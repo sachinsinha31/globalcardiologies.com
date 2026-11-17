@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Cardiologies | Advanced Cardiovascular Care</title>
+  <title>Global Cardiologies | Advanced Heart Care, Pediatrics & Medical Training</title>
   <style>
     :root {
       --primary: #0284c7;
@@ -14,6 +14,8 @@
       --white: #ffffff;
       --border: #e2e8f0;
       --accent: #ef4444;
+      --baby-tint: #fdf4f8;
+      --baby-primary: #db2777;
     }
 
     * {
@@ -34,7 +36,7 @@
       color: inherit;
     }
 
-    /* Top Info Bar */
+    /* Top Notice Bar */
     .top-bar {
       background-color: var(--navy);
       color: var(--white);
@@ -68,10 +70,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 800;
       color: var(--navy);
       display: flex;
@@ -85,11 +89,12 @@
 
     nav {
       display: flex;
-      gap: 2rem;
+      gap: 1.2rem;
       align-items: center;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       color: var(--slate);
+      flex-wrap: wrap;
     }
 
     nav a:hover {
@@ -99,7 +104,7 @@
     .btn-appointment {
       background: var(--primary);
       color: var(--white);
-      padding: 0.7rem 1.5rem;
+      padding: 0.6rem 1.25rem;
       border-radius: 99px;
       font-weight: 600;
       transition: background 0.2s;
@@ -112,9 +117,7 @@
     /* Hero Section */
     .hero {
       background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-      padding: 6rem 1.5rem;
-      display: flex;
-      align-items: center;
+      padding: 5rem 1.5rem;
     }
 
     .hero-container {
@@ -140,7 +143,7 @@
     }
 
     .hero h1 {
-      font-size: 3.2rem;
+      font-size: 3rem;
       line-height: 1.15;
       color: var(--navy);
       margin-bottom: 1.2rem;
@@ -148,7 +151,7 @@
     }
 
     .hero p {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: var(--slate);
       margin-bottom: 2rem;
     }
@@ -156,12 +159,13 @@
     .hero-btns {
       display: flex;
       gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .btn-primary {
       background: var(--navy);
       color: var(--white);
-      padding: 0.9rem 2rem;
+      padding: 0.85rem 1.8rem;
       border-radius: 8px;
       font-weight: 600;
     }
@@ -170,38 +174,29 @@
       background: transparent;
       color: var(--navy);
       border: 2px solid var(--navy);
-      padding: 0.9rem 2rem;
+      padding: 0.85rem 1.8rem;
       border-radius: 8px;
       font-weight: 600;
     }
 
-    .hero-card-preview {
+    .hero-notice-box {
       background: var(--white);
-      padding: 2.5rem;
+      padding: 2rem;
       border-radius: 16px;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
       border: 1px solid var(--border);
     }
 
-    .hero-card-preview h3 {
-      font-size: 1.5rem;
+    .hero-notice-box h3 {
+      font-size: 1.3rem;
       color: var(--navy);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
-    .hero-card-preview ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
+    .hero-notice-box p {
+      font-size: 0.95rem;
       color: var(--slate);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-card-preview li::before {
-      content: "✓ ";
-      color: var(--primary);
-      font-weight: bold;
+      margin-bottom: 1.2rem;
     }
 
     /* Section Styling */
@@ -216,12 +211,12 @@
 
     .section-title {
       text-align: center;
-      max-width: 600px;
-      margin: 0 auto 4rem auto;
+      max-width: 650px;
+      margin: 0 auto 3.5rem auto;
     }
 
     .section-title h2 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       color: var(--navy);
       margin-bottom: 0.75rem;
       font-weight: 800;
@@ -231,50 +226,75 @@
       color: var(--slate);
     }
 
-    /* Services Grid */
-    .services-grid {
+    /* Grid Layouts */
+    .grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
 
-    .service-card {
+    .card {
       background: var(--bg-light);
       border: 1px solid var(--border);
-      padding: 2.5rem;
+      padding: 2.2rem;
       border-radius: 12px;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .service-card:hover {
-      transform: translateY(-5px);
+    .card:hover {
+      transform: translateY(-4px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.05);
       background: var(--white);
     }
 
-    .service-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1.2rem;
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
     }
 
-    .service-card h3 {
-      font-size: 1.35rem;
+    .card h3 {
+      font-size: 1.25rem;
       color: var(--navy);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
     }
 
-    .service-card p {
+    .card p {
       color: var(--slate);
       font-size: 0.95rem;
     }
 
-    /* About Strip */
-    .about-section {
-      background: var(--bg-light);
+    /* Special Baby Care Section Styling */
+    .baby-section {
+      background-color: var(--baby-tint);
+      border-top: 1px solid #fbcfe8;
+      border-bottom: 1px solid #fbcfe8;
+    }
+
+    .baby-card {
+      background: var(--white);
+      border: 1px solid #f472b6;
+      padding: 2.2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(219, 39, 119, 0.05);
+      transition: transform 0.2s;
+    }
+
+    .baby-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .baby-card h3 {
+      color: #9d174d;
+    }
+
+    /* Background variations */
+    .bg-slate-tint {
+      background-color: var(--bg-light);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
 
+    /* About Section Grid */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -294,32 +314,6 @@
       margin-bottom: 1.2rem;
     }
 
-    .stats-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .stat-box {
-      background: var(--white);
-      padding: 1.5rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-    }
-
-    .stat-box h4 {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 0.2rem;
-    }
-
-    .stat-box p {
-      font-size: 0.85rem;
-      color: var(--slate);
-      margin: 0;
-    }
-
     /* Contact Banner */
     .contact-banner {
       background: var(--navy);
@@ -330,20 +324,20 @@
     }
 
     .contact-banner h2 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       margin-bottom: 1rem;
     }
 
     .contact-banner p {
       color: #94a3b8;
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto 2.5rem auto;
     }
 
     .contact-info-flex {
       display: flex;
       justify-content: center;
-      gap: 3rem;
+      gap: 2.5rem;
       flex-wrap: wrap;
       margin-bottom: 2.5rem;
     }
@@ -380,17 +374,17 @@
         grid-template-columns: 1fr;
       }
       .hero h1 {
-        font-size: 2.4rem;
+        font-size: 2.3rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
+  <!-- Top Notice Bar -->
   <div class="top-bar">
-    <div>Accepting New Patient Consultations & Second Opinions</div>
-    <div>Emergency Line: <span>+1 (800) 555-HEART</span></div>
+    <div>Scheduled Consultations & Inquiries Only (No Walk-in Emergencies)</div>
+    <div>Inquiry Desk: <span>contact@globalcardiologies.com</span></div>
   </div>
 
   <!-- Header -->
@@ -398,11 +392,14 @@
     <div class="nav-container">
       <a href="#" class="logo"><span>♥</span> Global Cardiologies</a>
       <nav>
-        <a href="#services">Specialties</a>
-        <a href="#about">About Practice</a>
-        <a href="#contact">Contact</a>
+        <a href="#heart">Adult Heart</a>
+        <a href="#baby-care">Baby & Pediatrics</a>
+        <a href="#global-cures">Global Branches</a>
+        <a href="#elderly">Elderly Care</a>
+        <a href="#training">Training</a>
+        <a href="#about">About Us</a>
       </nav>
-      <a href="#contact" class="btn-appointment">Book Consultation</a>
+      <a href="#contact" class="btn-appointment">Contact Us</a>
     </div>
   </header>
 
@@ -410,104 +407,198 @@
   <section class="hero">
     <div class="hero-container">
       <div>
-        <span class="hero-tag">Advanced Heart & Vascular Institute</span>
-        <h1>Excellence in Cardiovascular Medicine</h1>
+        <span class="hero-tag">International Healthcare Institute</span>
+        <h1>Advanced Heart Care, Pediatric Wellness & Clinical Training</h1>
         <p>
-          Providing world-class diagnostic imaging, preventive cardiology, and personalized heart care backed by rigorous US clinical standards.
+          Delivering expert adult heart care, specialized baby and pediatric support, senior wellness programs, global medical branches, and staff training partnerships.
         </p>
         <div class="hero-btns">
-          <a href="#contact" class="btn-primary">Schedule Consultation</a>
-          <a href="#services" class="btn-secondary">View Specialties</a>
+          <a href="#contact" class="btn-primary">Book Consultation</a>
+          <a href="#training" class="btn-secondary">Explore Training</a>
         </div>
       </div>
-      <div class="hero-card-preview">
-        <h3>Patient-Centered Care</h3>
-        <ul>
-          <li>Comprehensive 12-lead ECG & Echocardiography</li>
-          <li>Advanced Risk Stratification & Lipid Management</li>
-          <li>Rapid-Access Diagnostic Reporting</li>
-          <li>Sub-Specialist Second Opinions</li>
-        </ul>
-        <a href="#contact" class="btn-appointment" style="display:block; text-align:center;">Request Appointment</a>
+      <div class="hero-notice-box">
+        <h3>Important Patient Notice</h3>
+        <p>We operate strictly on a scheduled appointment and consultation basis. For immediate emergency medical attention, please contact your local emergency services.</p>
+        <a href="#contact" class="btn-appointment" style="display:inline-block; text-align:center;">Send Inquiry</a>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services">
+  <!-- 1. Adult Heart Section -->
+  <section id="heart">
     <div class="container">
       <div class="section-title">
-        <h2>Clinical Specialties</h2>
-        <p>Cutting-edge non-invasive diagnostics combined with dedicated therapeutic management.</p>
+        <h2>Adult Heart & Diagnostics</h2>
+        <p>Comprehensive adult health solutions utilizing high-precision testing, prevention, and risk management.</p>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">🩺</div>
-          <h3>Preventive Cardiology</h3>
-          <p>Comprehensive risk assessments, advanced lipid profiling, and tailored hypertension control plans designed for long-term health.</p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">🩺</div>
+          <h3>Preventive Wellness</h3>
+          <p>Advanced lipid tracking, vascular risk stratification, and structured hypertension management programs.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon">📈</div>
-          <h3>Advanced Diagnostics</h3>
-          <p>State-of-the-art non-invasive testing including echocardiograms, ambulatory Holter monitoring, and treadmill stress evaluations.</p>
+        <div class="card">
+          <div class="card-icon">📈</div>
+          <h3>Diagnostic Imaging</h3>
+          <p>High-resolution 12-lead ECG, comprehensive echocardiography, and ambulatory rhythm monitoring.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon">💉</div>
-          <h3>Vascular & Heart Health</h3>
-          <p>Specialized management of coronary artery disease, rhythm disorders, and heart failure optimization pathways.</p>
+        <div class="card">
+          <div class="card-icon">💉</div>
+          <h3>Specialized Treatment</h3>
+          <p>Targeted medical optimization and follow-up care for chronic circulation and heart rhythm conditions.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about-section">
+  <!-- 2. Baby & Pediatric Care Section (Completely Seperate) -->
+  <section id="baby-care" class="baby-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Baby & Pediatric Care</h2>
+        <p>Gentle, specialized developmental and clinical attention tailored specifically for infants, babies, and growing children.</p>
+      </div>
+      <div class="grid-3">
+        <div class="baby-card">
+          <div class="card-icon">👶</div>
+          <h3>Infant Health Screenings</h3>
+          <p>Gentle non-insured diagnostic assessments and vital monitoring structured safely for newborns and infants.</p>
+        </div>
+        <div class="baby-card">
+          <div class="card-icon">👦</div>
+          <h3>Pediatric Growth & Development</h3>
+          <p>Child-friendly clinical evaluations, nutritional guidance, and milestone health tracking for toddlers and kids.</p>
+        </div>
+        <div class="baby-card">
+          <div class="card-icon">💗</div>
+          <h3>Youth Wellness & Pediatrics</h3>
+          <p>Supportive preventative care paths, school athletic physical evaluations, and specialized pediatric follow-ups.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Global Cures & Other Branches Section -->
+  <section id="global-cures">
+    <div class="container">
+      <div class="section-title">
+        <h2>Global Branches & Medical Cures</h2>
+        <p>Expanding our clinical reach with integrated multi-specialty branches and collaborative medical treatments worldwide.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <h3>International Clinical Network</h3>
+          <p>Coordinated multi-country medical expertise, second opinions, and cross-border clinical consultations.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏥</div>
+          <h3>Allied Therapeutic Branches</h3>
+          <p>Integrating metabolic wellness, pulmonary care, and internal medicine branches into comprehensive patient paths.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <h3>Global Research Partnerships</h3>
+          <p>Collaborating with premier medical institutions internationally to bring advanced evidence-based treatments home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Old Parent Care (Geriatric Care) Section -->
+  <section id="elderly" class="bg-slate-tint">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="hero-tag">Specialized Senior Support</span>
+          <h2>Compassionate Elderly & Parent Care</h2>
+          <p>
+            Caring for aging parents requires dedicated patience, low-stress environments, and rigorous chronic condition management. Our geriatric healthcare programs are customized for senior wellness.
+          </p>
+          <p>
+            We focus on safe medication tracking, gentle health monitoring, and coordinated family updates to give your loved ones dignity, safety, and vitality.
+          </p>
+        </div>
+        <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border);">
+          <h3 style="font-size: 1.4rem; color: var(--navy); margin-bottom: 1rem;">Senior Care Priorities</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem; color: var(--slate);">
+            <li>✓ Low-stress, gentle diagnostic assessments</li>
+            <li>✓ Coordinated multi-medication safety reviews</li>
+            <li>✓ Family-centered health status reporting</li>
+            <li>✓ Fall-risk and general vitality monitoring</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Training Section (For Doctors & Employees visiting sites) -->
+  <section id="training">
+    <div class="container">
+      <div class="section-title">
+        <h2>Clinical Training & Professional Development</h2>
+        <p>Empowering our junior doctors, medical staff, and visiting personnel through continuous global site training and education.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">🔬</div>
+          <h3>Junior Doctor Fellowship</h3>
+          <p>Structured clinical rotations, diagnostic mentorship, and direct case-study training under senior specialists.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✈</div>
+          <h3>Global Site Visit Programs</h3>
+          <p>Our physicians and medical teams regularly travel to partner international institutions to train on emerging medical technologies.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📚</div>
+          <h3>Staff & Employee Education</h3>
+          <p>Continuous internal workshops ensuring all clinical and administrative teams maintain the highest US-standard compliance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. About Us Section -->
+  <section id="about" class="bg-slate-tint">
     <div class="container about-grid">
       <div class="about-text">
-        <h2>Uncompromising Medical Standards</h2>
+        <span class="hero-tag">Our Institution</span>
+        <h2>About Global Cardiologies</h2>
         <p>
-          At Global Cardiologies, our mission is to deliver elite medical guidance rooted in transparent communication and advanced cardiac science. We treat every patient with rigorous clinical diligence.
+          Global Cardiologies is founded on the principles of academic excellence, rigorous diagnostic accuracy, and transparent medical communication. 
         </p>
         <p>
-          From initial screening to long-term chronic condition management, our team works tirelessly to ensure your cardiovascular health is in expert hands.
+          Our network brings together multi-specialty clinical experts dedicated to serving patients of all ages—from newborn babies to elderly parents—with uncompromising medical integrity.
         </p>
-        <div class="stats-row">
-          <div class="stat-box">
-            <h4>100%</h4>
-            <p>Evidence-Based Protocols</p>
-          </div>
-          <div class="stat-box">
-            <h4>24/7</h4>
-            <p>Care Support & Coordination</p>
-          </div>
-        </div>
       </div>
-      <div style="background: var(--white); padding: 3rem; border-radius: 16px; border: 1px solid var(--border);">
-        <h3 style="font-size: 1.5rem; color: var(--navy); margin-bottom: 1rem;">Our Core Commitment</h3>
-        <p style="color: var(--slate); margin-bottom: 1.5rem;">We combine state-of-the-art medical technology with a deeply compassionate approach to patient well-being.</p>
-        <a href="#contact" class="btn-primary" style="display:inline-block;">Meet Our Specialists</a>
+      <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border);">
+        <h3 style="font-size: 1.4rem; color: var(--navy); margin-bottom: 1rem;">Core Institutional Pillars</h3>
+        <p style="color: var(--slate); margin-bottom: 1rem;"><strong>No Emergency Walk-ins:</strong> To preserve personalized care quality, all visits are scheduled in advance.</p>
+        <p style="color: var(--slate);"><strong>Global Reach:</strong> Combining local compassionate care with international branch networks and advanced staff training.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact & Non-Emergency Inquiry Section -->
   <section id="contact">
     <div class="container">
       <div class="contact-banner">
-        <h2>Schedule Your Consultation Today</h2>
-        <p>Reach out to our patient coordinators to book an appointment or ask a clinical inquiry.</p>
+        <h2>Schedule an Appointment or Inquiry</h2>
+        <p>Please note: We do not handle emergency walk-ins. Reach out to our coordination team below to book your consultation.</p>
         <div class="contact-info-flex">
           <div>
-            <strong>Email Address</strong>
+            <strong>Inquiry Email</strong>
             contact@globalcardiologies.com
           </div>
           <div>
-            <strong>Phone / Appointments</strong>
+            <strong>Coordination Phone</strong>
             +1 (800) 555-HEART
           </div>
           <div>
-            <strong>Hours of Operation</strong>
-            Mon – Sat: 8:00 AM – 6:00 PM
+            <strong>Operating Hours</strong>
+            Mon – Sat: 8:00 AM – 6:00 PM (By Appointment)
           </div>
         </div>
         <a href="mailto:contact@globalcardiologies.com" class="btn-accent">Send an Email Inquiry</a>
@@ -518,7 +609,7 @@
   <!-- Footer -->
   <footer>
     <p>© 2026 Global Cardiologies (globalcardiologies.com). All rights reserved.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Disclaimer: Website content is for informational purposes only and does not replace professional medical evaluation.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Disclaimer: This website provides informational details for scheduled consultations and does not handle emergency medical care.</p>
   </footer>
 
 </body>
