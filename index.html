@@ -1,527 +1,226 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Cardiologies | Advanced Heart Care & Medical Network</title>
-  <style>
-    :root {
-      --primary: #0284c7;
-      --primary-dark: #0369a1;
-      --navy: #0f172a;
-      --slate: #475569;
-      --bg-light: #f8fafc;
-      --white: #ffffff;
-      --border: #e2e8f0;
-      --accent: #ef4444;
-      --baby-tint: #fdf4f8;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Global Cardiologies — Heart, Baby &amp; Elder Care</title>
+<meta name="description" content="Heart, baby and elder care by appointment, in your own language.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('gc-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{--bg:#F5FAFB;--s:#fff;--ink:#0B2A3D;--mut:#5A7080;--line:#DDEAEE;--p:#0E9AA7;--p2:#0B6E8A;--a:#FF6B5E;--soft:#E6F6F7;--sh:0 20px 50px rgba(11,70,90,.12)}
+[data-theme=dark]{--bg:#07161C;--s:#0D2128;--ink:#E7F4F6;--mut:#92AAB3;--line:#1B3640;--soft:#0B2A32;--sh:0 20px 50px rgba(0,0,0,.5)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 'Plus Jakarta Sans','Noto Sans Devanagari','Noto Sans Bengali','Noto Sans Kannada','Noto Sans Gujarati',system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.15;letter-spacing:-.02em}p{margin:0}a{color:inherit;text-decoration:none}ul{list-style:none;margin:0;padding:0}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}section{padding:96px 0}
+.gt{background:linear-gradient(100deg,var(--p),var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:999px;font:700 15px inherit;font-family:inherit;border:2px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.bp{background:var(--p);color:#fff;box-shadow:0 10px 26px rgba(14,154,167,.35)}.bp:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(14,154,167,.5)}
+.bo{border-color:var(--ink);color:var(--ink)}.bo:hover{background:var(--ink);color:var(--bg)}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--navy); background-color: var(--white); line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
+.top{background:var(--p2);color:#fff;font-size:13px}.top .w{display:flex;align-items:center;gap:16px;min-height:42px;flex-wrap:wrap}
+.top .n{margin-right:auto;opacity:.95}.top a{opacity:.9}
+.top select,.ib{height:30px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);color:#fff;border-radius:999px;font:600 13px inherit;font-family:inherit;cursor:pointer}
+.top select{padding:0 10px}.top select option{color:#0B2A3D}.ib{width:30px;display:grid;place-items:center;padding:0}
+.ib svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sun{display:none}[data-theme=dark] .sun{display:block}[data-theme=dark] .moon{display:none}
+header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--s) 90%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:20px;min-height:74px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;white-space:nowrap}.logo svg{width:34px;height:34px}
+.menu{display:flex;gap:2px;margin:0 auto}.menu a{padding:10px 14px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--mut);transition:.15s}.menu a:hover{background:var(--soft);color:var(--p2)}
+@media(max-width:1020px){.nav{flex-wrap:wrap;padding:10px 0}.srch{order:9;flex:1 1 100%;margin:0}}
 
-    /* Dropdown Language Bar */
-    .lang-bar {
-      background: #020617;
-      color: #94a3b8;
-      padding: 0.5rem 1.5rem;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.85rem;
-    }
-    .lang-select {
-      background: #0f172a;
-      border: 1px solid #334155;
-      color: #cbd5e1;
-      padding: 0.3rem 0.6rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.85rem;
-    }
+.top svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px;margin-right:5px}
+.nav{gap:12px}.dd{position:relative}
+.allb{display:flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;border:0;background:var(--p);color:#fff;font:700 15px inherit;font-family:inherit;cursor:pointer;box-shadow:0 8px 20px rgba(14,154,167,.3)}
+.nb{padding:10px 12px;background:none;border:0;border-radius:999px;font:600 14.5px inherit;font-family:inherit;color:var(--ink);cursor:pointer;display:inline-flex;gap:6px;align-items:center}.nb:hover{background:var(--soft);color:var(--p2)}
+.dp{position:absolute;top:calc(100% + 10px);left:0;min-width:270px;background:var(--s);border:1px solid var(--line);border-radius:20px;box-shadow:var(--sh);padding:10px;display:none;z-index:40}.dd.open .dp{display:block}
+.dp a,.dp button{display:flex;align-items:center;gap:12px;width:100%;padding:12px 14px;border:0;background:none;border-radius:12px;font:600 14.5px inherit;font-family:inherit;color:var(--ink);cursor:pointer;text-align:left}.dp a:hover,.dp button:hover{background:var(--soft);color:var(--p2)}
+.dp svg{width:20px;height:20px;stroke:var(--p);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.srch{position:relative;margin-left:auto;flex:0 1 290px;display:flex;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px 4px 4px 18px}
+.srch input{border:0;background:none;height:38px;padding:0;font-size:14px;width:100%;color:var(--ink)}.srch input:focus{outline:none}.srch:focus-within{outline:2px solid var(--p)}
+.srch button{flex:none;width:36px;height:36px;border-radius:50%;border:0;background:var(--p);cursor:pointer;display:grid;place-items:center}.srch button svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round}
+.sr{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--s);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh);padding:6px;display:none;z-index:40}.sr.on{display:block}.sr a{display:block;padding:10px 12px;border-radius:10px;font-size:14px;font-weight:600}.sr a:hover{background:var(--soft)}
+.bo svg{width:18px;height:18px;stroke:#1BAA7A;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cm{margin-top:18px;font-size:14px;color:var(--mut)}.cm svg{width:16px;height:16px;stroke:var(--p);fill:none;stroke-width:2;vertical-align:-3px;margin-right:6px}.cm a{color:var(--p2);font-weight:700}.cm div{margin-top:6px}
+dialog#mod{border:0;padding:0;border-radius:28px;width:min(760px,94vw);max-height:92vh;color:#fff;background:radial-gradient(520px 300px at 50% 0%,rgba(14,154,167,.28),transparent),#071820;box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:auto}
+dialog#mod::backdrop{background:rgba(2,10,14,.74);backdrop-filter:blur(4px)}
+.mi{padding:34px 30px 30px;position:relative}
+.x{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.1);color:#fff;font-size:22px;cursor:pointer}
+.mp{display:block;width:max-content;margin:0 auto 12px;padding:6px 18px;border-radius:999px;border:1px solid #1E9BC4;background:rgba(30,155,196,.12);color:#5CC8EC;font:700 12px inherit;font-family:inherit;letter-spacing:.12em;text-transform:uppercase}
+#mt{text-align:center;font-size:clamp(26px,4vw,36px);margin-bottom:18px;color:#fff}
+.mq{display:flex;gap:12px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}.mb2{display:inline-flex;align-items:center;gap:9px;padding:11px 22px;border-radius:14px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:#fff;font:600 14.5px inherit;font-family:inherit}.mb2:hover{background:rgba(255,255,255,.12)}
+.mb2 svg{width:18px;height:18px;stroke:#2CC98F;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.mb2 svg.m{stroke:#fff}
+.tg{display:grid;grid-template-columns:1fr 1fr;padding:5px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);margin-bottom:20px}.tg button{padding:13px;border:0;border-radius:12px;background:none;color:#9DB6BE;font:700 14.5px inherit;font-family:inherit;cursor:pointer}.tg .on{background:linear-gradient(100deg,var(--p),var(--p2));color:#fff}
+#mf{display:grid;grid-template-columns:1fr 1fr;gap:16px}#mf .full{grid-column:1/-1}@media(max-width:600px){#mf{grid-template-columns:1fr}}
+#mf label{color:#C5D6DB}#mf input,#mf select,#mf textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:#fff;border-radius:14px;padding:0 16px;height:50px;font:500 15px inherit;font-family:inherit}#mf textarea{height:110px;padding:14px 16px;resize:vertical}#mf select option{color:#0B2A3D}
+#mf .btn{width:100%}.hp{position:absolute;left:-9999px;opacity:0}
+.hero{background:radial-gradient(700px 420px at 92% 0%,color-mix(in srgb,var(--p) 20%,transparent),transparent),radial-gradient(600px 420px at 0% 100%,color-mix(in srgb,var(--a) 14%,transparent),transparent);padding:70px 0 110px}
+.hg{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}@media(max-width:940px){.hg{grid-template-columns:1fr}}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:9px 18px;border-radius:999px;background:var(--s);border:1px solid var(--line);font-size:13.5px;font-weight:600;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,.05)}
+.dot{width:9px;height:9px;border-radius:50%;background:#2CC98F;box-shadow:0 0 0 0 rgba(44,201,143,.7);animation:pg 2s infinite}@keyframes pg{to{box-shadow:0 0 0 10px rgba(44,201,143,0)}}
+.hero h1{font-size:clamp(40px,6vw,76px);margin-bottom:22px}.hero h1 span{display:block}
+.lead{font-size:19px;color:var(--mut);max-width:48ch;margin-bottom:32px}.cta{display:flex;gap:14px;flex-wrap:wrap}
+.ph{position:relative;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,var(--a1,#7ADBE3),var(--a2,#0E9AA7))}
+.ph>svg{width:34%;max-width:120px;fill:none;stroke:rgba(255,255,255,.9);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ph img,.ph video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hv{border-radius:40px 40px 40px 120px;aspect-ratio:4/4.7;box-shadow:var(--sh);--a1:#0E9AA7;--a2:#0B4F6E}
+.hv>svg{width:42%;max-width:none;stroke-width:1.2}
+.hw{position:relative}.fc{position:absolute;display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:20px;background:var(--s);box-shadow:var(--sh);animation:dr 5s ease-in-out infinite alternate}
+.fc svg{width:46px;height:30px;stroke:var(--a);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.fc.a{top:8%;left:-26px}.fc.b{bottom:9%;right:-18px;animation-delay:-2.5s}.fc i{width:34px;height:34px;border-radius:50%;border:3px solid var(--s);margin-left:-14px;background:var(--c)}.fc i:first-child{margin:0}
+@keyframes dr{to{transform:translateY(-14px)}}@media(max-width:600px){.fc.a{left:6px}.fc.b{right:6px}}
 
-    /* Top Notice Bar */
-    .top-bar {
-      background-color: var(--navy);
-      color: var(--white);
-      font-size: 0.85rem;
-      padding: 0.6rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .top-bar span { color: #38bdf8; font-weight: 600; }
+.bar{position:relative;z-index:5;margin-top:-62px}
+.bk{background:var(--s);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:var(--sh);display:grid;grid-template-columns:auto 1.2fr 1fr 1fr auto;gap:14px;align-items:end}
+@media(max-width:980px){.bk{grid-template-columns:1fr 1fr}.bk h3,.bk .btn{grid-column:1/-1}}@media(max-width:560px){.bk{grid-template-columns:1fr}}
+.bk h3{font-size:19px;padding-right:14px;max-width:11ch}
+label{display:block;font-size:12.5px;font-weight:700;color:var(--mut);margin-bottom:6px}
+input,select.f{width:100%;height:50px;padding:0 16px;border:1.5px solid var(--line);border-radius:14px;font:500 15px inherit;font-family:inherit;background:var(--bg);color:var(--ink)}
+input:focus,select.f:focus{outline:2px solid var(--p);outline-offset:1px}
+.nt{font-size:13px;color:var(--mut);margin-top:12px;text-align:center}
 
-    /* Header */
-    header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
-    .nav-container { max-width: 1200px; margin: 0 auto; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .logo { font-size: 1.4rem; font-weight: 800; color: var(--navy); display: flex; align-items: center; gap: 0.5rem; }
-    .logo span { color: var(--accent); }
-    nav { display: flex; gap: 1.2rem; align-items: center; font-weight: 600; font-size: 0.88rem; color: var(--slate); flex-wrap: wrap; }
-    nav a:hover { color: var(--primary); }
-    .btn-appointment { background: var(--primary); color: var(--white); padding: 0.6rem 1.25rem; border-radius: 99px; font-weight: 600; transition: background 0.2s; }
-    .btn-appointment:hover { background: var(--primary-dark); }
-
-    /* Hero Section */
-    .hero { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 5rem 1.5rem; }
-    .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-    .hero-tag { display: inline-block; background: #bae6fd; color: var(--primary-dark); font-weight: 700; font-size: 0.8rem; padding: 0.4rem 1rem; border-radius: 99px; text-transform: uppercase; margin-bottom: 1.2rem; }
-    .hero h1 { font-size: 3rem; line-height: 1.15; color: var(--navy); margin-bottom: 1.2rem; font-weight: 800; }
-    .hero p { font-size: 1.1rem; color: var(--slate); margin-bottom: 2rem; }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary { background: var(--navy); color: var(--white); padding: 0.85rem 1.8rem; border-radius: 8px; font-weight: 600; }
-    .btn-secondary { background: transparent; color: var(--navy); border: 2px solid var(--navy); padding: 0.85rem 1.8rem; border-radius: 8px; font-weight: 600; }
-    .hero-notice-box { background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid var(--border); }
-    .hero-notice-box h3 { font-size: 1.3rem; color: var(--navy); margin-bottom: 0.75rem; }
-    .hero-notice-box p { font-size: 0.95rem; color: var(--slate); margin-bottom: 1.2rem; }
-
-    /* Section Styling */
-    section { padding: 5rem 1.5rem; }
-    .container { max-width: 1200px; margin: 0 auto; }
-    .section-title { text-align: center; max-width: 650px; margin: 0 auto 3.5rem auto; }
-    .section-title h2 { font-size: 2.3rem; color: var(--navy); margin-bottom: 0.75rem; font-weight: 800; }
-    .section-title p { color: var(--slate); }
-
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-    .card { background: var(--bg-light); border: 1px solid var(--border); padding: 2.2rem; border-radius: 12px; transition: transform 0.2s, box-shadow 0.2s; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); background: var(--white); }
-    .card-icon { font-size: 2.2rem; margin-bottom: 1rem; }
-    .card h3 { font-size: 1.25rem; color: var(--navy); margin-bottom: 0.6rem; }
-    .card p { color: var(--slate); font-size: 0.95rem; margin-bottom: 1.2rem; }
-    .card-link { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
-
-    .baby-section { background-color: var(--baby-tint); border-top: 1px solid #fbcfe8; border-bottom: 1px solid #fbcfe8; }
-    .baby-card { background: var(--white); border: 1px solid #f472b6; padding: 2.2rem; border-radius: 12px; transition: transform 0.2s; }
-    .baby-card:hover { transform: translateY(-4px); }
-    .baby-card h3 { color: #9d174d; }
-
-    .bg-slate-tint { background-color: var(--bg-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .about-text h2 { font-size: 2.3rem; color: var(--navy); margin-bottom: 1.2rem; font-weight: 800; }
-    .about-text p { color: var(--slate); margin-bottom: 1.2rem; }
-
-    .contact-banner { background: var(--navy); color: var(--white); border-radius: 16px; padding: 4rem 2rem; text-align: center; }
-    .contact-banner h2 { font-size: 2.3rem; margin-bottom: 1rem; }
-    .contact-banner p { color: #94a3b8; max-width: 650px; margin: 0 auto 2.5rem auto; }
-    .contact-info-flex { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-    .contact-info-flex div strong { display: block; color: #38bdf8; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.3rem; }
-    .btn-accent { background: var(--primary); color: var(--white); padding: 0.9rem 2.5rem; border-radius: 8px; font-weight: 600; display: inline-block; }
-
-    footer { background: #020617; color: #64748b; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; }
-
-    @media (max-width: 850px) { .hero-container, .about-grid { grid-template-columns: 1fr; } }
-  </style>
+.sh{max-width:640px;margin:0 auto 48px;text-align:center}.sh h2{font-size:clamp(30px,4.2vw,50px)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}@media(max-width:900px){.cards{grid-template-columns:1fr 1fr}}@media(max-width:560px){.cards{grid-template-columns:1fr}}
+.card{background:var(--s);border:1px solid var(--line);border-radius:28px;padding:12px 12px 24px;transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+.card .ph{aspect-ratio:4/3;border-radius:20px;margin-bottom:20px}.card h3{font-size:21px;padding:0 14px 6px}
+.card .m{display:flex;align-items:center;gap:10px;padding:8px 14px 0;font-weight:700;font-size:14.5px;color:var(--p2)}
+.card .m i{width:34px;height:34px;border-radius:50%;background:var(--p);color:#fff;display:grid;place-items:center;font-style:normal;transition:transform .25s}.card:hover .m i{transform:translateX(6px)}
+.wh{background:var(--soft)}.wg{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}@media(max-width:860px){.wg{grid-template-columns:1fr}}
+.wv{aspect-ratio:1/1;border-radius:120px 40px 40px 40px;box-shadow:var(--sh);--a1:#FF9A8B;--a2:#FF6B5E}
+.wh h2{font-size:clamp(30px,4vw,46px);margin-bottom:28px}
+.ck li{display:flex;gap:14px;align-items:center;padding:16px 20px;background:var(--s);border-radius:18px;margin-bottom:12px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.04)}
+.ck li::before{content:"✓";flex:none;width:30px;height:30px;border-radius:50%;background:var(--p);color:#fff;display:grid;place-items:center;font-size:14px}
+.mb{background:linear-gradient(120deg,var(--p2),var(--p));color:#fff;border-radius:36px;padding:56px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;box-shadow:var(--sh)}
+.mb h2{font-size:clamp(26px,3.6vw,42px);max-width:20ch}.mb .btn{background:#fff;color:var(--p2)}
+footer{background:#06161D;color:#9DB6BE;padding:56px 0 26px;font-size:14px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;margin-bottom:28px}@media(max-width:700px){.fg{grid-template-columns:1fr}}
+footer .logo{color:#fff;margin-bottom:12px}footer li{margin-bottom:8px}footer a:hover{color:#fff}
+.em{background:rgba(255,107,94,.14);border:1px solid rgba(255,107,94,.4);color:#FFD9D4;border-radius:16px;padding:14px 18px;margin-bottom:28px}
+.lg{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:12.5px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-h" viewBox="0 0 24 24"><path d="M12 21s-8-4.8-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.2-8 11-8 11Z"/></symbol>
+<symbol id="i-b" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c0-4 3-6.5 7-6.5s7 2.5 7 6.5"/></symbol>
+<symbol id="i-e" viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"/><path d="M5 10.5V20h14v-9.5"/><path d="M10 20v-5h4v5"/></symbol>
+<symbol id="i-g" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+<symbol id="i-t" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5Z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol></defs></svg>
 
-  <!-- Language Switcher Dropdown Bar -->
-  <div class="lang-bar">
-    <span>🌐 Language:</span>
-    <select id="langDropdown" class="lang-select" onchange="changeLanguage(this.value)">
-      <option value="en">English</option>
-      <option value="hi">हिन्दी (Hindi)</option>
-      <option value="bn">বাংলা (Bangla)</option>
-      <option value="kn">ಕನ್ನಡ (Kannada)</option>
-      <option value="gu">ગુજરાતી (Gujarati)</option>
-      <option value="es">Español (Spanish)</option>
-      <option value="ne">नेपाली (Nepali)</option>
-    </select>
+<div class="top"><div class="w">
+  <span class="n" data-i18n="notice">Appointments only. Not for emergencies — call 112.</span>
+  <a href="tel:+91-9501168543"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>+91 00000 00000</a><a href="https://wa.me/910000000000?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5Z"/></svg>+91 00000 00000</a><a href="mailto:info@globalcardiologies.com"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>info@globalcardiologies.com</a>
+  <select id="lang" aria-label="Language"><option value="en">English</option><option value="hi">हिन्दी</option><option value="bn">বাংলা</option><option value="kn">ಕನ್ನಡ</option><option value="gu">ગુજરાતી</option><option value="es">Español</option><option value="ne">नेपाली</option></select>
+  <button class="ib" id="theme" aria-label="Light or dark theme"><svg class="moon" viewBox="0 0 24 24"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10Z"/></svg><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M5 5l1.5 1.5M17.5 17.5 19 19M2 12h2M20 12h2M5 19l1.5-1.5M17.5 6.5 19 5"/></svg></button>
+</div></div>
+
+<header><div class="w nav">
+  <a class="logo" href="#top" translate="no"><svg viewBox="0 0 32 32" fill="none"><path d="M16 28S3 20.5 3 11.5A6.5 6.5 0 0 1 16 9a6.5 6.5 0 0 1 13 2.5C29 20.5 16 28 16 28Z" fill="#FF6B5E"/><path d="M6 16h6l2-4 3 8 2-4h7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Global Cardiologies</a>
+  <div class="dd"><button class="allb" data-dd aria-expanded="false"><span data-i18n="allsvc">All Services</span> ▾</button><div class="dp mm"><a href="adult-heart.html" data-k="heart cardiac cardiology adult bp cholesterol"><svg><use href="#i-h"/></svg><span data-i18n="c_heart">Adult Heart Care</span></a><a href="baby-care.html" data-k="baby child kids paediatric pediatric infant newborn"><svg><use href="#i-b"/></svg><span data-i18n="c_baby">Baby &amp; Paediatric Care</span></a><a href="elderly-care.html" data-k="elder senior parent old age geriatric"><svg><use href="#i-e"/></svg><span data-i18n="c_elder">Elderly &amp; Parent Care</span></a><a href="global-branches.html" data-k="global international second opinion abroad"><svg><use href="#i-g"/></svg><span data-i18n="c_global">Global Care Coordination</span></a><a href="training.html" data-k="training fellowship doctor course"><svg><use href="#i-t"/></svg><span data-i18n="c_train">Clinical Training</span></a></div></div>
+  <div class="dd"><button class="nb" data-dd aria-expanded="false"><span data-i18n="getcare">Get care</span> ▾</button><div class="dp"><button data-open="ind"><svg><use href="#i-b"/></svg><span data-i18n="ind">Individual &amp; family</span></button><button data-open="org"><svg><use href="#i-t"/></svg><span data-i18n="org">Hospital &amp; organisation</span></button></div></div>
+  <a class="nb" href="#plans" data-i18n="n_plans">Memberships</a>
+  <button class="nb" data-open="ind" data-i18n="contact">Contact us</button>
+  <div class="srch"><input id="q" autocomplete="off" data-i18n-ph="search" placeholder="What care are you looking for?" aria-label="Search"><button id="qb" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg></button><div class="sr" id="sr"></div></div>
+</div></header>
+
+<main id="top">
+<section class="hero" style="padding-bottom:110px"><div class="w hg">
+  <div>
+    <div class="badge"><i class="dot"></i><span data-i18n="badge">Now scheduling appointments</span></div>
+    <h1><span data-i18n="h1a">Healthier hearts.</span><span class="gt" data-i18n="h1b">Happier families.</span></h1>
+    <p class="lead" data-i18n="lead">Heart, baby and elder care by appointment, in your own language.</p>
+    <div class="cta"><button class="btn bp" data-open="ind" data-i18n="advisor">Talk to an advisor</button><a class="btn bo" href="https://wa.me/910000000000?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5Z"/></svg><span data-i18n="wa">WhatsApp us</span></a></div>
+    <div class="cm"><a href="#" data-open="ind"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span data-i18n="m_title">Request more information</span></a><div data-i18n="note">Our team will contact you to confirm your visit.</div></div>
   </div>
-
-  <!-- Top Notice Bar -->
-  <div class="top-bar">
-    <div data-key="notice1">Scheduled Consultations & Inquiries Only (No Walk-in Emergencies)</div>
-    <div><span data-key="inquiry_label">Inquiry Desk:</span> <span style="color:#38bdf8;">contact@globalcardiologies.com</span></div>
+  <div class="hw">
+    <div class="ph hv"><svg><use href="#i-h"/></svg><img src="assets/hero-family.jpg" alt="" onerror="this.remove()"><video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-hidden="true"><source src="assets/hero.mp4" type="video/mp4"></video></div>
+    <div class="fc a" aria-hidden="true"><svg viewBox="0 0 46 30"><path d="M0 16h12l4-10 7 22 5-14 3 4h15"/></svg></div>
+    <div class="fc b" aria-hidden="true"><i style="--c:#FFB020"></i><i style="--c:#0E9AA7"></i><i style="--c:#7C5CFF"></i></div>
   </div>
+</div></section>
 
-  <!-- Header -->
-  <header>
-    <div class="nav-container">
-      <a href="index.html" class="logo"><span>♥</span> Global Cardiologies</a>
-      <nav>
-        <a href="adult-heart.html" data-key="nav_adult">Adult Heart</a>
-        <a href="baby-care.html" data-key="nav_baby">Baby & Pediatrics</a>
-        <a href="global-branches.html" data-key="nav_global">Global Branches</a>
-        <a href="elderly-care.html" data-key="nav_elderly">Elderly Care</a>
-        <a href="training.html" data-key="nav_training">Training</a>
-        <a href="about.html" data-key="nav_about">About Us</a>
-      </nav>
-      <a href="contact.html" class="btn-appointment" data-key="btn_contact">Contact Us</a>
-    </div>
-  </header>
+<div class="bar" id="book"><div class="w"><form class="bk" id="enq">
+  <h3 data-i18n="b_title">Request an appointment</h3>
+  <div><label for="t" data-i18n="b_service">Service</label><select id="t" class="f"><option value="Adult heart care" data-i18n="c_heart">Adult Heart Care</option><option value="Baby &amp; paediatric care" data-i18n="c_baby">Baby &amp; Paediatric Care</option><option value="Elderly &amp; parent care" data-i18n="c_elder">Elderly &amp; Parent Care</option><option value="Global care coordination" data-i18n="c_global">Global Care Coordination</option><option value="Clinical training" data-i18n="c_train">Clinical Training</option></select></div>
+  <div><label for="n" data-i18n="b_name">Your name</label><input id="n" required></div>
+  <div><label for="p" data-i18n="b_phone">Phone</label><input id="p" type="tel" required></div>
+  <button class="btn bp" type="submit" data-i18n="b_send">Send request</button>
+</form><p class="nt" data-i18n="note">Our team will contact you to confirm your visit.</p></div></div>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-container">
-      <div>
-        <span class="hero-tag" data-key="hero_tag">International Healthcare Institute</span>
-        <h1 data-key="hero_title">Advanced Heart Care, Pediatric Wellness & Clinical Training</h1>
-        <p data-key="hero_desc">
-          Delivering expert adult heart care, specialized baby and pediatric support, senior wellness programs, global medical branches, and staff training partnerships.
-        </p>
-        <div class="hero-btns">
-          <a href="contact.html" class="btn-primary" data-key="btn_book">Book Consultation</a>
-          <a href="training.html" class="btn-secondary" data-key="btn_explore">Explore Training</a>
-        </div>
-      </div>
-      <div class="hero-notice-box">
-        <h3 data-key="notice_box_title">Important Patient Notice</h3>
-        <p data-key="notice_box_desc">We operate strictly on a scheduled appointment and consultation basis. For immediate emergency medical attention, please contact your local emergency services.</p>
-        <a href="contact.html" class="btn-appointment" style="display:inline-block; text-align:center;" data-key="btn_send_inquiry">Send Inquiry</a>
-      </div>
-    </div>
-  </section>
+<section id="care"><div class="w">
+  <div class="sh rv"><h2 data-i18n="t_care">Care for every generation</h2></div>
+  <div class="cards">
+    <a class="card rv" href="adult-heart.html"><div class="ph" style="--a1:#FF8A7A;--a2:#E5484D"><svg><use href="#i-h"/></svg><img src="assets/svc-heart.jpg" alt="" loading="lazy" onerror="this.remove()"></div><h3 data-i18n="c_heart">Adult Heart Care</h3><div class="m"><span data-i18n="more">Learn more</span><i>→</i></div></a>
+    <a class="card rv" href="baby-care.html"><div class="ph" style="--a1:#FFD36B;--a2:#FFA41B"><svg><use href="#i-b"/></svg><img src="assets/svc-baby.jpg" alt="" loading="lazy" onerror="this.remove()"></div><h3 data-i18n="c_baby">Baby &amp; Paediatric Care</h3><div class="m"><span data-i18n="more">Learn more</span><i>→</i></div></a>
+    <a class="card rv" href="elderly-care.html"><div class="ph" style="--a1:#6EE0B4;--a2:#1BAA7A"><svg><use href="#i-e"/></svg><img src="assets/svc-elder.jpg" alt="" loading="lazy" onerror="this.remove()"></div><h3 data-i18n="c_elder">Elderly &amp; Parent Care</h3><div class="m"><span data-i18n="more">Learn more</span><i>→</i></div></a>
+    <a class="card rv" href="global-branches.html"><div class="ph" style="--a1:#A99BFF;--a2:#6B4DF0"><svg><use href="#i-g"/></svg><img src="assets/svc-global.jpg" alt="" loading="lazy" onerror="this.remove()"></div><h3 data-i18n="c_global">Global Care Coordination</h3><div class="m"><span data-i18n="more">Learn more</span><i>→</i></div></a>
+    <a class="card rv" href="training.html"><div class="ph" style="--a1:#7ADBE3;--a2:#0E9AA7"><svg><use href="#i-t"/></svg><img src="assets/svc-training.jpg" alt="" loading="lazy" onerror="this.remove()"></div><h3 data-i18n="c_train">Clinical Training</h3><div class="m"><span data-i18n="more">Learn more</span><i>→</i></div></a>
+  </div>
+</div></section>
 
-  <!-- 1. Adult Heart Section Preview -->
-  <section id="heart">
-    <div class="container">
-      <div class="section-title">
-        <h2 data-key="adult_title">Adult Heart & Diagnostics</h2>
-        <p data-key="adult_desc">Comprehensive adult health solutions utilizing high-precision testing, prevention, and risk management.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">🩺</div>
-          <h3 data-key="adult_c1_title">Preventive Wellness</h3>
-          <p data-key="adult_c1_desc">Advanced lipid tracking, vascular risk stratification, and structured hypertension management programs.</p>
-          <a href="adult-heart.html" class="card-link" data-key="read_more">View Details →</a>
-        </div>
-        <div class="card">
-          <div class="card-icon">📈</div>
-          <h3 data-key="adult_c2_title">Diagnostic Imaging</h3>
-          <p data-key="adult_c2_desc">High-resolution 12-lead ECG, comprehensive echocardiography, and ambulatory rhythm monitoring.</p>
-          <a href="adult-heart.html" class="card-link" data-key="read_more">View Details →</a>
-        </div>
-        <div class="card">
-          <div class="card-icon">💉</div>
-          <h3 data-key="adult_c3_title">Specialized Treatment</h3>
-          <p data-key="adult_c3_desc">Targeted medical optimization and follow-up care for chronic circulation and heart rhythm conditions.</p>
-          <a href="adult-heart.html" class="card-link" data-key="read_more">View Details →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="wh"><div class="w wg">
+  <div class="ph wv rv"><svg><use href="#i-b"/></svg><img src="assets/why.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+  <div class="rv"><h2 data-i18n="t_why">Why families choose us</h2>
+    <ul class="ck"><li data-i18n="w1">Unhurried, appointment-based care</li><li data-i18n="w2">One team for every age</li><li data-i18n="w3">Care in your own language</li><li data-i18n="w4">Clear updates for the family</li></ul></div>
+</div></section>
 
-  <!-- 2. Baby & Pediatric Care Section Preview -->
-  <section id="baby-care" class="baby-section">
-    <div class="container">
-      <div class="section-title">
-        <h2 data-key="baby_title">Baby & Pediatric Care</h2>
-        <p data-key="baby_desc">Gentle, specialized developmental and clinical attention tailored specifically for infants, babies, and growing children.</p>
-      </div>
-      <div class="grid-3">
-        <div class="baby-card">
-          <div class="card-icon">👶</div>
-          <h3 data-key="baby_c1_title">Infant Health Screenings</h3>
-          <p data-key="baby_c1_desc">Gentle non-invasive diagnostic assessments and vital monitoring structured safely for newborns and infants.</p>
-          <a href="baby-care.html" class="card-link" data-key="read_more">View Details →</a>
-        </div>
-        <div class="baby-card">
-          <div class="card-icon">👦</div>
-          <h3 data-key="baby_c2_title">Pediatric Growth & Development</h3>
-          <p data-key="baby_c2_desc">Child-friendly clinical evaluations, nutritional guidance, and milestone health tracking for toddlers and kids.</p>
-          <a href="baby-care.html" class="card-link" data-key="read_more">View Details →</a>
-        </div>
-        <div class="baby-card">
-          <div class="card-icon">💗</div>
-          <h3 data-key="baby_c3_title">Youth Wellness & Pediatrics</h3>
-          <p data-key="baby_c3_desc">Supportive preventative care paths, school athletic physical evaluations, and specialized pediatric follow-ups.</p>
-          <a href="baby-care.html" class="card-link" data-key="read_more">View Details →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="plans"><div class="w"><div class="mb rv"><h2 data-i18n="t_plans">Health memberships for the whole family</h2><a class="btn" href="#book" data-i18n="enq">Enquire</a></div></div></section>
+</main>
 
-  <!-- 3. Global Cures Section Preview -->
-  <section id="global-cures">
-    <div class="container">
-      <div class="section-title">
-        <h2 data-key="global_title">Global Branches & Medical Cures</h2>
-        <p data-key="global_desc">Expanding our clinical reach with integrated multi-specialty branches and collaborative medical treatments worldwide.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">🌐</div>
-          <h3 data-key="global_c1_title">International Clinical Network</h3>
-          <p data-key="global_c1_desc">Coordinated multi-country medical expertise, second opinions, and cross-border clinical consultations.</p>
-          <a href="global-branches.html" class="card-link" data-key="read_more">View Details →</a>
-        </div>
-        <div class="card">
-          <div class="card-icon">🏥</div>
-          <h3 data-key="global_c2_title">Allied Therapeutic Branches</h3>
-          <p data-key="global_c2_desc">Integrating metabolic wellness, pulmonary care, and internal medicine branches into comprehensive patient paths.</p>
-          <a href="global-branches.html" class="card-link" data-key="read_more">View Details →</a>
-        </div>
-        <div class="card">
-          <div class="card-icon">🤝</div>
-          <h3 data-key="global_c3_title">Global Research Partnerships</h3>
-          <p data-key="global_c3_desc">Collaborating with premier medical institutions internationally to bring advanced evidence-based treatments home.</p>
-          <a href="global-branches.html" class="card-link" data-key="read_more">View Details →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<footer><div class="w">
+  <div class="em" data-i18n="notice">Appointments only. Not for emergencies — call 112.</div>
+  <div class="fg"><div><div class="logo" translate="no">Global Cardiologies</div><p>info@globalcardiologies.com<br>+91-9501168543</p></div>
+  <ul><li><a href="adult-heart.html" data-i18n="n_heart">Adult Heart</a></li><li><a href="baby-care.html" data-i18n="n_baby">Baby Care</a></li><li><a href="elderly-care.html" data-i18n="n_elder">Elderly Care</a></li></ul>
+  <ul><li><a href="global-branches.html" data-i18n="n_global">Global Care</a></li><li><a href="training.html" data-i18n="n_train">Training</a></li><li><a href="#book" data-i18n="book">Book appointment</a></li></ul></div>
+  <div class="lg">© 2026 Global Cardiologies. <span data-i18n="disc">Information here is general and not medical advice.</span></div>
+</div></footer>
 
-  <!-- 4. Old Parent Care Preview -->
-  <section id="elderly" class="bg-slate-tint">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text">
-          <span class="hero-tag" data-key="elderly_tag">Specialized Senior Support</span>
-          <h2 data-key="elderly_title">Compassionate Elderly & Parent Care</h2>
-          <p data-key="elderly_p1">
-            Caring for aging parents requires dedicated patience, low-stress environments, and rigorous chronic condition management. Our geriatric healthcare programs are customized for senior wellness.
-          </p>
-          <a href="elderly-care.html" class="btn-primary" style="display:inline-block; margin-top:1rem;" data-key="explore_elderly">Explore Senior Care →</a>
-        </div>
-        <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border);">
-          <h3 style="font-size: 1.4rem; color: var(--navy); margin-bottom: 1rem;" data-key="senior_priorities">Senior Care Priorities</h3>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem; color: var(--slate);">
-            <li data-key="s_list1">✓ Low-stress, gentle diagnostic assessments</li>
-            <li data-key="s_list2">✓ Coordinated multi-medication safety reviews</li>
-            <li data-key="s_list3">✓ Family-centered health status reporting</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+<dialog id="mod" aria-labelledby="mt"><div class="mi"><button class="x" id="mx" type="button" aria-label="Close">×</button>
+<span class="mp" data-i18n="letstalk">Let’s talk</span><h2 id="mt" data-i18n="m_title">Request more information</h2>
+<div class="mq"><a class="mb2" href="https://wa.me/910000000000?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5Z"/></svg><span data-i18n="wa">WhatsApp us</span></a><a class="mb2" href="mailto:info@globalcardiologies.com"><svg class="m" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span data-i18n="emailus">Email us</span></a></div>
+<div class="tg"><button type="button" class="on" data-m="ind" data-i18n="ind">Individual &amp; family</button><button type="button" data-m="org" data-i18n="org">Hospital &amp; organisation</button></div>
+<form id="mf"><div><label for="mn" data-i18n="b_name">Your name</label><input id="mn" required></div><div><label for="me" data-i18n="f_email">Email</label><input id="me" type="email" required></div>
+<div><label for="mp" data-i18n="b_phone">Phone</label><input id="mp" type="tel"></div><div><label for="ms" data-i18n="b_service">Service</label><select id="ms"><option value="Adult heart care" data-i18n="c_heart">Adult Heart Care</option><option value="Baby &amp; paediatric care" data-i18n="c_baby">Baby &amp; Paediatric Care</option><option value="Elderly &amp; parent care" data-i18n="c_elder">Elderly &amp; Parent Care</option><option value="Global care coordination" data-i18n="c_global">Global Care Coordination</option><option value="Clinical training" data-i18n="c_train">Clinical Training</option></select></div>
+<div class="full" id="orgw" style="display:none"><label for="mo" data-i18n="f_org">Organisation name</label><input id="mo"></div>
+<div class="full"><label for="mg" data-i18n="f_msg">Tell us more about your request</label><textarea id="mg"></textarea></div>
+<input class="hp" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button class="btn bp full" type="submit" data-i18n="submit">Submit</button></form></div></dialog>
+<script>
+(function(){var d=document,$=function(i){return d.getElementById(i)};
+var L={
+hi:{wa:"WhatsApp करें",allsvc:"सभी सेवाएँ",getcare:"देखभाल पाएँ",ind:"व्यक्ति और परिवार",org:"अस्पताल और संस्था",contact:"संपर्क करें",search:"आप कौन-सी देखभाल खोज रहे हैं?",advisor:"सलाहकार से बात करें",letstalk:"बात करें",m_title:"अधिक जानकारी का अनुरोध करें",emailus:"ईमेल करें",f_email:"ईमेल",f_org:"संस्था का नाम",f_msg:"अपने अनुरोध के बारे में बताएँ",submit:"जमा करें",n_heart:"वयस्क हृदय",n_baby:"शिशु देखभाल",n_elder:"बुज़ुर्ग देखभाल",n_global:"वैश्विक देखभाल",n_train:"प्रशिक्षण",n_plans:"सदस्यता",book:"अपॉइंटमेंट बुक करें",notice:"केवल अपॉइंटमेंट से। आपातकाल के लिए नहीं — 112 पर कॉल करें।",badge:"अब अपॉइंटमेंट उपलब्ध हैं",h1a:"स्वस्थ दिल।",h1b:"खुशहाल परिवार।",lead:"अपॉइंटमेंट पर हृदय, शिशु और बुज़ुर्ग देखभाल, आपकी अपनी भाषा में।",explore:"हमारी देखभाल देखें",b_title:"अपॉइंटमेंट का अनुरोध करें",b_service:"सेवा",b_name:"आपका नाम",b_phone:"फ़ोन",b_send:"अनुरोध भेजें",note:"हमारी टीम आपकी विज़िट पक्की करने के लिए संपर्क करेगी।",t_care:"हर पीढ़ी के लिए देखभाल",c_heart:"वयस्क हृदय देखभाल",c_baby:"शिशु एवं बाल देखभाल",c_elder:"बुज़ुर्ग एवं माता-पिता की देखभाल",c_global:"वैश्विक देखभाल समन्वय",c_train:"क्लिनिकल प्रशिक्षण",more:"और जानें",t_why:"परिवार हमें क्यों चुनते हैं",w1:"बिना जल्दबाज़ी, अपॉइंटमेंट आधारित देखभाल",w2:"हर उम्र के लिए एक टीम",w3:"आपकी अपनी भाषा में देखभाल",w4:"परिवार को स्पष्ट जानकारी",t_plans:"पूरे परिवार के लिए स्वास्थ्य सदस्यता",enq:"पूछताछ करें",disc:"यहाँ दी गई जानकारी सामान्य है, चिकित्सकीय सलाह नहीं।"},
+bn:{wa:"হোয়াটসঅ্যাপ করুন",allsvc:"সব সেবা",getcare:"যত্ন নিন",ind:"ব্যক্তি ও পরিবার",org:"হাসপাতাল ও প্রতিষ্ঠান",contact:"যোগাযোগ করুন",search:"আপনি কোন যত্ন খুঁজছেন?",advisor:"পরামর্শদাতার সঙ্গে কথা বলুন",letstalk:"কথা বলুন",m_title:"আরও তথ্যের অনুরোধ করুন",emailus:"ইমেইল করুন",f_email:"ইমেইল",f_org:"প্রতিষ্ঠানের নাম",f_msg:"আপনার অনুরোধ সম্পর্কে জানান",submit:"জমা দিন",n_heart:"প্রাপ্তবয়স্ক হৃদরোগ",n_baby:"শিশু যত্ন",n_elder:"প্রবীণ যত্ন",n_global:"বৈশ্বিক যত্ন",n_train:"প্রশিক্ষণ",n_plans:"সদস্যপদ",book:"অ্যাপয়েন্টমেন্ট বুক করুন",notice:"শুধুমাত্র অ্যাপয়েন্টমেন্টে। জরুরি অবস্থার জন্য নয় — ১১২ নম্বরে কল করুন।",badge:"এখন অ্যাপয়েন্টমেন্ট চলছে",h1a:"সুস্থ হৃদয়।",h1b:"সুখী পরিবার।",lead:"অ্যাপয়েন্টমেন্টে হৃদয়, শিশু ও প্রবীণ যত্ন, আপনার নিজের ভাষায়।",explore:"আমাদের সেবা দেখুন",b_title:"অ্যাপয়েন্টমেন্টের অনুরোধ করুন",b_service:"সেবা",b_name:"আপনার নাম",b_phone:"ফোন",b_send:"অনুরোধ পাঠান",note:"আপনার ভিজিট নিশ্চিত করতে আমাদের দল যোগাযোগ করবে।",t_care:"প্রতিটি প্রজন্মের জন্য যত্ন",c_heart:"প্রাপ্তবয়স্কদের হৃদযত্ন",c_baby:"শিশু ও শিশুরোগ যত্ন",c_elder:"প্রবীণ ও অভিভাবকের যত্ন",c_global:"বৈশ্বিক যত্ন সমন্বয়",c_train:"ক্লিনিক্যাল প্রশিক্ষণ",more:"আরও জানুন",t_why:"পরিবার কেন আমাদের বেছে নেয়",w1:"তাড়াহুড়োহীন, অ্যাপয়েন্টমেন্টভিত্তিক যত্ন",w2:"প্রতিটি বয়সের জন্য একটি দল",w3:"আপনার নিজের ভাষায় যত্ন",w4:"পরিবারের জন্য স্পষ্ট তথ্য",t_plans:"পুরো পরিবারের জন্য স্বাস্থ্য সদস্যপদ",enq:"জানতে চান",disc:"এখানকার তথ্য সাধারণ, চিকিৎসা পরামর্শ নয়।"},
+kn:{wa:"ವಾಟ್ಸಾಪ್ ಮಾಡಿ",allsvc:"ಎಲ್ಲಾ ಸೇವೆಗಳು",getcare:"ಆರೈಕೆ ಪಡೆಯಿರಿ",ind:"ವ್ಯಕ್ತಿ ಮತ್ತು ಕುಟುಂಬ",org:"ಆಸ್ಪತ್ರೆ ಮತ್ತು ಸಂಸ್ಥೆ",contact:"ಸಂಪರ್ಕಿಸಿ",search:"ನೀವು ಯಾವ ಆರೈಕೆ ಹುಡುಕುತ್ತಿದ್ದೀರಿ?",advisor:"ಸಲಹೆಗಾರರೊಂದಿಗೆ ಮಾತನಾಡಿ",letstalk:"ಮಾತನಾಡೋಣ",m_title:"ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗೆ ಕೋರಿಕೆ",emailus:"ಇಮೇಲ್ ಮಾಡಿ",f_email:"ಇಮೇಲ್",f_org:"ಸಂಸ್ಥೆಯ ಹೆಸರು",f_msg:"ನಿಮ್ಮ ಕೋರಿಕೆಯ ಬಗ್ಗೆ ತಿಳಿಸಿ",submit:"ಸಲ್ಲಿಸಿ",n_heart:"ವಯಸ್ಕರ ಹೃದಯ",n_baby:"ಶಿಶು ಆರೈಕೆ",n_elder:"ಹಿರಿಯರ ಆರೈಕೆ",n_global:"ಜಾಗತಿಕ ಆರೈಕೆ",n_train:"ತರಬೇತಿ",n_plans:"ಸದಸ್ಯತ್ವ",book:"ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಬುಕ್ ಮಾಡಿ",notice:"ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಮಾತ್ರ. ತುರ್ತು ಸೇವೆಗೆ ಅಲ್ಲ — 112 ಗೆ ಕರೆ ಮಾಡಿ.",badge:"ಈಗ ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಲಭ್ಯ",h1a:"ಆರೋಗ್ಯಕರ ಹೃದಯ.",h1b:"ಸಂತೋಷದ ಕುಟುಂಬ.",lead:"ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಮೂಲಕ ಹೃದಯ, ಶಿಶು ಮತ್ತು ಹಿರಿಯರ ಆರೈಕೆ, ನಿಮ್ಮ ಸ್ವಂತ ಭಾಷೆಯಲ್ಲಿ.",explore:"ನಮ್ಮ ಆರೈಕೆ ನೋಡಿ",b_title:"ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್‌ಗೆ ಕೋರಿಕೆ",b_service:"ಸೇವೆ",b_name:"ನಿಮ್ಮ ಹೆಸರು",b_phone:"ಫೋನ್",b_send:"ಕೋರಿಕೆ ಕಳುಹಿಸಿ",note:"ನಿಮ್ಮ ಭೇಟಿ ಖಚಿತಪಡಿಸಲು ನಮ್ಮ ತಂಡ ಸಂಪರ್ಕಿಸುತ್ತದೆ.",t_care:"ಪ್ರತಿ ತಲೆಮಾರಿಗೂ ಆರೈಕೆ",c_heart:"ವಯಸ್ಕರ ಹೃದಯ ಆರೈಕೆ",c_baby:"ಶಿಶು ಮತ್ತು ಮಕ್ಕಳ ಆರೈಕೆ",c_elder:"ಹಿರಿಯರು ಮತ್ತು ಪೋಷಕರ ಆರೈಕೆ",c_global:"ಜಾಗತಿಕ ಆರೈಕೆ ಸಮನ್ವಯ",c_train:"ಕ್ಲಿನಿಕಲ್ ತರಬೇತಿ",more:"ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ",t_why:"ಕುಟುಂಬಗಳು ನಮ್ಮನ್ನು ಏಕೆ ಆರಿಸುತ್ತವೆ",w1:"ಆತುರವಿಲ್ಲದ, ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಆಧಾರಿತ ಆರೈಕೆ",w2:"ಪ್ರತಿ ವಯಸ್ಸಿಗೂ ಒಂದೇ ತಂಡ",w3:"ನಿಮ್ಮ ಸ್ವಂತ ಭಾಷೆಯಲ್ಲಿ ಆರೈಕೆ",w4:"ಕುಟುಂಬಕ್ಕೆ ಸ್ಪಷ್ಟ ಮಾಹಿತಿ",t_plans:"ಇಡೀ ಕುಟುಂಬಕ್ಕೆ ಆರೋಗ್ಯ ಸದಸ್ಯತ್ವ",enq:"ವಿಚಾರಿಸಿ",disc:"ಇಲ್ಲಿನ ಮಾಹಿತಿ ಸಾಮಾನ್ಯ, ವೈದ್ಯಕೀಯ ಸಲಹೆಯಲ್ಲ."},
+gu:{wa:"વોટ્સએપ કરો",allsvc:"બધી સેવાઓ",getcare:"સંભાળ મેળવો",ind:"વ્યક્તિ અને પરિવાર",org:"હોસ્પિટલ અને સંસ્થા",contact:"સંપર્ક કરો",search:"તમે કઈ સંભાળ શોધી રહ્યા છો?",advisor:"સલાહકાર સાથે વાત કરો",letstalk:"વાત કરીએ",m_title:"વધુ માહિતીની વિનંતી કરો",emailus:"ઇમેઇલ કરો",f_email:"ઇમેઇલ",f_org:"સંસ્થાનું નામ",f_msg:"તમારી વિનંતી વિશે જણાવો",submit:"સબમિટ કરો",n_heart:"પુખ્ત હૃદય",n_baby:"બાળ સંભાળ",n_elder:"વડીલ સંભાળ",n_global:"વૈશ્વિક સંભાળ",n_train:"તાલીમ",n_plans:"સભ્યપદ",book:"એપોઇન્ટમેન્ટ બુક કરો",notice:"ફક્ત એપોઇન્ટમેન્ટથી. કટોકટી માટે નથી — 112 પર કૉલ કરો.",badge:"હવે એપોઇન્ટમેન્ટ ઉપલબ્ધ",h1a:"સ્વસ્થ હૃદય.",h1b:"સુખી પરિવાર.",lead:"એપોઇન્ટમેન્ટથી હૃદય, બાળક અને વડીલોની સંભાળ, તમારી પોતાની ભાષામાં.",explore:"અમારી સંભાળ જુઓ",b_title:"એપોઇન્ટમેન્ટની વિનંતી કરો",b_service:"સેવા",b_name:"તમારું નામ",b_phone:"ફોન",b_send:"વિનંતી મોકલો",note:"તમારી મુલાકાત નક્કી કરવા અમારી ટીમ સંપર્ક કરશે.",t_care:"દરેક પેઢી માટે સંભાળ",c_heart:"પુખ્ત હૃદય સંભાળ",c_baby:"બાળક અને બાળરોગ સંભાળ",c_elder:"વડીલ અને માતા-પિતાની સંભાળ",c_global:"વૈશ્વિક સંભાળ સંકલન",c_train:"ક્લિનિકલ તાલીમ",more:"વધુ જાણો",t_why:"પરિવારો અમને કેમ પસંદ કરે છે",w1:"ઉતાવળ વગરની, એપોઇન્ટમેન્ટ આધારિત સંભાળ",w2:"દરેક ઉંમર માટે એક ટીમ",w3:"તમારી પોતાની ભાષામાં સંભાળ",w4:"પરિવાર માટે સ્પષ્ટ માહિતી",t_plans:"આખા પરિવાર માટે આરોગ્ય સભ્યપદ",enq:"પૂછપરછ કરો",disc:"અહીંની માહિતી સામાન્ય છે, તબીબી સલાહ નથી."},
+es:{wa:"Escríbanos por WhatsApp",allsvc:"Todos los servicios",getcare:"Recibir atención",ind:"Personas y familias",org:"Hospitales y organizaciones",contact:"Contacto",search:"¿Qué atención busca?",advisor:"Hablar con un asesor",letstalk:"Hablemos",m_title:"Solicitar más información",emailus:"Escríbanos un correo",f_email:"Correo electrónico",f_org:"Nombre de la organización",f_msg:"Cuéntenos más sobre su solicitud",submit:"Enviar",n_heart:"Corazón adulto",n_baby:"Cuidado infantil",n_elder:"Cuidado de mayores",n_global:"Cuidado global",n_train:"Formación",n_plans:"Membresías",book:"Reservar cita",notice:"Solo con cita. No es para emergencias: llame al 112.",badge:"Citas disponibles ahora",h1a:"Corazones sanos.",h1b:"Familias felices.",lead:"Cuidado del corazón, del bebé y de los mayores con cita, en su propio idioma.",explore:"Conozca nuestro cuidado",b_title:"Solicitar una cita",b_service:"Servicio",b_name:"Su nombre",b_phone:"Teléfono",b_send:"Enviar solicitud",note:"Nuestro equipo le contactará para confirmar su visita.",t_care:"Cuidado para cada generación",c_heart:"Cuidado cardíaco adulto",c_baby:"Cuidado del bebé y pediátrico",c_elder:"Cuidado de mayores y padres",c_global:"Coordinación de atención global",c_train:"Formación clínica",more:"Saber más",t_why:"Por qué nos eligen las familias",w1:"Atención con cita y sin prisas",w2:"Un equipo para cada edad",w3:"Atención en su propio idioma",w4:"Información clara para la familia",t_plans:"Membresías de salud para toda la familia",enq:"Consultar",disc:"La información aquí es general y no es consejo médico."},
+ne:{wa:"WhatsApp गर्नुहोस्",allsvc:"सबै सेवाहरू",getcare:"हेरचाह पाउनुहोस्",ind:"व्यक्ति र परिवार",org:"अस्पताल र संस्था",contact:"सम्पर्क गर्नुहोस्",search:"तपाईं कस्तो हेरचाह खोज्दै हुनुहुन्छ?",advisor:"सल्लाहकारसँग कुरा गर्नुहोस्",letstalk:"कुरा गरौँ",m_title:"थप जानकारीको अनुरोध गर्नुहोस्",emailus:"इमेल गर्नुहोस्",f_email:"इमेल",f_org:"संस्थाको नाम",f_msg:"आफ्नो अनुरोधबारे बताउनुहोस्",submit:"पेश गर्नुहोस्",n_heart:"वयस्क हृदय",n_baby:"शिशु हेरचाह",n_elder:"ज्येष्ठ नागरिक हेरचाह",n_global:"विश्वव्यापी हेरचाह",n_train:"तालिम",n_plans:"सदस्यता",book:"अपोइन्टमेन्ट बुक गर्नुहोस्",notice:"अपोइन्टमेन्टमा मात्र। आपतकालीनका लागि होइन — ११२ मा फोन गर्नुहोस्।",badge:"अब अपोइन्टमेन्ट उपलब्ध छ",h1a:"स्वस्थ मुटु।",h1b:"खुसी परिवार।",lead:"अपोइन्टमेन्टमा मुटु, शिशु र ज्येष्ठ नागरिकको हेरचाह, तपाईंको आफ्नै भाषामा।",explore:"हाम्रो हेरचाह हेर्नुहोस्",b_title:"अपोइन्टमेन्टको अनुरोध गर्नुहोस्",b_service:"सेवा",b_name:"तपाईंको नाम",b_phone:"फोन",b_send:"अनुरोध पठाउनुहोस्",note:"तपाईंको भेट पक्का गर्न हाम्रो टोलीले सम्पर्क गर्नेछ।",t_care:"हरेक पुस्ताका लागि हेरचाह",c_heart:"वयस्क मुटुको हेरचाह",c_baby:"शिशु तथा बाल हेरचाह",c_elder:"ज्येष्ठ नागरिक र अभिभावकको हेरचाह",c_global:"विश्वव्यापी हेरचाह समन्वय",c_train:"क्लिनिकल तालिम",more:"थप जान्नुहोस्",t_why:"परिवारले हामीलाई किन रोज्छन्",w1:"हतार नगरी, अपोइन्टमेन्टमा आधारित हेरचाह",w2:"हरेक उमेरका लागि एउटै टोली",w3:"तपाईंको आफ्नै भाषामा हेरचाह",w4:"परिवारलाई स्पष्ट जानकारी",t_plans:"पूरै परिवारका लागि स्वास्थ्य सदस्यता",enq:"सोधपुछ गर्नुहोस्",disc:"यहाँको जानकारी सामान्य हो, चिकित्सकीय सल्लाह होइन।"}};
+var els=d.querySelectorAll('[data-i18n]');els.forEach(function(e){e.dataset.en=e.textContent});var phs=d.querySelectorAll('[data-i18n-ph]');phs.forEach(function(e){e.dataset.en=e.placeholder});
+function setL(c){var T=L[c]||{};els.forEach(function(e){var k=e.dataset.i18n;e.textContent=T[k]||e.dataset.en});phs.forEach(function(e){e.placeholder=T[e.dataset.i18nPh]||e.dataset.en});d.documentElement.lang=c;$('lang').value=c;try{localStorage.setItem('gc-lang',c)}catch(x){}}
+$('lang').onchange=function(){setL(this.value)};
+try{var s=localStorage.getItem('gc-lang');if(s&&s!=='en')setL(s)}catch(x){}
+$('theme').onclick=function(){var t=d.documentElement.dataset.theme==='dark'?'light':'dark';d.documentElement.dataset.theme=t;try{localStorage.setItem('gc-theme',t)}catch(e){}};
+var v=d.querySelector('.hv video');if(matchMedia('(prefers-reduced-motion:reduce)').matches)v.pause();
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});d.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+$('enq').onsubmit=function(e){e.preventDefault();var b='Name: '+$('n').value+'\nPhone: '+$('p').value+'\nService: '+$('t').value;location.href='mailto:info@globalcardiologies.com?subject='+encodeURIComponent('Appointment request: '+$('t').value)+'&body='+encodeURIComponent(b)};
 
-  <!-- Footer -->
-  <footer>
-    <p data-key="footer_copy">© 2026 Global Cardiologies (globalcardiologies.com). All rights reserved.</p>
-  </footer>
-
-  <script>
-    const translations = {
-      en: {
-        notice1: "Scheduled Consultations & Inquiries Only (No Walk-in Emergencies)",
-        inquiry_label: "Inquiry Desk:",
-        nav_adult: "Adult Heart", nav_baby: "Baby & Pediatrics", nav_global: "Global Branches", nav_elderly: "Elderly Care", nav_training: "Training", nav_about: "About Us", btn_contact: "Contact Us",
-        hero_tag: "International Healthcare Institute",
-        hero_title: "Advanced Heart Care, Pediatric Wellness & Clinical Training",
-        hero_desc: "Delivering expert adult heart care, specialized baby and pediatric support, senior wellness programs, global medical branches, and staff training partnerships.",
-        btn_book: "Book Consultation", btn_explore: "Explore Training",
-        notice_box_title: "Important Patient Notice",
-        notice_box_desc: "We operate strictly on a scheduled appointment and consultation basis. For immediate emergency medical attention, please contact your local emergency services.",
-        btn_send_inquiry: "Send Inquiry",
-        adult_title: "Adult Heart & Diagnostics", adult_desc: "Comprehensive adult health solutions utilizing high-precision testing, prevention, and risk management.",
-        adult_c1_title: "Preventive Wellness", adult_c1_desc: "Advanced lipid tracking, vascular risk stratification, and structured hypertension management programs.",
-        adult_c2_title: "Diagnostic Imaging", adult_c2_desc: "High-resolution 12-lead ECG, comprehensive echocardiography, and ambulatory rhythm monitoring.",
-        adult_c3_title: "Specialized Treatment", adult_c3_desc: "Targeted medical optimization and follow-up care for chronic circulation and heart rhythm conditions.",
-        baby_title: "Baby & Pediatric Care", baby_desc: "Gentle, specialized developmental and clinical attention tailored specifically for infants, babies, and growing children.",
-        baby_c1_title: "Infant Health Screenings", baby_c1_desc: "Gentle non-invasive diagnostic assessments and vital monitoring structured safely for newborns and infants.",
-        baby_c2_title: "Pediatric Growth & Development", baby_c2_desc: "Child-friendly clinical evaluations, nutritional guidance, and milestone health tracking for toddlers and kids.",
-        baby_c3_title: "Youth Wellness & Pediatrics", baby_c3_desc: "Supportive preventative care paths, school athletic physical evaluations, and specialized pediatric follow-ups.",
-        global_title: "Global Branches & Medical Cures", global_desc: "Expanding our clinical reach with integrated multi-specialty branches and collaborative medical treatments worldwide.",
-        global_c1_title: "International Clinical Network", global_c1_desc: "Coordinated multi-country medical expertise, second opinions, and cross-border clinical consultations.",
-        global_c2_title: "Allied Therapeutic Branches", global_c2_desc: "Integrating metabolic wellness, pulmonary care, and internal medicine branches into comprehensive patient paths.",
-        global_c3_title: "Global Research Partnerships", global_c3_desc: "Collaborating with premier medical institutions internationally to bring advanced evidence-based treatments home.",
-        elderly_tag: "Specialized Senior Support", elderly_title: "Compassionate Elderly & Parent Care",
-        elderly_p1: "Caring for aging parents requires dedicated patience, low-stress environments, and rigorous chronic condition management.",
-        explore_elderly: "Explore Senior Care", senior_priorities: "Senior Care Priorities",
-        s_list1: "✓ Low-stress, gentle diagnostic assessments", s_list2: "✓ Coordinated multi-medication safety reviews", s_list3: "✓ Family-centered health status reporting",
-        read_more: "View Details →", footer_copy: "© 2026 Global Cardiologies (globalcardiologies.com). All rights reserved."
-      },
-      hi: {
-        notice1: "केवल निर्धारित परामर्श और पूछताछ (कोई आपातकालीन वॉक-इन नहीं)",
-        inquiry_label: "पूछताछ:",
-        nav_adult: "वयस्क हृदय", nav_baby: "शिशु और बाल रोग", nav_global: "वैश्विक शाखाएं", nav_elderly: "बुजुर्ग देखभाल", nav_training: "प्रशिक्षण", nav_about: "हमारे बारे में", btn_contact: "संपर्क करें",
-        hero_tag: "अंतर्राष्ट्रीय स्वास्थ्य संस्थान",
-        hero_title: "उन्नत हृदय देखभाल, बाल विकास और चिकित्सा प्रशिक्षण",
-        hero_desc: "विशेषज्ञ वयस्क हृदय देखभाल, शिशु स्वास्थ्य सहायता, वरिष्ठ कल्याण कार्यक्रम और वैश्विक चिकित्सा शाखाएं।",
-        btn_book: "परामर्श बुक करें", btn_explore: "प्रशिक्षण देखें",
-        notice_box_title: "महत्वपूर्ण सूचना",
-        notice_box_desc: "हम केवल अपॉइंटमेंट और परामर्श पर काम करते हैं। तत्काल आपातकालीन सहायता के लिए स्थानीय आपातकालीन सेवा से संपर्क करें।",
-        btn_send_inquiry: "पूछताछ भेजें",
-        adult_title: "वयस्क हृदय और जाँच", adult_desc: "सटीक परीक्षण और निवारक स्वास्थ्य देखभाल।",
-        adult_c1_title: "निवारक स्वास्थ्य", adult_c1_desc: "रक्तचाप और कोलेस्ट्रॉल प्रबंधन कार्यक्रम।",
-        adult_c2_title: "हृदय जाँच स्कैन", adult_c2_desc: "ईसीजी और इकोकार्डियोग्राफी परीक्षण।",
-        adult_c3_title: "विशेष उपचार", adult_c3_desc: "हृदय गति और परिसंचरण के लिए लक्षित देखभाल।",
-        baby_title: "शिशु और बाल चिकित्सा", baby_desc: "नवजात शिशुओं और बच्चों के लिए विशेष और कोमल देखभाल।",
-        baby_c1_title: "शिशु स्वास्थ्य जांच", baby_c1_desc: "शिशुओं के लिए सुरक्षित और दर्द रहित स्वास्थ्य परीक्षण।",
-        baby_c2_title: "बाल विकास देखभाल", baby_c2_desc: "पोषण मार्गदर्शन और बच्चों के विकास की निगरानी।",
-        baby_c3_title: "बाल चिकित्सा कल्याण", baby_c3_desc: "स्कूली बच्चों के लिए शारीरिक स्वास्थ्य मूल्यांकन।",
-        global_title: "वैश्विक शाखाएं और उपचार", global_desc: "दुनिया भर में एकीकृत बहु-विशेषता चिकित्सा शाखाएं।",
-        global_c1_title: "अंतर्राष्ट्रीय नेटवर्क", global_c1_desc: "वैश्विक विशेषज्ञ डॉक्टरों से दूसरी राय और परामर्श।",
-        global_c2_title: "सहायक चिकित्सा शाखाएं", global_c2_desc: "चयापचय और आंतरिक चिकित्सा का समन्वय।",
-        global_c3_title: "वैश्विक अनुसंधान", global_c3_desc: "अग्रणी चिकित्सा संस्थानों के साथ साझीदारी।",
-        elderly_tag: "वरिष्ठ नागरिक सहायता", elderly_title: "दयालु बुजुर्ग और माता-पिता की देखभाल",
-        elderly_p1: "बुजुर्ग माता-पिता की देखभाल के लिए शांत वातावरण और दीर्घकालिक स्वास्थ्य प्रबंधन।",
-        explore_elderly: "वरिष्ठ देखभाल देखें", senior_priorities: "वरिष्ठ देखभाल प्राथमिकताएं",
-        s_list1: "✓ तनावमुक्त और कोमल स्वास्थ्य परीक्षण", s_list2: "✓ सुरक्षित दवा समीक्षा", s_list3: "✓ परिवार केंद्रित स्वास्थ्य रिपोर्टिंग",
-        read_more: "विवरण देखें →", footer_copy: "© 2026 ग्लोबल कार्डियोलॉजी। सर्वाधिकार सुरक्षित।"
-      },
-      bn: {
-        notice1: "শুধুমাত্র নির্ধারিত পরামর্শ এবং অনুসন্ধান (কোনো ওয়াক-ইন জরুরী নয়)",
-        inquiry_label: "জিজ্ঞাসাবাদ:",
-        nav_adult: "প্রাপ্তবয়স্কদের হার্ট", nav_baby: "শিশু ও পেডিয়াট্রিক", nav_global: "গ্লোবাল ব্রাঞ্চ", nav_elderly: "বয়স্কদের যত্ন", nav_training: "প্রশিক্ষণ", nav_about: "আমাদের সম্পর্কে", btn_contact: "যোগাযোগ",
-        hero_tag: "আন্তর্জাতিক স্বাস্থ্যসেবা প্রতিষ্ঠান",
-        hero_title: "উন্নত হার্ট কেয়ার এবং পেডিয়াট্রিক ওয়েলনেস",
-        hero_desc: "বিশেষজ্ঞ প্রাপ্তবয়স্কদের হার্ট কেয়ার, শিশু স্বাস্থ্য সহায়তা এবং বৈশ্বিক চিকিৎসা শাখা প্রদান করা।",
-        btn_book: "পরামর্শ বুক করুন", btn_explore: "প্রশিক্ষণ দেখুন",
-        notice_box_title: "গুরুত্বপূর্ণ বিজ্ঞপ্তি",
-        notice_box_desc: "আমরা শুধুমাত্র অ্যাপয়েন্টমেন্ট ভিত্তিতে কাজ করি। জরুরী সহায়তার জন্য স্থানীয় জরুরি সেবায় যোগাযোগ করুন।",
-        btn_send_inquiry: "অনুসন্ধান পাঠান",
-        adult_title: "প্রাপ্তবয়স্কদের হার্ট এবং ডায়াগনস্টিকস", adult_desc: "নির্ভুল পরীক্ষা এবং প্রতিরোধমূলক স্বাস্থ্য সমাধান।",
-        adult_c1_title: "প্রতিরোধমূলক সুস্থতা", adult_c1_desc: "উন্নত লিপিড ট্র্যাকিং এবং রক্তচাপ ব্যবস্থাপনা।",
-        adult_c2_title: "ডায়াগনস্টিক ইমেজিং", adult_c2_desc: "ইসিজি এবং ইকোকার্ডিওগ্রাফি পরীক্ষা।",
-        adult_c3_title: "বিশেষায়িত চিকিৎসা", adult_c3_desc: "হৃদস্পন্দন এবং রক্তচলাচলের জন্য বিশেষ যত্ন।",
-        baby_title: "শিশু ও শিশুর যত্ন", baby_desc: "নজাতক এবং ক্রমবর্ধমান শিশুদের জন্য মৃদু ও বিশেষ মনোযোগ।",
-        baby_c1_title: "শিশু স্বাস্থ্য স্ক্রীনিং", baby_c1_desc: "নবজাতকদের জন্য নিরাপদ এবং মৃদু স্বাস্থ্য পরীক্ষা।",
-        baby_c2_title: "শিশুর বিকাশ", baby_c2_desc: "পুষ্টি নির্দেশিকা এবং স্বাস্থ্য ট্র্যাকিং।",
-        baby_c3_title: "যুব সুস্থতা", baby_c3_desc: "স্কুল অ্যাথলেটিক শারীরিক মূল্যায়ন।",
-        global_title: "গ্লোবাল ব্রাঞ্চ এবং চিকিৎসা", global_desc: "বিশ্বব্যাপী সমন্বিত মাল্টি-স্পেশালিটি চিকিৎসা শাখা।",
-        global_c1_title: "আন্তর্জাতিক নেটওয়ার্ক", global_c1_desc: "বহু-দেশীয় চিকিৎসা দক্ষতা এবং দ্বিতীয় মতামত।",
-        global_c2_title: "সহায়ক থেরাপিউটিক শাখা", global_c2_desc: "মেটাবলিক এবং অভ্যন্তরীণ চিকিৎসা সমন্বয়।",
-        global_c3_title: "গবেষণা অংশীদারিত্ব", global_c3_desc: "আন্তর্জাতিক প্রতিষ্ঠানের সাথে বৈজ্ঞানিক সহযোগিতা।",
-        elderly_tag: "সিনিয়র সাপোর্ট", elderly_title: "সহানুভূতিশীল বয়স্ক এবং পিতামাতার যত্ন",
-        elderly_p1: "বয়স্ক পিতামাতার যত্নের জন্য ধৈর্য, কম চাপের পরিবেশ এবং দীর্ঘমেয়াদী ব্যবস্থাপনা।",
-        explore_elderly: "বয়স্কদের যত্ন দেখুন", senior_priorities: "সিনিয়র কেয়ার অগ্রাধিকার",
-        s_list1: "✓ কম চাপের স্বাস্থ্য মূল্যায়ন", s_list2: "✓ সমন্বিত ওষুধ সুরক্ষা পর্যালোচনা", s_list3: "✓ পরিবার-কেন্দ্রিক স্বাস্থ্য রিপোর্টিং",
-        read_more: "বিস্তারিত দেখুন →", footer_copy: "© 2026 গ্লোবাল কার্ডিওলজি। সমস্ত অধিকার সংরক্ষিত।"
-      },
-      kn: {
-        notice1: "ನಿಗದಿತ ಸಮಾಲೋಚನೆಗಳು ಮಾತ್ರ (ತುರ್ತು ವॉक-ಇನ್ ಇಲ್ಲ)",
-        inquiry_label: "ವಿಚಾರಣೆ:",
-        nav_adult: "ವಯಸ್ಕರ ಹೃದಯ", nav_baby: "ಶಿಶು ಮತ್ತು ಮಕ್ಕಳ ಆರೈಕೆ", nav_global: "ಜಾಗತಿಕ ಶಾಖೆಗಳು", nav_elderly: "ಹಿರಿಯರ ಆರೈಕೆ", nav_training: "ತರಬೇತಿ", nav_about: "ನಮ್ಮ ಬಗ್ಗೆ", btn_contact: "ಸಂಪರ್ಕಿಸಿ",
-        hero_tag: "ಅಂತರರಾಷ್ಟ್ರೀಯ ಆರೋಗ್ಯ ಸಂಸ್ಥೆ",
-        hero_title: "ಸುಧಾರಿತ ಹೃದಯ ಆರೈಕೆ ಮತ್ತು ಕ್ಲಿನಿಕಲ್ ತರಬೇತಿ",
-        hero_desc: "ತಜ್ಞ ವಯಸ್ಕರ ಹೃದಯ ಆರೈಕೆ, ಶಿಶು ಸ್ವಾಸ್ಥ್ಯ ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಜಾಗತಿಕ ವೈದ್ಯಕೀಯ ಶಾಖೆಗಳು.",
-        btn_book: "ಸಮಾಲೋಚನೆ ಕಾಯ್ದಿರಿಸಿ", btn_explore: "ತರಬೇತಿ ನೋಡಿ",
-        notice_box_title: "ಪ್ರಮುಖ ಸೂಚನೆ",
-        notice_box_desc: "ನಾವು ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಆಧಾರದ ಮೇಲೆ ಮಾತ್ರ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತೇವೆ. ತುರ್ತು ಸಹಾಯಕ್ಕಾಗಿ ಸ್ಥಳೀಯ ತುರ್ತು ಸೇವೆಗಳನ್ನು ಸಂಪರ್ಕಿಸಿ.",
-        btn_send_inquiry: "ವಿಚಾರಣೆ ಕಳುಹಿಸಿ",
-        adult_title: "ವಯಸ್ಕರ ಹೃದಯ ಮತ್ತು ರೋಗನಿರ್ಣಯ", adult_desc: "ನಿಖರವಾದ ಪರೀಕ್ಷೆ ಮತ್ತು ತಡೆಗಟ್ಟುವ ಆರೋಗ್ಯ ಪರಿಹಾರಗಳು.",
-        adult_c1_title: "ತಡೆಗಟ್ಟುವ ಸ್ವಾಸ್ಥ್ಯ", adult_c1_desc: "ಕೊಲೆಸ್ಟ್ರಾಲ್ ಮತ್ತು ರಕ್ತದೊತ್ತಡ ನಿರ್ವಹಣೆ.",
-        adult_c2_title: "ರೋಗನಿರ್ಣಯ ಇಮೇಜಿಂಗ್", adult_c2_desc: "ಇಸಿಜಿ ಮತ್ತು ಎಕೋಕಾರ್ಡಿಯೋಗ್ರಾಫಿ ಪರೀಕ್ಷೆ.",
-        adult_c3_title: "ವಿಶೇಷ ಚಿಕಿತ್ಸೆ", adult_c3_desc: "ಹೃದಯದ ಲಯ ಮತ್ತು ರಕ್ತಪರಿಚಲನೆಗೆ ಗುರಿಪಡಿಸಿದ ಆರೈಕೆ.",
-        baby_title: "ಶಿಶು ಮತ್ತು ಮಕ್ಕಳ ಆರೈಕೆ", baby_desc: "ಶಿಶುಗಳು ಮತ್ತು ಬೆಳೆಯುತ್ತಿರುವ ಮಕ್ಕಳಿಗಾಗಿ ವಿಶೇಷ ಮತ್ತು ಸೌಮ್ಯ ಆರೈಕೆ.",
-        baby_c1_title: "ಶಿಶು ಆರೋಗ್ಯ ತಪಾಸಣೆ", baby_c1_desc: "ನವಜಾತ ಶಿಶುಗಳಿಗೆ ಸುರಕ್ಷಿತ ಆರೋಗ್ಯ ಮೌಲ್ಯಮಾಪನ.",
-        baby_c2_title: "ಮಕ್ಕಳ ಬೆಳವಣಿಗೆ", baby_c2_desc: "ಪೋಷಣೆಯ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಸ್ವಾಸ್ಥ್ಯ ಟ್ರ್ಯಾಕಿಂಗ್.",
-        baby_c3_title: "ಮಕ್ಕಳ ಸ್ವಾಸ್ಥ್ಯ", baby_c3_desc: "ಶಾಲೆ ಮಕ್ಕಳ ಅಥ್ಲೆಟಿಕ್ ದೈಹಿಕ ಮೌಲ್ಯಮಾಪನ.",
-        global_title: "ಜಾಗತಿಕ ಶಾಖೆಗಳು ಮತ್ತು ಚಿಕಿತ್ಸೆ", global_desc: "ವಿಶ್ವಾದ್ಯಂತ ಸಮಗ್ರ ಬಹು-ವಿಶೇಷ ವೈದ್ಯಕೀಯ ಶಾಖೆಗಳು.",
-        global_c1_title: "ಅಂತರರಾಷ್ಟ್ರೀಯ ನೆಟ್‌ವರ್ಕ್", global_c1_desc: "ವಿಶ್ವದ ತಜ್ಞರಿಂದ ಸಲಹೆ ಮತ್ತು ಎರಡನೇ ಅಭಿಪ್ರಾಯ.",
-        global_c2_title: "ಚಿಕಿತ್ಸಕ ಶಾಖೆಗಳು", global_c2_desc: "ಚಯಾಪಚಯ ಮತ್ತು ಆಂತರಿಕ ವೈದ್ಯಕೀಯ ಸಂಯೋಜನೆ.",
-        global_c3_title: "ಸಂಶೋಧನಾ ಪಾಲುದಾರಿಕೆ", global_c3_desc: "ಅಂತರರಾಷ್ಟ್ರೀಯ ಸಂಸ್ಥೆಗಳೊಂದಿಗೆ ವೈಜ್ಞಾನಿಕ ಸಹಕಾರ.",
-        elderly_tag: "ಹಿರಿಯರ ಬೆಂಬಲ", elderly_title: "ಹಿರಿಯರು ಮತ್ತು ಪೋಷಕರ ಆರೈಕೆ",
-        elderly_p1: "ವೃದ್ಧಾಪ್ಯದ ಪೋಷಕರ ಆರೈಕೆಗಾಗಿ ಕಡಿಮೆ-ಒತ್ತಡದ ವಾತಾವರಣ ಮತ್ತು ಆರೋಗ್ಯ ನಿರ್ವಹಣೆ.",
-        explore_elderly: "ಹಿರಿಯರ ಆರೈಕೆ ನೋಡಿ", senior_priorities: "ಹಿರಿಯರ ಆರೈಕೆ ಪ್ರಾಮುಖ್ಯತೆಗಳು",
-        s_list1: "✓ ಕಡಿಮೆ-ಒತ್ತಡದ ಆರೋಗ್ಯ ಮೌಲ್ಯಮಾಪನ", s_list2: "✓ ಸುರಕ್ಷಿತ ಔಷಧಿ ವಿಮರ್ಶೆ", s_list3: "✓ ಕುಟುಂಬ-ಕೇಂದ್ರಿತ ವರದಿ",
-        read_more: "ವಿವರಗಳನ್ನು ನೋಡಿ →", footer_copy: "© 2026 ಗ್ಲೋಬಲ್ ಕಾರ್ಡಿಯಾಲಜೀಸ್. ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ."
-      },
-      gu: {
-        notice1: "ફક્ત નિર્ધારિત પરામર્શ (કોઈ ઇમરજન્સી વૉક-ઇન નથી)",
-        inquiry_label: "પૂછપરછ:",
-        nav_adult: "પુખ્ત હૃદય", nav_baby: "શિશુ અને બાળરોગ", nav_global: "વૈશ્વિક શાખાઓ", nav_elderly: "વૃદ્ધોની સંભાળ", nav_training: "તાલીમ", nav_about: "અમારા વિશે", btn_contact: "સંપર્ક કરો",
-        hero_tag: "આંતરરાષ્ટ્રીય આરોગ્ય સંસ્થા",
-        hero_title: "અદ્યતન હાર્ટ કેર અને ક્લિનિકલ તાલીમ",
-        hero_desc: "નિષ્ણાત પુખ્ત હૃદયની સંભાળ, બાળરોગ સુખાકારી કાર્યક્રમો અને વૈશ્વિક તબીબી શાખાઓ.",
-        btn_book: "પરામર્શ બુક કરો", btn_explore: "તાલીમ જુઓ",
-        notice_box_title: "મહત્વપૂર્ણ સૂચના",
-        notice_box_desc: "અમે ફક્ત એપોઇન્ટમેન્ટના આધારે કામ કરીએ છીએ. તાત્કાલિક કટોકટી સહાય માટે સ્થાનિક સેવાઓનો સંપર્ક કરો.",
-        btn_send_inquiry: "પૂછપરછ મોકલો",
-        adult_title: "પુખ્ત હાર્ટ અને ડાયગ્નોસ્ટિક્સ", adult_desc: "ચોક્કસ પરીક્ષણ અને નિવારક આરોગ્ય ઉકેલો.",
-        adult_c1_title: "નિવારક સુખાકારી", adult_c1_desc: "લિપિડ ટ્રેકિંગ અને બ્લડ પ્રેશર વ્યવસ્થાપન.",
-        adult_c2_title: "ડાયગ્નોસ્ટિક ઇમેજિંગ", adult_c2_desc: "ઈસીજી અને ઇકોકાર્ડિયોગ્રાફી પરીક્ષણ.",
-        adult_c3_title: "વિશિષ્ટ સારવાર", adult_c3_desc: "હૃદયની લય અને પરિભ્રમણ માટે લક્ષિત સંભાળ.",
-        baby_title: "શિશુ અને બાળરોગ સંભાળ", baby_desc: "નવજાત શિશુઓ અને બાળકો માટે ખાસ અને સૌમ્ય સંભાળ.",
-        baby_c1_title: "શિશુ સ્વાસ્થ્ય તપાસ", baby_c1_desc: "નવજાત શિશુઓ માટે સુરક્ષિત સ્વાસ્થ્ય મૂલ્યાંકન.",
-        baby_c2_title: "બાળકોનો વિકાસ", baby_c2_desc: "પોષણ માર્ગદર્શન અને વિકાસ ટ્રેકિંગ.",
-        baby_c3_title: "યુવા સુખાકારી", baby_c3_desc: "શાળાના બાળકોનું શારીરિક મૂલ્યાંકન.",
-        global_title: "વૈશ્વિક શાખાઓ અને ઉપચાર", global_desc: "વિશ્વભરમાં સંકલિત મલ્ટી-સ્પેશિયાલટી શાખાઓ.",
-        global_c1_title: "આંતરરાષ્ટ્રીય નેટવર્ક", global_c1_desc: "વૈશ્વિક નિષ્ણાતો પાસેથી સલાહ અને બીજા અભિપ્રાય.",
-        global_c2_title: "થેરાપ્યુટિક શાખાઓ", global_c2_desc: "ચયાપચય અને આંતરિક દવાઓનું સંકલન.",
-        global_c3_title: "સંશોધન ભાગીદારી", global_c3_desc: "આંતરરાષ્ટ્રીય સંસ્થાઓ સાથે વૈજ્ઞાનિક સહયોગ.",
-        elderly_tag: "વરિષ્ઠ આધાર", elderly_title: "વૃદ્ધ અને માતા-પિતાની સંભાળ",
-        elderly_p1: "વૃદ્ધ માતા-પિતાની સંભાળ માટે શાંત વાતાવરણ અને લાંબા ગાળાનું સ્વાસ્થ્ય સંચાલન.",
-        explore_elderly: "વૃદ્ધોની સંભાળ જુઓ", senior_priorities: "વરિષ્ઠ કાળજી પ્રાથમિકતાઓ",
-        s_list1: "✓ તણાવ મુક્ત સ્વાસ્થ્ય મૂલ્યાંકન", s_list2: "✓ સલામત દવા સમીક્ષા", s_list3: "✓ પરિવાર-કેન્દ્રિત અહેવાલ",
-        read_more: "વિગતો જુઓ →", footer_copy: "© 2026 ગ્લોબલ કાર્ડિયોલોજીસ. બધા હકો સુરક્ષિત છે."
-      },
-      es: {
-        notice1: "Solo consultas programadas (sin emergencias sin cita previa)",
-        inquiry_label: "Consultas:",
-        nav_adult: "Corazón adulto", nav_baby: "Bebé y pediatría", nav_global: "Sucursales globales", nav_elderly: "Cuidado de ancianos", nav_training: "Capacitación", nav_about: "Sobre nosotros", btn_contact: "Contacto",
-        hero_tag: "Instituto Internacional de Salud",
-        hero_title: "Atención cardíaca avanzada y capacitación clínica",
-        hero_desc: "Atención experta para adultos, apoyo pediátrico especializado y sucursales médicas globales.",
-        btn_book: "Reservar consulta", btn_explore: "Ver capacitación",
-        notice_box_title: "Aviso importante",
-        notice_box_desc: "Operamos estrictamente con cita previa. Para emergencias, comuníquese con los servicios locales.",
-        btn_send_inquiry: "Enviar consulta",
-        adult_title: "Corazón adulto y diagnóstico", adult_desc: "Pruebas de alta precisión y soluciones preventivas de salud.",
-        adult_c1_title: "Bienestar preventivo", adult_c1_desc: "Control de colesterol y programas de hipertensión.",
-        adult_c2_title: "Imágenes diagnósticas", adult_c2_desc: "ECG de alta resolución y ecocardiografía.",
-        adult_c3_title: "Tratamiento especializado", adult_c3_desc: "Cuidado dirigido para afecciones del ritmo cardíaco.",
-        baby_title: "Cuidado de bebés y pediatría", baby_desc: "Atención suave y especializada para bebés y niños en crecimiento.",
-        baby_c1_title: "Exámenes infantiles", baby_c1_desc: "Evaluaciones diagnósticas no invasivas y seguras.",
-        baby_c2_title: "Crecimiento pediátrico", baby_c2_desc: "Orientación nutricional y seguimiento del desarrollo.",
-        baby_c3_title: "Bienestar juvenil", baby_c3_desc: "Evaluaciones físicas deportivas escolares.",
-        global_title: "Sucursales globales y curas", global_desc: "Expansión clínica con sucursales multiespecialidad integradas.",
-        global_c1_title: "Red clínica internacional", global_c1_desc: "Experticia médica multinacional y segundas opiniones.",
-        global_c2_title: "Ramas terapéuticas", global_c2_desc: "Integración de salud metabólica y medicina interna.",
-        global_c3_title: "Alianzas de investigación", global_c3_desc: "Colaboración con instituciones médicas líderes mundiales.",
-        elderly_tag: "Soporte para adultos mayores", elderly_title: "Cuidado compasivo de ancianos",
-        elderly_p1: "Cuidado personalizado para padres ancianos con ambientes de bajo estrés y gestión de condiciones crónicas.",
-        explore_elderly: "Ver cuidado de ancianos", senior_priorities: "Prioridades de cuidado",
-        s_list1: "✓ Evaluaciones de diagnóstico de bajo estrés", s_list2: "✓ Revisiones de seguridad de medicamentos", s_list3: "✓ Informes centrados en la familia",
-        read_more: "Ver detalles →", footer_copy: "© 2026 Global Cardiologies. Todos los derechos reservados."
-      },
-      ne: {
-        notice1: "निर्धारित परामर्श र सोधपुछ मात्र (कुनै वाक-इन आपतकालीन छैन)",
-        inquiry_label: "सोधपुछ:",
-        nav_adult: "वयस्क मुटु", nav_baby: "शिशु तथा बाल रोग", nav_global: "विश्वव्यापी शाखाहरू", nav_elderly: "जेष्ठ नागरिक हेरचाह", nav_training: "प्रशिक्षण", nav_about: "हाम्रो बारेमा", btn_contact: "सम्पर्क",
-        hero_tag: "अन्तर्राष्ट्रिय स्वास्थ्य संस्था",
-        hero_title: "उन्नत मुटुको हेरचाह र क्लिनिकल प्रशिक्षण",
-        hero_desc: "विशेषज्ञ वयस्क मुटुको हेरचाह, शिशु स्वास्थ्य कार्यक्रम र विश्वव्यापी चिकित्सा शाखाहरू।",
-        btn_book: "परामर्श बुक गर्नुहोस्", btn_explore: "प्रशिक्षण हेर्नुहोस्",
-        notice_box_title: "महत्वपूर्ण सूचना",
-        notice_box_desc: "हामी अपोइन्टमेन्टको आधारमा मात्र सञ्चालन गर्छौं। तत्काल आपतकालीन सहायताको लागि स्थानीय सेवाहरूमा सम्पर्क गर्नुहोस्।",
-        btn_send_inquiry: "सोधपुछ पठाउनुहोस्",
-        adult_title: "वयस्क मुटु र निदान", adult_desc: "सटीक परीक्षण र निवारक स्वास्थ्य समाधानहरू।",
-        adult_c1_title: "निवारक कल्याण", adult_c1_desc: "कोलेस्ट्रोल र रक्तचाप व्यवस्थापन कार्यक्रमहरू।",
-        adult_c2_title: "डायग्नोस्टिक इमेजिङ", adult_c2_desc: "इजी र इकोकार्डियोग्राफी परीक्षण।",
-        adult_c3_title: "विशेष उपचार", adult_c3_desc: "मुटुको चाल र रक्तसञ्चारको लागि लक्षित हेरचाह।",
-        baby_title: "शिशु तथा बाल हेरचाह", baby_desc: "नवजात शिशु र बालबालिकाका लागि विशेष र कोमल हेरचाह।",
-        baby_c1_title: "शिशु स्वास्थ्य जाँच", baby_c1_desc: "शिशुहरूका लागि सुरक्षित स्वास्थ्य मूल्याङ्कन।",
-        baby_c2_title: "बाल विकास हेरचाह", baby_c2_desc: "पोषण मार्गदर्शन र स्वास्थ्य ट्र्याकिङ।",
-        baby_c3_title: "बाल कल्याण", baby_c3_desc: "विद्यालयका बालबालिकाको शारीरिक मूल्याङ्कन।",
-        global_title: "विश्वव्यापी शाखाहरू र उपचार", global_desc: "विश्वभर एकीकृत बहु-विशेषता चिकित्सा शाखाहरू।",
-        global_c1_title: "अन्तर्राष्ट्रिय नेटवर्क", global_c1_desc: "विश्वभरका विशेषज्ञ डाक्टरहरूसँग परामर्श।",
-        global_c2_title: "चिकित्सकीय शाखाहरू", global_c2_desc: "पाचन स्वास्थ्य र आन्तरिक चिकित्साको समन्वय।",
-        global_c3_title: "अनुसन्धान साझेदारी", global_c3_desc: "अग्रणी चिकित्सा संस्थाहरूसँगको सहकार्य।",
-        elderly_tag: "वरिष्ठ समर्थन", elderly_title: "जेष्ठ नागरिक र अभिभावक हेरचाह",
-        elderly_p1: "बुढ्यौली अभिभावकहरूको हेरचाहका लागि कम तनावयुक्त वातावरण र दीर्घकालीन व्यवस्थापन।",
-        explore_elderly: "जेष्ठ नागरिक हेरचाह हेर्नुहोस्", senior_priorities: "वरिष्ठ हेरचाह प्राथमिकताहरू",
-        s_list1: "✓ तनावमुक्त स्वास्थ्य परीक्षण", s_list2: "✓ सुरक्षित औषधि समीक्षाहरू", s_list3: "✓ परिवार-केन्द्रित रिपोर्टिङ",
-        read_more: "विवरण हेर्नुहोस् →", footer_copy: "© 2026 ग्लोबल कार्डियोलॉजीज। सबै अधिकार सुरक्षित।"
-      }
-    };
-
-    function changeLanguage(lang) {
-      const keys = translations[lang];
-      if (!keys) return;
-      document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (keys[key]) {
-          el.innerHTML = keys[key];
-        }
-      });
-      localStorage.setItem('selected_lang', lang);
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('selected_lang');
-      if (savedLang && translations[savedLang]) {
-        document.getElementById('langDropdown').value = savedLang;
-        changeLanguage(savedLang);
-      }
-    });
-  </script>
-
+d.querySelectorAll('[data-dd]').forEach(function(b){b.onclick=function(e){e.stopPropagation();var p=b.parentNode,o=p.classList.contains('open');d.querySelectorAll('.dd.open').forEach(function(x){x.classList.remove('open')});if(!o)p.classList.add('open');b.setAttribute('aria-expanded',!o)}});
+d.addEventListener('click',function(e){if(!e.target.closest('.dd'))d.querySelectorAll('.dd.open').forEach(function(x){x.classList.remove('open')});if(!e.target.closest('.srch'))$('sr').classList.remove('on')});
+var mm=[].slice.call(d.querySelectorAll('.mm a')),q=$('q'),sr=$('sr');
+q.oninput=function(){var v=q.value.trim().toLowerCase();sr.innerHTML='';if(v){mm.filter(function(a){return(a.textContent+' '+a.dataset.k).toLowerCase().indexOf(v)>-1}).slice(0,5).forEach(function(a){var c=d.createElement('a');c.href=a.getAttribute('href');c.textContent=a.textContent.trim();sr.appendChild(c)})}sr.classList.toggle('on',sr.children.length>0)};
+q.onkeydown=function(e){if(e.key==='Enter'&&sr.firstChild)location.href=sr.firstChild.href};$('qb').onclick=function(){if(sr.firstChild)location.href=sr.firstChild.href};
+var mod=$('mod'),mode='ind';
+function setMode(m){mode=m;d.querySelectorAll('.tg button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m)});$('orgw').style.display=m==='org'?'':'none'}
+d.querySelectorAll('[data-open]').forEach(function(b){b.onclick=function(e){e.preventDefault();d.querySelectorAll('.dd.open').forEach(function(x){x.classList.remove('open')});setMode(b.dataset.open);mod.showModal()}});
+d.querySelectorAll('.tg button').forEach(function(b){b.onclick=function(){setMode(b.dataset.m)}});
+$('mx').onclick=function(){mod.close()};mod.onclick=function(e){if(e.target===mod)mod.close()};
+$('mf').onsubmit=function(e){e.preventDefault();if($('hp').value)return;var b='Type: '+(mode==='org'?'Hospital / organisation':'Individual & family')+'\nName: '+$('mn').value+'\nEmail: '+$('me').value+'\nPhone: '+$('mp').value+(mode==='org'?'\nOrganisation: '+$('mo').value:'')+'\nService: '+$('ms').value+'\n\n'+$('mg').value;location.href='mailto:info@globalcardiologies.com?subject='+encodeURIComponent('Information request: '+$('ms').value)+'&body='+encodeURIComponent(b)};
+})();
+</script>
 </body>
 </html>
