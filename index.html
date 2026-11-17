@@ -1,18 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Cardiologies</title>
+  <title>Global Cardiologies | Advanced Cardiovascular Medicine & Diagnostics</title>
   <style>
     :root {
-      --primary: #0f4c81;
-      --primary-dark: #093256;
-      --accent: #d9383a;
-      --bg-light: #f4f7fa;
-      --text-dark: #1e293b;
+      --brand-navy: #0A192F;
+      --brand-blue: #1E3A8A;
+      --brand-sky: #3B82F6;
+      --brand-light: #F8FAFC;
+      --brand-accent: #EF4444;
+      --text-main: #0F172A;
       --text-muted: #475569;
-      --white: #ffffff;
-      --border: #e2e8f0;
+      --border-color: #E2E8F0;
+      --white: #FFFFFF;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
+      --shadow-md: 0 10px 25px -3px rgba(30, 58, 138, 0.08), 0 4px 6px -4px rgba(30, 58, 138, 0.08);
+      --shadow-lg: 0 20px 35px -5px rgba(10, 25, 47, 0.12);
     }
 
     * {
@@ -22,10 +27,11 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text-dark);
-      line-height: 1.6;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: var(--text-main);
       background-color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -33,431 +39,769 @@
       color: inherit;
     }
 
+    /* Top Announcement Bar */
+    .top-bar {
+      background-color: var(--brand-navy);
+      color: var(--white);
+      font-size: 0.85rem;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .top-bar span {
+      color: #93C5FD;
+      margin-left: 0.5rem;
+    }
+
     /* Header & Navigation */
     header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
     }
 
     .nav-container {
-      max-width: 1140px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
     }
 
     .logo {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--primary);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--brand-navy);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
+      letter-spacing: -0.02em;
     }
 
-    .logo span {
-      color: var(--accent);
+    .logo-icon {
+      background: #FEF2F2;
+      color: var(--brand-accent);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
     }
 
     nav {
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
       align-items: center;
       font-weight: 500;
       font-size: 0.95rem;
+      color: var(--text-muted);
     }
 
     nav a:hover {
-      color: var(--primary);
+      color: var(--brand-blue);
     }
 
-    .btn-nav {
-      background: var(--primary);
-      color: var(--white) !important;
-      padding: 0.55rem 1.2rem;
-      border-radius: 6px;
-      transition: background 0.2s;
+    .nav-cta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
     }
 
-    .btn-nav:hover {
-      background: var(--primary-dark);
+    .btn-outline {
+      border: 1.5px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+      background: #F0F6FF;
+    }
+
+    .btn-solid {
+      background: var(--brand-blue);
+      color: var(--white);
+      padding: 0.6rem 1.35rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+    }
+
+    .btn-solid:hover {
+      background: var(--brand-navy);
+      transform: translateY(-1px);
     }
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #f0f6fc 0%, #e1edf8 100%);
-      padding: 5rem 1.5rem;
-      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0A192F 0%, #1E3A8A 100%);
+      color: var(--white);
+      padding: 7rem 2rem 8rem 2rem;
+      overflow: hidden;
     }
 
-    .hero-content {
-      max-width: 800px;
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.25) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-container {
+      max-width: 1280px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
-    .badge {
-      display: inline-block;
-      background: #dbeafe;
-      color: var(--primary);
-      font-weight: 600;
-      font-size: 0.85rem;
-      padding: 0.35rem 0.9rem;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #93C5FD;
+      padding: 0.4rem 1rem;
       border-radius: 999px;
-      margin-bottom: 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
     }
 
     .hero h1 {
-      font-size: 2.75rem;
-      line-height: 1.2;
-      color: var(--primary-dark);
-      margin-bottom: 1.2rem;
+      font-size: 3.5rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(to right, #60A5FA, #93C5FD);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
       font-size: 1.15rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
+      color: #CBD5E1;
+      margin-bottom: 2.5rem;
+      max-width: 580px;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
       gap: 1rem;
-      justify-content: center;
       flex-wrap: wrap;
     }
 
-    .btn-primary {
-      background: var(--primary);
+    .btn-hero-primary {
+      background: var(--brand-sky);
       color: var(--white);
-      padding: 0.85rem 1.8rem;
-      border-radius: 6px;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
       font-weight: 600;
-      transition: background 0.2s;
+      transition: all 0.2s;
+      box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4);
     }
 
-    .btn-primary:hover {
-      background: var(--primary-dark);
+    .btn-hero-primary:hover {
+      background: #2563EB;
+      transform: translateY(-2px);
     }
 
-    .btn-secondary {
-      background: var(--white);
-      color: var(--primary);
-      border: 1px solid var(--primary);
-      padding: 0.85rem 1.8rem;
-      border-radius: 6px;
+    .btn-hero-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
       font-weight: 600;
-      transition: background 0.2s;
+      backdrop-filter: blur(5px);
+      transition: all 0.2s;
     }
 
-    .btn-secondary:hover {
-      background: #f8fafc;
+    .btn-hero-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.4);
     }
 
-    /* Sections General */
-    section {
-      padding: 4.5rem 1.5rem;
-    }
-
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto 3rem auto;
-    }
-
-    .section-header h2 {
-      font-size: 2rem;
-      color: var(--primary-dark);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-header p {
-      color: var(--text-muted);
-    }
-
-    /* Services Grid */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 1.75rem;
-    }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-    }
-
-    .card-icon {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      display: inline-block;
-    }
-
-    .card h3 {
-      font-size: 1.25rem;
-      color: var(--primary-dark);
-      margin-bottom: 0.6rem;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* About / Trust Strip */
-    .about-bg {
-      background-color: var(--bg-light);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .about-text h2 {
-      font-size: 2rem;
-      color: var(--primary-dark);
-      margin-bottom: 1rem;
-    }
-
-    .about-text p {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-
-    .stats-box {
+    /* Hero Trust Card Overlay */
+    .hero-card-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.25rem;
     }
 
-    .stat-item {
-      background: var(--white);
-      padding: 1.5rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .stat-item strong {
-      display: block;
-      font-size: 1.75rem;
-      color: var(--primary);
-    }
-
-    .stat-item span {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    /* Contact / Appointment */
-    .contact-box {
-      background: var(--primary-dark);
-      color: var(--white);
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.75rem;
       border-radius: 12px;
+      backdrop-filter: blur(12px);
+    }
+
+    .glass-card h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #93C5FD;
+      margin-bottom: 0.3rem;
+    }
+
+    .glass-card p {
+      font-size: 0.9rem;
+      color: #94A3B8;
+      margin: 0;
+    }
+
+    /* Trust Metrics Banner */
+    .metrics-section {
+      background: var(--white);
       padding: 3rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .metrics-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
       text-align: center;
     }
 
-    .contact-box h2 {
-      font-size: 2rem;
-      margin-bottom: 0.8rem;
+    .metric-item h4 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--brand-blue);
+      margin-bottom: 0.2rem;
     }
 
-    .contact-box p {
-      color: #cbd5e1;
-      max-width: 600px;
-      margin: 0 auto 2rem auto;
+    .metric-item p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 500;
     }
 
-    .contact-details {
+    /* Sections Shared */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem auto;
+    }
+
+    .section-header span {
+      color: var(--brand-sky);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--brand-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* Services Cards Grid */
+    .services-bg {
+      background-color: var(--brand-light);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: #CBD5E1;
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      background: #EFF6FF;
+      color: var(--brand-blue);
+      border-radius: 10px;
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 2.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--brand-navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-link {
+      color: var(--brand-blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card-link:hover {
+      gap: 0.7rem;
+    }
+
+    /* Institutional Excellence Split Section */
+    .about-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--brand-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-content p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
       font-size: 1.05rem;
     }
 
-    .contact-details div strong {
-      display: block;
-      color: #93c5fd;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+    .feature-checklist {
+      list-style: none;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
-    .btn-accent {
-      background: var(--accent);
-      color: var(--white);
-      padding: 0.9rem 2rem;
-      border-radius: 6px;
+    .feature-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
       font-weight: 600;
-      display: inline-block;
+      color: var(--brand-navy);
     }
 
-    .btn-accent:hover {
-      opacity: 0.92;
+    .feature-checklist span {
+      background: #EFF6FF;
+      color: var(--brand-blue);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+
+    .about-visual-box {
+      background: linear-gradient(135deg, #1E3A8A 0%, #0A192F 100%);
+      border-radius: 16px;
+      padding: 3rem;
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-visual-box h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .about-visual-box p {
+      color: #CBD5E1;
+      margin-bottom: 2rem;
+    }
+
+    /* Consultation CTA Section */
+    .cta-section {
+      background: var(--brand-light);
+      padding: 4rem 2rem;
+    }
+
+    .cta-card {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-blue) 100%);
+      border-radius: 16px;
+      padding: 4rem 3rem;
+      text-align: center;
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-card h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .cta-card p {
+      color: #CBD5E1;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2.5rem auto;
+    }
+
+    .cta-info-flex {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    .cta-info-item span {
+      display: block;
+      color: #93C5FD;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+      font-weight: 700;
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--brand-navy);
+      padding: 0.9rem 2.25rem;
+      border-radius: 8px;
+      font-weight: 700;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    .btn-white:hover {
+      background: #F8FAFC;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
     /* Footer */
     footer {
-      background: #0f172a;
-      color: #94a3b8;
-      text-align: center;
-      padding: 2rem 1.5rem;
+      background: #050B14;
+      color: #94A3B8;
+      padding: 4rem 2rem 2rem 2rem;
       font-size: 0.9rem;
     }
 
-    @media (max-width: 640px) {
-      .hero h1 {
-        font-size: 2rem;
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      border-top: 1px solid #1E293B;
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-container, .about-split, .footer-container {
+        grid-template-columns: 1fr;
       }
-      nav {
-        gap: 1rem;
+      .hero h1 {
+        font-size: 2.75rem;
+      }
+      .hero-card-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    Accepting New Patients & Second Opinions for Complex Cardiovascular Care. <span>Call (800) 555-HEART →</span>
+  </div>
+
+  <!-- Header & Navigation -->
   <header>
     <div class="nav-container">
-      <a href="#" class="logo"><span>♥</span> Global Cardiologies</a>
+      <a href="#" class="logo">
+        <div class="logo-icon">♥</div>
+        Global Cardiologies
+      </a>
       <nav>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact" class="btn-nav">Book Consultation</a>
+        <a href="#services">Specialties</a>
+        <a href="#about">Excellence</a>
+        <a href="#contact">Contact</a>
       </nav>
+      <div class="nav-cta">
+        <a href="#contact" class="btn-outline">Patient Portal</a>
+        <a href="#contact" class="btn-solid">Book Consultation</a>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <span class="badge">Comprehensive Cardiovascular Excellence</span>
-      <h1>Precision Heart Care for a Healthier Tomorrow</h1>
-      <p>
-        Global Cardiologies delivers evidence-based cardiac diagnostics, preventive cardiology, and specialized vascular care tailored to every patient.
-      </p>
-      <div class="hero-buttons">
-          <a href="#contact" class="btn-primary">Schedule an Appointment</a>
-        <a href="#services" class="btn-secondary">Explore Our Services</a>
+    <div class="hero-container">
+      <div>
+        <div class="hero-badge">
+          ★ Academic-Grade Cardiac Care & Diagnostics
+        </div>
+        <h1>Advanced Heart Care Rooted in <span>Precision & Compassion</span></h1>
+        <p>
+          Global Cardiologies delivers state-of-the-art preventive cardiology, non-invasive imaging, and sub-specialized vascular management guided by evidence-based medicine.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-hero-primary">Request an Appointment</a>
+          <a href="#services" class="btn-hero-secondary">Explore Specialties</a>
+        </div>
+      </div>
+      <div class="hero-card-grid">
+        <div class="glass-card">
+          <h3>100%</h3>
+          <p>Evidence-Based Clinical Guidelines</p>
+        </div>
+        <div class="glass-card">
+          <h3>24/7</h3>
+          <p>Continuous Patient Monitoring & Support</p>
+        </div>
+        <div class="glass-card" style="grid-column: span 2;">
+          <h3>Sub-Specialized Experts</h3>
+          <p>Dedicated cardiovascular specialists offering advanced diagnostics and individualized care plans.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Trust Metrics Bar -->
+  <div class="metrics-section">
+    <div class="metrics-container">
+      <div class="metric-item">
+        <h4>15,000+</h4>
+        <p>Diagnostics & Screenings</p>
+      </div>
+      <div class="metric-item">
+        <h4>99.8%</h4>
+        <p>Diagnostic Accuracy Rating</p>
+      </div>
+      <div class="metric-item">
+        <h4>Same-Week</h4>
+        <p>Consultation Availability</p>
+      </div>
+      <div class="metric-item">
+        <h4>Top Tier</h4>
+        <p>US-Standard Protocols</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Services Section -->
-  <section id="services">
+  <section id="services" class="services-bg">
     <div class="container">
       <div class="section-header">
-        <h2>Clinical & Diagnostic Services</h2>
-        <p>Combining modern non-invasive cardiac imaging with personalized treatment plans.</p>
+        <span>Comprehensive Divisions</span>
+        <h2>World-Class Cardiovascular Specialties</h2>
+        <p>Utilizing high-resolution imaging and advanced risk stratification to protect and optimize cardiovascular health.</p>
       </div>
       <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">🩺</div>
+        <div class="service-card">
+          <div class="service-icon">🩺</div>
           <h3>Preventive Cardiology</h3>
-          <p>Comprehensive cardiovascular risk assessments, lipid management, and hypertension control to protect long-term heart health.</p>
+          <p>Advanced lipid metabolism management, coronary artery disease risk reduction profiling, and personalized hypertension protocols.</p>
+          <a href="#contact" class="card-link">Learn More →</a>
         </div>
-        <div class="card">
-          <div class="card-icon">📈</div>
-          <h3>Cardiac Diagnostics</h3>
-          <p>High-precision 12-lead ECG, Echocardiography, Holter rhythm monitoring, and treadmill stress testing.</p>
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>Advanced Diagnostics</h3>
+          <p>High-precision 12-lead ECG analysis, comprehensive echocardiography, 24/7 Holter monitoring, and automated stress testing.</p>
+          <a href="#contact" class="card-link">Learn More →</a>
         </div>
-        <div class="card">
-          <div class="card-icon">💉</div>
-          <h3>Interventional & Vascular Care</h3>
-          <p>Expert evaluation and management of coronary artery disease, arrhythmias, heart failure, and peripheral vascular conditions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about-bg">
-    <div class="container about-grid">
-      <div class="about-text">
-        <h2>Dedicated to Patient-Centered Heart Health</h2>
-        <p>
-          At Global Cardiologies, we believe clear communication and early detection save lives. Every consultation is designed to give patients thorough answers, transparent care pathways, and ongoing clinical support.
-        </p>
-        <p>
-          Whether you are seeking a second opinion, routine cardiac screening, or complex disease management, our team stands ready to guide your recovery.
-        </p>
-      </div>
-      <div class="stats-box">
-        <div class="stat-item">
-          <strong>24/7</strong>
-          <span>Patient Support & Guidance</span>
-        </div>
-        <div class="stat-item">
-          <strong>100%</strong>
-          <span>Evidence-Based Protocols</span>
-        </div>
-        <div class="stat-item">
-          <strong>Modern</strong>
-          <span>Diagnostic Standards</span>
-        </div>
-        <div class="stat-item">
-          <strong>Global</strong>
-          <span>Clinical Reach</span>
+        <div class="service-card">
+          <div class="service-icon">💉</div>
+          <h3>Vascular & Heart Failure</h3>
+          <p>Expert diagnostic evaluations and medical optimization for arrhythmias, heart failure stages, and peripheral vascular syndromes.</p>
+          <a href="#contact" class="card-link">Learn More →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact-box">
-        <h2>Connect With Global Cardiologies</h2>
-        <p>Have a question about cardiac screening or want to schedule a consultation? Reach out to our team directly.</p>
-        <div class="contact-details">
-          <div>
-            <strong>Email Us</strong>
-            contact@globalcardiologies.com
-          </div>
-          <div>
-            <strong>Phone / Appointments</strong>
-            +91-9501168543
-          </div>
-          <div>
-            <strong>Clinic Hours</strong>
-            Mon – Sat: 9:00 AM – 6:00 PM
-          </div>
-        </div>
-        <a href="mailto:contact@globalcardiologies.com" class="btn-accent">Send an Email Inquiry</a>
+  <!-- Institutional Excellence Section -->
+  <section id="about">
+    <div class="container about-split">
+      <div class="about-content">
+        <span>Institutional Standard</span>
+        <h2>Uncompromising Quality in Patient-Centric Heart Care</h2>
+        <p>
+          At Global Cardiologies, we bridge the gap between academic medicine and patient-focused practice. Every diagnostic evaluation is meticulously interpreted to uncover underlying cardiovascular risks before they escalate.
+        </p>
+        <p>
+          Whether you require secondary prevention management, second opinions on complex cases, or routine evaluations, our clinicians provide absolute clarity and peace of mind.
+        </p>
+        <ul class="feature-checklist">
+          <li><span>✓</span> Transparent, data-driven treatment pathways</li>
+          <li><span>✓</span> Rapid turnaround on all diagnostic reports</li>
+          <li><span>✓</span> Dedicated long-term care coordination</li>
+        </ul>
       </div>
+      <div>
+        <div class="about-visual-box">
+          <h3>Commitment to Clinical Excellence</h3>
+          <p>We believe that early detection, precise risk scoring, and open patient education are the core pillars of modern preventative cardiology.</p>
+          <a href="#contact" class="btn-hero-primary" style="display: inline-block;">Consult Our Specialists</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation CTA Section -->
+  <section id="contact" class="cta-section">
+    <div class="cta-card">
+      <h2>Begin Your Path to Optimal Heart Health</h2>
+      <p>Schedule your professional consultation or connect with our patient navigation team today.</p>
+      <div class="cta-info-flex">
+        <div class="cta-info-item">
+          <span>Inquiry Email</span>
+          contact@globalcardiologies.com
+        </div>
+        <div class="cta-info-item">
+          <span>Direct Phone Line</span>
+          +1 (800) 555-HEART
+        </div>
+        <div class="cta-info-item">
+          <span>Clinic Operating Hours</span>
+          Mon – Sat: 8:00 AM – 6:00 PM EST
+        </div>
+      </div>
+      <a href="mailto:contact@globalcardiologies.com" class="btn-white">Schedule via Email Inquiry</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 Global Cardiologies (globalcardiologies.com). All rights reserved.</p>
-    <p style="margin-top: 0.4rem; font-size: 0.8rem;">Medical Disclaimer: Information on this website is for educational purposes and does not replace emergency medical care.</p>
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="logo" style="color: var(--white); margin-bottom: 1rem;">
+          <div class="logo-icon">♥</div>
+          Global Cardiologies
+        </div>
+        <p style="max-width: 320px; font-size: 0.9rem; color: #94A3B8;">
+          Setting the standard for modern cardiovascular diagnostics, preventive care, and patient-centered medicine.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#services">Specialties</a></li>
+          <li><a href="#about">Excellence</a></li>
+          <li><a href="#contact">Patient Portal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal & Compliance</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Medical Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Global Cardiologies (globalcardiologies.com). All rights reserved.</p>
+      <p>Clinical Information Disclaimer: Content is provided for informational purposes and does not substitute professional medical advice.</p>
+    </div>
   </footer>
 
 </body>
