@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Cardiologies | Advanced Heart Care, Pediatrics & Medical Training</title>
+  <title>Global Cardiologies | Advanced Heart Care & Medical Network</title>
   <style>
     :root {
       --primary: #0284c7;
@@ -17,25 +17,11 @@
       --baby-tint: #fdf4f8;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--navy); background-color: var(--white); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--navy);
-      background-color: var(--white);
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Multi-Language Switcher Bar */
+    /* Dropdown Language Bar */
     .lang-bar {
       background: #020617;
       color: #94a3b8;
@@ -43,32 +29,17 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
       font-size: 0.85rem;
-      flex-wrap: wrap;
     }
-
-    .lang-bar span {
-      color: #cbd5e1;
-      margin-right: 0.5rem;
-      font-weight: 600;
-    }
-
-    .lang-btn {
-      background: transparent;
+    .lang-select {
+      background: #0f172a;
       border: 1px solid #334155;
       color: #cbd5e1;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
       cursor: pointer;
-      font-size: 0.8rem;
-      transition: all 0.2s;
-    }
-
-    .lang-btn:hover, .lang-btn.active {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: var(--white);
+      font-size: 0.85rem;
     }
 
     /* Top Notice Bar */
@@ -83,349 +54,82 @@
       flex-wrap: wrap;
       gap: 0.5rem;
     }
-
-    .top-bar span {
-      color: #38bdf8;
-      font-weight: 600;
-    }
+    .top-bar span { color: #38bdf8; font-weight: 600; }
 
     /* Header */
-    header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.25rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--navy);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .logo span {
-      color: var(--accent);
-    }
-
-    nav {
-      display: flex;
-      gap: 1.2rem;
-      align-items: center;
-      font-weight: 600;
-      font-size: 0.88rem;
-      color: var(--slate);
-      flex-wrap: wrap;
-    }
-
-    nav a:hover {
-      color: var(--primary);
-    }
-
-    .btn-appointment {
-      background: var(--primary);
-      color: var(--white);
-      padding: 0.6rem 1.25rem;
-      border-radius: 99px;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-
-    .btn-appointment:hover {
-      background: var(--primary-dark);
-    }
+    header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .logo { font-size: 1.4rem; font-weight: 800; color: var(--navy); display: flex; align-items: center; gap: 0.5rem; }
+    .logo span { color: var(--accent); }
+    nav { display: flex; gap: 1.2rem; align-items: center; font-weight: 600; font-size: 0.88rem; color: var(--slate); flex-wrap: wrap; }
+    nav a:hover { color: var(--primary); }
+    .btn-appointment { background: var(--primary); color: var(--white); padding: 0.6rem 1.25rem; border-radius: 99px; font-weight: 600; transition: background 0.2s; }
+    .btn-appointment:hover { background: var(--primary-dark); }
 
     /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-      padding: 5rem 1.5rem;
-    }
-
-    .hero-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .hero-tag {
-      display: inline-block;
-      background: #bae6fd;
-      color: var(--primary-dark);
-      font-weight: 700;
-      font-size: 0.8rem;
-      padding: 0.4rem 1rem;
-      border-radius: 99px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      line-height: 1.15;
-      color: var(--navy);
-      margin-bottom: 1.2rem;
-      font-weight: 800;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: var(--slate);
-      margin-bottom: 2rem;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: var(--navy);
-      color: var(--white);
-      padding: 0.85rem 1.8rem;
-      border-radius: 8px;
-      font-weight: 600;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--navy);
-      border: 2px solid var(--navy);
-      padding: 0.85rem 1.8rem;
-      border-radius: 8px;
-      font-weight: 600;
-    }
-
-    .hero-notice-box {
-      background: var(--white);
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      border: 1px solid var(--border);
-    }
-
-    .hero-notice-box h3 {
-      font-size: 1.3rem;
-      color: var(--navy);
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-notice-box p {
-      font-size: 0.95rem;
-      color: var(--slate);
-      margin-bottom: 1.2rem;
-    }
+    .hero { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 5rem 1.5rem; }
+    .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .hero-tag { display: inline-block; background: #bae6fd; color: var(--primary-dark); font-weight: 700; font-size: 0.8rem; padding: 0.4rem 1rem; border-radius: 99px; text-transform: uppercase; margin-bottom: 1.2rem; }
+    .hero h1 { font-size: 3rem; line-height: 1.15; color: var(--navy); margin-bottom: 1.2rem; font-weight: 800; }
+    .hero p { font-size: 1.1rem; color: var(--slate); margin-bottom: 2rem; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary { background: var(--navy); color: var(--white); padding: 0.85rem 1.8rem; border-radius: 8px; font-weight: 600; }
+    .btn-secondary { background: transparent; color: var(--navy); border: 2px solid var(--navy); padding: 0.85rem 1.8rem; border-radius: 8px; font-weight: 600; }
+    .hero-notice-box { background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    .hero-notice-box h3 { font-size: 1.3rem; color: var(--navy); margin-bottom: 0.75rem; }
+    .hero-notice-box p { font-size: 0.95rem; color: var(--slate); margin-bottom: 1.2rem; }
 
     /* Section Styling */
-    section {
-      padding: 5rem 1.5rem;
-    }
+    section { padding: 5rem 1.5rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-title { text-align: center; max-width: 650px; margin: 0 auto 3.5rem auto; }
+    .section-title h2 { font-size: 2.3rem; color: var(--navy); margin-bottom: 0.75rem; font-weight: 800; }
+    .section-title p { color: var(--slate); }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    .card { background: var(--bg-light); border: 1px solid var(--border); padding: 2.2rem; border-radius: 12px; transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); background: var(--white); }
+    .card-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+    .card h3 { font-size: 1.25rem; color: var(--navy); margin-bottom: 0.6rem; }
+    .card p { color: var(--slate); font-size: 0.95rem; margin-bottom: 1.2rem; }
+    .card-link { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
 
-    .section-title {
-      text-align: center;
-      max-width: 650px;
-      margin: 0 auto 3.5rem auto;
-    }
+    .baby-section { background-color: var(--baby-tint); border-top: 1px solid #fbcfe8; border-bottom: 1px solid #fbcfe8; }
+    .baby-card { background: var(--white); border: 1px solid #f472b6; padding: 2.2rem; border-radius: 12px; transition: transform 0.2s; }
+    .baby-card:hover { transform: translateY(-4px); }
+    .baby-card h3 { color: #9d174d; }
 
-    .section-title h2 {
-      font-size: 2.3rem;
-      color: var(--navy);
-      margin-bottom: 0.75rem;
-      font-weight: 800;
-    }
+    .bg-slate-tint { background-color: var(--bg-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-text h2 { font-size: 2.3rem; color: var(--navy); margin-bottom: 1.2rem; font-weight: 800; }
+    .about-text p { color: var(--slate); margin-bottom: 1.2rem; }
 
-    .section-title p {
-      color: var(--slate);
-    }
+    .contact-banner { background: var(--navy); color: var(--white); border-radius: 16px; padding: 4rem 2rem; text-align: center; }
+    .contact-banner h2 { font-size: 2.3rem; margin-bottom: 1rem; }
+    .contact-banner p { color: #94a3b8; max-width: 650px; margin: 0 auto 2.5rem auto; }
+    .contact-info-flex { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .contact-info-flex div strong { display: block; color: #38bdf8; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.3rem; }
+    .btn-accent { background: var(--primary); color: var(--white); padding: 0.9rem 2.5rem; border-radius: 8px; font-weight: 600; display: inline-block; }
 
-    /* Grid Layouts */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
+    footer { background: #020617; color: #64748b; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; }
 
-    .card {
-      background: var(--bg-light);
-      border: 1px solid var(--border);
-      padding: 2.2rem;
-      border-radius: 12px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-      background: var(--white);
-    }
-
-    .card-icon {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .card h3 {
-      font-size: 1.25rem;
-      color: var(--navy);
-      margin-bottom: 0.6rem;
-    }
-
-    .card p {
-      color: var(--slate);
-      font-size: 0.95rem;
-    }
-
-    /* Special Baby Care Section Styling */
-    .baby-section {
-      background-color: var(--baby-tint);
-      border-top: 1px solid #fbcfe8;
-      border-bottom: 1px solid #fbcfe8;
-    }
-
-    .baby-card {
-      background: var(--white);
-      border: 1px solid #f472b6;
-      padding: 2.2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(219, 39, 119, 0.05);
-      transition: transform 0.2s;
-    }
-
-    .baby-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .baby-card h3 {
-      color: #9d174d;
-    }
-
-    /* Background variations */
-    .bg-slate-tint {
-      background-color: var(--bg-light);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* About Section Grid */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .about-text h2 {
-      font-size: 2.3rem;
-      color: var(--navy);
-      margin-bottom: 1.2rem;
-      font-weight: 800;
-    }
-
-    .about-text p {
-      color: var(--slate);
-      margin-bottom: 1.2rem;
-    }
-
-    /* Contact Banner */
-    .contact-banner {
-      background: var(--navy);
-      color: var(--white);
-      border-radius: 16px;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .contact-banner h2 {
-      font-size: 2.3rem;
-      margin-bottom: 1rem;
-    }
-
-    .contact-banner p {
-      color: #94a3b8;
-      max-width: 650px;
-      margin: 0 auto 2.5rem auto;
-    }
-
-    .contact-info-flex {
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 2.5rem;
-    }
-
-    .contact-info-flex div strong {
-      display: block;
-      color: #38bdf8;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.3rem;
-    }
-
-    .btn-accent {
-      background: var(--primary);
-      color: var(--white);
-      padding: 0.9rem 2.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      display: inline-block;
-    }
-
-    /* Footer */
-    footer {
-      background: #020617;
-      color: #64748b;
-      padding: 3rem 1.5rem;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 850px) {
-      .hero-container, .about-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero h1 {
-        font-size: 2.3rem;
-      }
-    }
+    @media (max-width: 850px) { .hero-container, .about-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
-  <!-- Language Switcher Top Bar -->
+  <!-- Language Switcher Dropdown Bar -->
   <div class="lang-bar">
-    <span>Language:</span>
-    <button class="lang-btn active" onclick="setLang('en')">English</button>
-    <button class="lang-btn" onclick="setLang('hi')">हिन्दी (Hindi)</button>
-    <button class="lang-btn" onclick="setLang('bn')">বাংলা (Bangla)</button>
-    <button class="lang-btn" onclick="setLang('kn')">ಕನ್ನಡ (Kannada)</button>
-    <button class="lang-btn" onclick="setLang('gu')">ગુજરાતી (Gujarati)</button>
-    <button class="lang-btn" onclick="setLang('es')">Español (Spanish)</button>
-    <button class="lang-btn" onclick="setLang('ne')">नेपाली (Nepali)</button>
+    <span>🌐 Language:</span>
+    <select id="langDropdown" class="lang-select" onchange="changeLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="hi">हिन्दी (Hindi)</option>
+      <option value="bn">বাংলা (Bangla)</option>
+      <option value="kn">ಕನ್ನಡ (Kannada)</option>
+      <option value="gu">ગુજરાતી (Gujarati)</option>
+      <option value="es">Español (Spanish)</option>
+      <option value="ne">नेपाली (Nepali)</option>
+    </select>
   </div>
 
   <!-- Top Notice Bar -->
@@ -437,16 +141,16 @@
   <!-- Header -->
   <header>
     <div class="nav-container">
-      <a href="#" class="logo"><span>♥</span> Global Cardiologies</a>
+      <a href="index.html" class="logo"><span>♥</span> Global Cardiologies</a>
       <nav>
-        <a href="#heart" data-key="nav_adult">Adult Heart</a>
-        <a href="#baby-care" data-key="nav_baby">Baby & Pediatrics</a>
-        <a href="#global-cures" data-key="nav_global">Global Branches</a>
-        <a href="#elderly" data-key="nav_elderly">Elderly Care</a>
-        <a href="#training" data-key="nav_training">Training</a>
-        <a href="#about" data-key="nav_about">About Us</a>
+        <a href="adult-heart.html" data-key="nav_adult">Adult Heart</a>
+        <a href="baby-care.html" data-key="nav_baby">Baby & Pediatrics</a>
+        <a href="global-branches.html" data-key="nav_global">Global Branches</a>
+        <a href="elderly-care.html" data-key="nav_elderly">Elderly Care</a>
+        <a href="training.html" data-key="nav_training">Training</a>
+        <a href="about.html" data-key="nav_about">About Us</a>
       </nav>
-      <a href="#contact" class="btn-appointment" data-key="btn_contact">Contact Us</a>
+      <a href="contact.html" class="btn-appointment" data-key="btn_contact">Contact Us</a>
     </div>
   </header>
 
@@ -460,19 +164,19 @@
           Delivering expert adult heart care, specialized baby and pediatric support, senior wellness programs, global medical branches, and staff training partnerships.
         </p>
         <div class="hero-btns">
-          <a href="#contact" class="btn-primary" data-key="btn_book">Book Consultation</a>
-          <a href="#training" class="btn-secondary" data-key="btn_explore">Explore Training</a>
+          <a href="contact.html" class="btn-primary" data-key="btn_book">Book Consultation</a>
+          <a href="training.html" class="btn-secondary" data-key="btn_explore">Explore Training</a>
         </div>
       </div>
       <div class="hero-notice-box">
         <h3 data-key="notice_box_title">Important Patient Notice</h3>
         <p data-key="notice_box_desc">We operate strictly on a scheduled appointment and consultation basis. For immediate emergency medical attention, please contact your local emergency services.</p>
-        <a href="#contact" class="btn-appointment" style="display:inline-block; text-align:center;" data-key="btn_send_inquiry">Send Inquiry</a>
+        <a href="contact.html" class="btn-appointment" style="display:inline-block; text-align:center;" data-key="btn_send_inquiry">Send Inquiry</a>
       </div>
     </div>
   </section>
 
-  <!-- 1. Adult Heart Section -->
+  <!-- 1. Adult Heart Section Preview -->
   <section id="heart">
     <div class="container">
       <div class="section-title">
@@ -484,22 +188,25 @@
           <div class="card-icon">🩺</div>
           <h3 data-key="adult_c1_title">Preventive Wellness</h3>
           <p data-key="adult_c1_desc">Advanced lipid tracking, vascular risk stratification, and structured hypertension management programs.</p>
+          <a href="adult-heart.html" class="card-link" data-key="read_more">View Details →</a>
         </div>
         <div class="card">
           <div class="card-icon">📈</div>
           <h3 data-key="adult_c2_title">Diagnostic Imaging</h3>
           <p data-key="adult_c2_desc">High-resolution 12-lead ECG, comprehensive echocardiography, and ambulatory rhythm monitoring.</p>
+          <a href="adult-heart.html" class="card-link" data-key="read_more">View Details →</a>
         </div>
         <div class="card">
           <div class="card-icon">💉</div>
           <h3 data-key="adult_c3_title">Specialized Treatment</h3>
           <p data-key="adult_c3_desc">Targeted medical optimization and follow-up care for chronic circulation and heart rhythm conditions.</p>
+          <a href="adult-heart.html" class="card-link" data-key="read_more">View Details →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. Baby & Pediatric Care Section -->
+  <!-- 2. Baby & Pediatric Care Section Preview -->
   <section id="baby-care" class="baby-section">
     <div class="container">
       <div class="section-title">
@@ -511,22 +218,25 @@
           <div class="card-icon">👶</div>
           <h3 data-key="baby_c1_title">Infant Health Screenings</h3>
           <p data-key="baby_c1_desc">Gentle non-invasive diagnostic assessments and vital monitoring structured safely for newborns and infants.</p>
+          <a href="baby-care.html" class="card-link" data-key="read_more">View Details →</a>
         </div>
         <div class="baby-card">
           <div class="card-icon">👦</div>
           <h3 data-key="baby_c2_title">Pediatric Growth & Development</h3>
           <p data-key="baby_c2_desc">Child-friendly clinical evaluations, nutritional guidance, and milestone health tracking for toddlers and kids.</p>
+          <a href="baby-care.html" class="card-link" data-key="read_more">View Details →</a>
         </div>
         <div class="baby-card">
           <div class="card-icon">💗</div>
           <h3 data-key="baby_c3_title">Youth Wellness & Pediatrics</h3>
           <p data-key="baby_c3_desc">Supportive preventative care paths, school athletic physical evaluations, and specialized pediatric follow-ups.</p>
+          <a href="baby-care.html" class="card-link" data-key="read_more">View Details →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. Global Cures & Other Branches Section -->
+  <!-- 3. Global Cures Section Preview -->
   <section id="global-cures">
     <div class="container">
       <div class="section-title">
@@ -538,22 +248,25 @@
           <div class="card-icon">🌐</div>
           <h3 data-key="global_c1_title">International Clinical Network</h3>
           <p data-key="global_c1_desc">Coordinated multi-country medical expertise, second opinions, and cross-border clinical consultations.</p>
+          <a href="global-branches.html" class="card-link" data-key="read_more">View Details →</a>
         </div>
         <div class="card">
           <div class="card-icon">🏥</div>
           <h3 data-key="global_c2_title">Allied Therapeutic Branches</h3>
           <p data-key="global_c2_desc">Integrating metabolic wellness, pulmonary care, and internal medicine branches into comprehensive patient paths.</p>
+          <a href="global-branches.html" class="card-link" data-key="read_more">View Details →</a>
         </div>
         <div class="card">
           <div class="card-icon">🤝</div>
           <h3 data-key="global_c3_title">Global Research Partnerships</h3>
           <p data-key="global_c3_desc">Collaborating with premier medical institutions internationally to bring advanced evidence-based treatments home.</p>
+          <a href="global-branches.html" class="card-link" data-key="read_more">View Details →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. Old Parent Care Section -->
+  <!-- 4. Old Parent Care Preview -->
   <section id="elderly" class="bg-slate-tint">
     <div class="container">
       <div class="about-grid">
@@ -563,9 +276,7 @@
           <p data-key="elderly_p1">
             Caring for aging parents requires dedicated patience, low-stress environments, and rigorous chronic condition management. Our geriatric healthcare programs are customized for senior wellness.
           </p>
-          <p data-key="elderly_p2">
-            We focus on safe medication tracking, gentle health monitoring, and coordinated family updates to give your loved ones dignity, safety, and vitality.
-          </p>
+          <a href="elderly-care.html" class="btn-primary" style="display:inline-block; margin-top:1rem;" data-key="explore_elderly">Explore Senior Care →</a>
         </div>
         <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border);">
           <h3 style="font-size: 1.4rem; color: var(--navy); margin-bottom: 1rem;" data-key="senior_priorities">Senior Care Priorities</h3>
@@ -573,82 +284,8 @@
             <li data-key="s_list1">✓ Low-stress, gentle diagnostic assessments</li>
             <li data-key="s_list2">✓ Coordinated multi-medication safety reviews</li>
             <li data-key="s_list3">✓ Family-centered health status reporting</li>
-            <li data-key="s_list4">✓ Fall-risk and general vitality monitoring</li>
           </ul>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. Training Section -->
-  <section id="training">
-    <div class="container">
-      <div class="section-title">
-        <h2 data-key="train_title">Clinical Training & Professional Development</h2>
-        <p data-key="train_desc">Empowering our junior doctors, medical staff, and visiting personnel through continuous global site training and education.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">🔬</div>
-          <h3 data-key="train_c1_title">Junior Doctor Fellowship</h3>
-          <p data-key="train_c1_desc">Structured clinical rotations, diagnostic mentorship, and direct case-study training under senior specialists.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">✈</div>
-          <h3 data-key="train_c2_title">Global Site Visit Programs</h3>
-          <p data-key="train_c2_desc">Our physicians and medical teams regularly travel to partner international institutions to train on emerging medical technologies.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📚</div>
-          <h3 data-key="train_c3_title">Staff & Employee Education</h3>
-          <p data-key="train_c3_desc">Continuous internal workshops ensuring all clinical and administrative teams maintain the highest US-standard compliance.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. About Us Section -->
-  <section id="about" class="bg-slate-tint">
-    <div class="container about-grid">
-      <div class="about-text">
-        <span class="hero-tag" data-key="about_tag">Our Institution</span>
-        <h2 data-key="about_title">About Global Cardiologies</h2>
-        <p data-key="about_p1">
-          Global Cardiologies is founded on the principles of academic excellence, rigorous diagnostic accuracy, and transparent medical communication. 
-        </p>
-        <p data-key="about_p2">
-          Our network brings together multi-specialty clinical experts dedicated to serving patients of all ages—from newborn babies to elderly parents—with uncompromising medical integrity.
-        </p>
-      </div>
-      <div style="background: var(--white); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border);">
-        <h3 style="font-size: 1.4rem; color: var(--navy); margin-bottom: 1rem;" data-key="pillars_title">Core Institutional Pillars</h3>
-        <p style="color: var(--slate); margin-bottom: 1rem;" data-key="pillar1"><strong>No Emergency Walk-ins:</strong> To preserve personalized care quality, all visits are scheduled in advance.</p>
-        <p style="color: var(--slate);" data-key="pillar2"><strong>Global Reach:</strong> Combining local compassionate care with international branch networks and advanced staff training.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact-banner">
-        <h2 data-key="contact_title">Schedule an Appointment or Inquiry</h2>
-        <p data-key="contact_desc">Please note: We do not handle emergency walk-ins. Reach out to our coordination team below to book your consultation.</p>
-        <div class="contact-info-flex">
-          <div>
-            <strong data-key="lbl_email">Inquiry Email</strong>
-            contact@globalcardiologies.com
-          </div>
-          <div>
-            <strong data-key="lbl_phone">Coordination Phone</strong>
-            +1 (800) 555-HEART
-          </div>
-          <div>
-            <strong data-key="lbl_hours">Operating Hours</strong>
-            Mon – Sat: 8:00 AM – 6:00 PM (By Appointment)
-          </div>
-        </div>
-        <a href="mailto:contact@globalcardiologies.com" class="btn-accent" data-key="btn_send_email">Send an Email Inquiry</a>
       </div>
     </div>
   </section>
@@ -656,569 +293,232 @@
   <!-- Footer -->
   <footer>
     <p data-key="footer_copy">© 2026 Global Cardiologies (globalcardiologies.com). All rights reserved.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem;" data-key="footer_disc">Disclaimer: This website provides informational details for scheduled consultations and does not handle emergency medical care.</p>
   </footer>
 
-  <!-- Multi-Language Translator Script -->
   <script>
     const translations = {
       en: {
         notice1: "Scheduled Consultations & Inquiries Only (No Walk-in Emergencies)",
         inquiry_label: "Inquiry Desk:",
-        nav_adult: "Adult Heart",
-        nav_baby: "Baby & Pediatrics",
-        nav_global: "Global Branches",
-        nav_elderly: "Elderly Care",
-        nav_training: "Training",
-        nav_about: "About Us",
-        btn_contact: "Contact Us",
+        nav_adult: "Adult Heart", nav_baby: "Baby & Pediatrics", nav_global: "Global Branches", nav_elderly: "Elderly Care", nav_training: "Training", nav_about: "About Us", btn_contact: "Contact Us",
         hero_tag: "International Healthcare Institute",
         hero_title: "Advanced Heart Care, Pediatric Wellness & Clinical Training",
         hero_desc: "Delivering expert adult heart care, specialized baby and pediatric support, senior wellness programs, global medical branches, and staff training partnerships.",
-        btn_book: "Book Consultation",
-        btn_explore: "Explore Training",
+        btn_book: "Book Consultation", btn_explore: "Explore Training",
         notice_box_title: "Important Patient Notice",
         notice_box_desc: "We operate strictly on a scheduled appointment and consultation basis. For immediate emergency medical attention, please contact your local emergency services.",
         btn_send_inquiry: "Send Inquiry",
-        adult_title: "Adult Heart & Diagnostics",
-        adult_desc: "Comprehensive adult health solutions utilizing high-precision testing, prevention, and risk management.",
-        adult_c1_title: "Preventive Wellness",
-        adult_c1_desc: "Advanced lipid tracking, vascular risk stratification, and structured hypertension management programs.",
-        adult_c2_title: "Diagnostic Imaging",
-        adult_c2_desc: "High-resolution 12-lead ECG, comprehensive echocardiography, and ambulatory rhythm monitoring.",
-        adult_c3_title: "Specialized Treatment",
-        adult_c3_desc: "Targeted medical optimization and follow-up care for chronic circulation and heart rhythm conditions.",
-        baby_title: "Baby & Pediatric Care",
-        baby_desc: "Gentle, specialized developmental and clinical attention tailored specifically for infants, babies, and growing children.",
-        baby_c1_title: "Infant Health Screenings",
-        baby_c1_desc: "Gentle non-invasive diagnostic assessments and vital monitoring structured safely for newborns and infants.",
-        baby_c2_title: "Pediatric Growth & Development",
-        baby_c2_desc: "Child-friendly clinical evaluations, nutritional guidance, and milestone health tracking for toddlers and kids.",
-        baby_c3_title: "Youth Wellness & Pediatrics",
-        baby_c3_desc: "Supportive preventative care paths, school athletic physical evaluations, and specialized pediatric follow-ups.",
-        global_title: "Global Branches & Medical Cures",
-        global_desc: "Expanding our clinical reach with integrated multi-specialty branches and collaborative medical treatments worldwide.",
-        global_c1_title: "International Clinical Network",
-        global_c1_desc: "Coordinated multi-country medical expertise, second opinions, and cross-border clinical consultations.",
-        global_c2_title: "Allied Therapeutic Branches",
-        global_c2_desc: "Integrating metabolic wellness, pulmonary care, and internal medicine branches into comprehensive patient paths.",
-        global_c3_title: "Global Research Partnerships",
-        global_c3_desc: "Collaborating with premier medical institutions internationally to bring advanced evidence-based treatments home.",
-        elderly_tag: "Specialized Senior Support",
-        elderly_title: "Compassionate Elderly & Parent Care",
-        elderly_p1: "Caring for aging parents requires dedicated patience, low-stress environments, and rigorous chronic condition management. Our geriatric healthcare programs are customized for senior wellness.",
-        elderly_p2: "We focus on safe medication tracking, gentle health monitoring, and coordinated family updates to give your loved ones dignity, safety, and vitality.",
-        senior_priorities: "Senior Care Priorities",
-        s_list1: "✓ Low-stress, gentle diagnostic assessments",
-        s_list2: "✓ Coordinated multi-medication safety reviews",
-        s_list3: "✓ Family-centered health status reporting",
-        s_list4: "✓ Fall-risk and general vitality monitoring",
-        train_title: "Clinical Training & Professional Development",
-        train_desc: "Empowering our junior doctors, medical staff, and visiting personnel through continuous global site training and education.",
-        train_c1_title: "Junior Doctor Fellowship",
-        train_c1_desc: "Structured clinical rotations, diagnostic mentorship, and direct case-study training under senior specialists.",
-        train_c2_title: "Global Site Visit Programs",
-        train_c2_desc: "Our physicians and medical teams regularly travel to partner international institutions to train on emerging medical technologies.",
-        train_c3_title: "Staff & Employee Education",
-        train_c3_desc: "Continuous internal workshops ensuring all clinical and administrative teams maintain the highest US-standard compliance.",
-        about_tag: "Our Institution",
-        about_title: "About Global Cardiologies",
-        about_p1: "Global Cardiologies is founded on the principles of academic excellence, rigorous diagnostic accuracy, and transparent medical communication.",
-        about_p2: "Our network brings together multi-specialty clinical experts dedicated to serving patients of all ages—from newborn babies to elderly parents—with uncompromising medical integrity.",
-        pillars_title: "Core Institutional Pillars",
-        pillar1: "<strong>No Emergency Walk-ins:</strong> To preserve personalized care quality, all visits are scheduled in advance.",
-        pillar2: "<strong>Global Reach:</strong> Combining local compassionate care with international branch networks and advanced staff training.",
-        contact_title: "Schedule an Appointment or Inquiry",
-        contact_desc: "Please note: We do not handle emergency walk-ins. Reach out to our coordination team below to book your consultation.",
-        lbl_email: "Inquiry Email",
-        lbl_phone: "Coordination Phone",
-        lbl_hours: "Operating Hours",
-        btn_send_email: "Send an Email Inquiry",
-        footer_copy: "© 2026 Global Cardiologies (globalcardiologies.com). All rights reserved.",
-        footer_disc: "Disclaimer: This website provides informational details for scheduled consultations and does not handle emergency medical care."
+        adult_title: "Adult Heart & Diagnostics", adult_desc: "Comprehensive adult health solutions utilizing high-precision testing, prevention, and risk management.",
+        adult_c1_title: "Preventive Wellness", adult_c1_desc: "Advanced lipid tracking, vascular risk stratification, and structured hypertension management programs.",
+        adult_c2_title: "Diagnostic Imaging", adult_c2_desc: "High-resolution 12-lead ECG, comprehensive echocardiography, and ambulatory rhythm monitoring.",
+        adult_c3_title: "Specialized Treatment", adult_c3_desc: "Targeted medical optimization and follow-up care for chronic circulation and heart rhythm conditions.",
+        baby_title: "Baby & Pediatric Care", baby_desc: "Gentle, specialized developmental and clinical attention tailored specifically for infants, babies, and growing children.",
+        baby_c1_title: "Infant Health Screenings", baby_c1_desc: "Gentle non-invasive diagnostic assessments and vital monitoring structured safely for newborns and infants.",
+        baby_c2_title: "Pediatric Growth & Development", baby_c2_desc: "Child-friendly clinical evaluations, nutritional guidance, and milestone health tracking for toddlers and kids.",
+        baby_c3_title: "Youth Wellness & Pediatrics", baby_c3_desc: "Supportive preventative care paths, school athletic physical evaluations, and specialized pediatric follow-ups.",
+        global_title: "Global Branches & Medical Cures", global_desc: "Expanding our clinical reach with integrated multi-specialty branches and collaborative medical treatments worldwide.",
+        global_c1_title: "International Clinical Network", global_c1_desc: "Coordinated multi-country medical expertise, second opinions, and cross-border clinical consultations.",
+        global_c2_title: "Allied Therapeutic Branches", global_c2_desc: "Integrating metabolic wellness, pulmonary care, and internal medicine branches into comprehensive patient paths.",
+        global_c3_title: "Global Research Partnerships", global_c3_desc: "Collaborating with premier medical institutions internationally to bring advanced evidence-based treatments home.",
+        elderly_tag: "Specialized Senior Support", elderly_title: "Compassionate Elderly & Parent Care",
+        elderly_p1: "Caring for aging parents requires dedicated patience, low-stress environments, and rigorous chronic condition management.",
+        explore_elderly: "Explore Senior Care", senior_priorities: "Senior Care Priorities",
+        s_list1: "✓ Low-stress, gentle diagnostic assessments", s_list2: "✓ Coordinated multi-medication safety reviews", s_list3: "✓ Family-centered health status reporting",
+        read_more: "View Details →", footer_copy: "© 2026 Global Cardiologies (globalcardiologies.com). All rights reserved."
       },
       hi: {
         notice1: "केवल निर्धारित परामर्श और पूछताछ (कोई आपातकालीन वॉक-इन नहीं)",
-        inquiry_label: "पूछताछ डेस्क:",
-        nav_adult: "वयस्क हृदय",
-        nav_baby: "शिशु एवं बाल चिकित्सा",
-        nav_global: "वैश्विक शाखाएं",
-        nav_elderly: "वरिष्ठ नागरिक देखभाल",
-        nav_training: "प्रशिक्षण",
-        nav_about: "हमारे बारे में",
-        btn_contact: "संपर्क करें",
+        inquiry_label: "पूछताछ:",
+        nav_adult: "वयस्क हृदय", nav_baby: "शिशु और बाल रोग", nav_global: "वैश्विक शाखाएं", nav_elderly: "बुजुर्ग देखभाल", nav_training: "प्रशिक्षण", nav_about: "हमारे बारे में", btn_contact: "संपर्क करें",
         hero_tag: "अंतर्राष्ट्रीय स्वास्थ्य संस्थान",
-        hero_title: "उन्नत हृदय देखभाल, बाल चिकित्सा और नैदानिक प्रशिक्षण",
-        hero_desc: "विशेषज्ञ वयस्क हृदय देखभाल, विशेष शिशु और बाल चिकित्सा सहायता, वरिष्ठ कल्याण कार्यक्रम, वैश्विक चिकित्सा शाखाएं और कर्मचारी प्रशिक्षण साझेदारी प्रदान करना।",
-        btn_book: "परामर्श बुक करें",
-        btn_explore: "प्रशिक्षण देखें",
-        notice_box_title: "महत्वपूर्ण रोगी सूचना",
-        notice_box_desc: "हम कड़ाई से निर्धारित अपॉइंटमेंट और परामर्श के आधार पर काम करते हैं। तत्काल आपातकालीन चिकित्सा सहायता के लिए, कृपया अपनी स्थानीय आपातकालीन सेवाओं से संपर्क करें।",
+        hero_title: "उन्नत हृदय देखभाल, बाल विकास और चिकित्सा प्रशिक्षण",
+        hero_desc: "विशेषज्ञ वयस्क हृदय देखभाल, शिशु स्वास्थ्य सहायता, वरिष्ठ कल्याण कार्यक्रम और वैश्विक चिकित्सा शाखाएं।",
+        btn_book: "परामर्श बुक करें", btn_explore: "प्रशिक्षण देखें",
+        notice_box_title: "महत्वपूर्ण सूचना",
+        notice_box_desc: "हम केवल अपॉइंटमेंट और परामर्श पर काम करते हैं। तत्काल आपातकालीन सहायता के लिए स्थानीय आपातकालीन सेवा से संपर्क करें।",
         btn_send_inquiry: "पूछताछ भेजें",
-        adult_title: "वयस्क हृदय एवं निदान",
-        adult_desc: "उच्च-सटीक परीक्षण, रोकथाम और जोखिम प्रबंधन का उपयोग करने वाले व्यापक वयस्क स्वास्थ्य समाधान।",
-        adult_c1_title: "निवारक कल्याण",
-        adult_c1_desc: "उन्नत लिपिड ट्रैकिंग, संवहनी जोखिम स्तरीकरण, और संरचित उच्च रक्तचाप प्रबंधन कार्यक्रम।",
-        adult_c2_title: "डायग्नोस्टिक इमेजिंग",
-        adult_c2_desc: "उच्च-रिज़ॉल्यूशन 12-लीड ईसीजी, व्यापक इकोकार्डियोफ्राफी, और एम्बुलेटरी रिदम मॉनिटरिंग।",
-        adult_c3_title: "विशिष्ट उपचार",
-        adult_c3_desc: " पुरानी परिसंचरण और हृदय ताल स्थितियों के लिए लक्षित चिकित्सा अनुकूलन और अनुवर्ती देखभाल।",
-        baby_title: "शिशु एवं बाल चिकित्सा",
-        baby_desc: "शिशुओं, बच्चों और बढ़ते बच्चों के लिए विशेष रूप से तैयार की गई सौम्य, विशिष्ट विकासात्मक और नैदानिक देखभाल।",
-        baby_c1_title: "शिशु स्वास्थ्य जांच",
-        baby_c1_desc: "नवजात शिशुओं और शिशुओं के लिए सुरक्षित रूप से संरचित कोमल गैर-आक्रामक नैदानिक मूल्यांकन और महत्वपूर्ण निगरानी।",
-        baby_c2_title: "बाल विकास एवं वृद्धि",
-        baby_c2_desc: "छोटे बच्चों और बच्चों के लिए बाल-अनुकूल नैदानिक मूल्यांकन, पोषण संबंधी मार्गदर्शन और मील का पत्थर स्वास्थ्य ट्रैकिंग।",
-        baby_c3_title: "युवा कल्याण एवं बाल चिकित्सा",
-        baby_c3_desc: "सहायक निवारक देखभाल मार्ग, स्कूल एथलेटिक शारीरिक मूल्यांकन, और विशेष बाल चिकित्सा अनुवर्ती।",
-        global_title: "वैश्विक शाखाएं और चिकित्सा उपचार",
-        global_desc: "दुनिया भर में एकीकृत बहु-विशिष्ट शाखाओं और सहयोगात्मक चिकित्सा उपचारों के साथ हमारी नैदानिक पहुंच का विस्तार करना।",
-        global_c1_title: "अंतर्राष्ट्रीय नैदानिक नेटवर्क",
-        global_c1_desc: "समन्वित बहु-देशीय चिकित्सा विशेषज्ञता, दूसरी राय और सीमा पार नैदानिक परामर्श।",
-        global_c2_title: "संबद्ध चिकित्सीय शाखाएँ",
-        global_c2_desc: "व्यापक रोगी मार्गों में चयापचय स्वास्थ्य, फुफ्फुसीय देखभाल और आंतरिक चिकित्सा शाखाओं को एकीकृत करना।",
-        global_c3_title: "वैश्विक अनुसंधान भागीदारी",
-        global_c3_desc: "उन्नत साक्ष्य-आधारित उपचार घर लाने के लिए अंतरराष्ट्रीय स्तर पर प्रमुख चिकित्सा संस्थानों के साथ सहयोग करना।",
-        elderly_tag: "विशिष्ट वरिष्ठ सहायता",
-        elderly_title: "दयालु बुजुर्ग और माता-पिता की देखभाल",
-        elderly_p1: "बुजुर्ग माता-पिता की देखभाल के लिए समर्पित धैर्य, कम तनाव वाले वातावरण और कठोर पुरानी स्थिति प्रबंधन की आवश्यकता होती है। हमारे जराचिकित्सा स्वास्थ्य सेवा कार्यक्रम वरिष्ठ कल्याण के लिए अनुकूलित हैं।",
-        elderly_p2: "हम आपके प्रियजनों को गरिमा, सुरक्षा और जीवन शक्ति देने के लिए सुरक्षित दवा ट्रैकिंग, सौम्य स्वास्थ्य निगरानी और समन्वित परिवार अपडेट पर ध्यान केंद्रित करते हैं।",
-        senior_priorities: "वरिष्ठ देखभाल प्राथमिकताएं",
-        s_list1: "✓ कम तनाव, सौम्य नैदानिक मूल्यांकन",
-        s_list2: "✓ समन्वित बहु-औषधि सुरक्षा समीक्षा",
-        s_list3: "✓ परिवार-केंद्रित स्वास्थ्य स्थिति रिपोर्टिंग",
-        s_list4: "✓ पतन-जोखिम और सामान्य जीवन शक्ति निगरानी",
-        train_title: "नैदानिक ​​प्रशिक्षण और व्यावसायिक विकास",
-        train_desc: "निरंतर वैश्विक साइट प्रशिक्षण और शिक्षा के माध्यम से हमारे जूनियर डॉक्टरों, चिकित्सा कर्मचारियों और आने वाले कर्मियों को सशक्त बनाना।",
-        train_c1_title: "जूनियर डॉक्टर फेलोशिप",
-        train_c1_desc: "वरिष्ठ विशेषज्ञों के तहत संरचित नैदानिक ​​रोटेशन, नैदानिक ​​सलाह और प्रत्यक्ष केस-स्टडी प्रशिक्षण।",
-        train_c2_title: "वैश्विक साइट यात्रा कार्यक्रम",
-        train_c2_desc: "हमारे चिकित्सक और चिकित्सा टीमें उभरती चिकित्सा प्रौद्योगिकियों पर प्रशिक्षण के लिए नियमित रूप से भागीदार अंतरराष्ट्रीय संस्थानों की यात्रा करती हैं।",
-        train_c3_title: "कर्मचारी और कर्मचारी शिक्षा",
-        train_c3_desc: "निरंतर आंतरिक कार्यशालाएं यह सुनिश्चित करती हैं कि सभी नैदानिक ​​और प्रशासनिक टीमें उच्चतम अमेरिकी-मानक अनुपालन बनाए रखें।",
-        about_tag: "हमारा संस्थान",
-        about_title: "ग्लोबल कार्डियोलॉजी के बारे में",
-        about_p1: "ग्लोबल कार्डियोलॉजी अकादमिक उत्कृष्टता, कठोर नैदानिक सटीकता और पारदर्शी चिकित्सा संचार के सिद्धांतों पर स्थापित है।",
-        about_p2: "हमारा नेटवर्क नवजात शिशुओं से लेकर बुजुर्ग माता-पिता तक सभी उम्र के रोगियों की सेवा के लिए समर्पित बहु-विशेषज्ञता वाले नैदानिक विशेषज्ञों को एक साथ लाता है।",
-        pillars_title: "कोर संस्थागत स्तंभ",
-        pillar1: "<strong>कोई आपातकालीन वॉक-इन नहीं:</strong> व्यक्तिगत देखभाल की गुणवत्ता को संरक्षित करने के लिए, सभी मुलाक़ातें पहले से निर्धारित होती हैं।",
-        pillar2: "<strong>वैश्विक पहुंच:</strong> अंतर्राष्ट्रीय शाखा नेटवर्क और उन्नत कर्मचारियों के प्रशिक्षण के साथ स्थानीय दयालु देखभाल का संयोजन।",
-        contact_title: "अपॉइंटमेंट या पूछताछ शेड्यूल करें",
-        contact_desc: "कृपया ध्यान दें: हम आपातकालीन वॉक-इन को नहीं संभालते हैं। अपना परामर्श बुक करने के लिए नीचे हमारी समन्वय टीम से संपर्क करें।",
-        lbl_email: "पूछताछ ईमेल",
-        lbl_phone: "समन्वय फ़ोन",
-        lbl_hours: "ऑपरेटिंग घंटे",
-        btn_send_email: "ईमेल पूछताछ भेजें",
-        footer_copy: "© 2026 Global Cardiologies (globalcardiologies.com). सर्वाधिकार सुरक्षित।",
-        footer_disc: "अस्वीकरण: यह वेबसाइट निर्धारित परामर्श के लिए जानकारीपूर्ण विवरण प्रदान करती है और आपातकालीन चिकित्सा देखभाल को नहीं संभालती है।"
+        adult_title: "वयस्क हृदय और जाँच", adult_desc: "सटीक परीक्षण और निवारक स्वास्थ्य देखभाल।",
+        adult_c1_title: "निवारक स्वास्थ्य", adult_c1_desc: "रक्तचाप और कोलेस्ट्रॉल प्रबंधन कार्यक्रम।",
+        adult_c2_title: "हृदय जाँच स्कैन", adult_c2_desc: "ईसीजी और इकोकार्डियोग्राफी परीक्षण।",
+        adult_c3_title: "विशेष उपचार", adult_c3_desc: "हृदय गति और परिसंचरण के लिए लक्षित देखभाल।",
+        baby_title: "शिशु और बाल चिकित्सा", baby_desc: "नवजात शिशुओं और बच्चों के लिए विशेष और कोमल देखभाल।",
+        baby_c1_title: "शिशु स्वास्थ्य जांच", baby_c1_desc: "शिशुओं के लिए सुरक्षित और दर्द रहित स्वास्थ्य परीक्षण।",
+        baby_c2_title: "बाल विकास देखभाल", baby_c2_desc: "पोषण मार्गदर्शन और बच्चों के विकास की निगरानी।",
+        baby_c3_title: "बाल चिकित्सा कल्याण", baby_c3_desc: "स्कूली बच्चों के लिए शारीरिक स्वास्थ्य मूल्यांकन।",
+        global_title: "वैश्विक शाखाएं और उपचार", global_desc: "दुनिया भर में एकीकृत बहु-विशेषता चिकित्सा शाखाएं।",
+        global_c1_title: "अंतर्राष्ट्रीय नेटवर्क", global_c1_desc: "वैश्विक विशेषज्ञ डॉक्टरों से दूसरी राय और परामर्श।",
+        global_c2_title: "सहायक चिकित्सा शाखाएं", global_c2_desc: "चयापचय और आंतरिक चिकित्सा का समन्वय।",
+        global_c3_title: "वैश्विक अनुसंधान", global_c3_desc: "अग्रणी चिकित्सा संस्थानों के साथ साझीदारी।",
+        elderly_tag: "वरिष्ठ नागरिक सहायता", elderly_title: "दयालु बुजुर्ग और माता-पिता की देखभाल",
+        elderly_p1: "बुजुर्ग माता-पिता की देखभाल के लिए शांत वातावरण और दीर्घकालिक स्वास्थ्य प्रबंधन।",
+        explore_elderly: "वरिष्ठ देखभाल देखें", senior_priorities: "वरिष्ठ देखभाल प्राथमिकताएं",
+        s_list1: "✓ तनावमुक्त और कोमल स्वास्थ्य परीक्षण", s_list2: "✓ सुरक्षित दवा समीक्षा", s_list3: "✓ परिवार केंद्रित स्वास्थ्य रिपोर्टिंग",
+        read_more: "विवरण देखें →", footer_copy: "© 2026 ग्लोबल कार्डियोलॉजी। सर्वाधिकार सुरक्षित।"
       },
       bn: {
-        notice1: "নির্ধারিত পরামর্শ এবং অনুসন্ধান শুধুমাত্র (কোন ওয়াক-ইন জরুরী নয়)",
-        inquiry_label: "জিজ্ঞাসাবাদ ডেস্ক:",
-        nav_adult: "প্রাপ্তবয়স্কদের হৃদয়",
-        nav_baby: "শিশু ও শিশু চিকিৎসা",
-        nav_global: "গ্লোবাল ব্রাঞ্চ",
-        nav_elderly: "বয়স্কদের যত্ন",
-        nav_training: "প্রশিক্ষণ",
-        nav_about: "আমাদের সম্পর্কে",
-        btn_contact: "যোগাযোগ করুন",
-        hero_tag: "আন্তর্জাতিক স্বাস্থ্যসেবা ইনস্টিটিউট",
-        hero_title: "উন্নত হৃদরোগের যত্ন, পেডিয়াট্রিক ওয়েলনেস এবং ক্লিনিকাল প্রশিক্ষণ",
-        hero_desc: "বিশেষজ্ঞ প্রাপ্তবয়স্কদের হৃদরোগের যত্ন, বিশেষ শিশু এবং পেডিয়াট্রিক সহায়তা, সিনিয়র ওয়েলনেস প্রোগ্রাম, বৈশ্বিক চিকিৎসা শাখা এবং স্টাফ প্রশিক্ষণ অংশীদারিত্ব প্রদান করা।",
-        btn_book: "পরামর্শ বুক করুন",
-        btn_explore: "প্রশিক্ষণ অন্বেষণ করুন",
-        notice_box_title: "গুরুত্বপূর্ণ রোগীর বিজ্ঞপ্তি",
-        notice_box_desc: "আমরা কঠোরভাবে একটি নির্ধারিত সময় এবং পরামর্শের ভিত্তিতে কাজ করি। তাত্ক্ষণিক জরুরী চিকিৎসার জন্য, অনুগ্রহ করে আপনার স্থানীয় জরুরী পরিষেবার সাথে যোগাযোগ করুন।",
+        notice1: "শুধুমাত্র নির্ধারিত পরামর্শ এবং অনুসন্ধান (কোনো ওয়াক-ইন জরুরী নয়)",
+        inquiry_label: "জিজ্ঞাসাবাদ:",
+        nav_adult: "প্রাপ্তবয়স্কদের হার্ট", nav_baby: "শিশু ও পেডিয়াট্রিক", nav_global: "গ্লোবাল ব্রাঞ্চ", nav_elderly: "বয়স্কদের যত্ন", nav_training: "প্রশিক্ষণ", nav_about: "আমাদের সম্পর্কে", btn_contact: "যোগাযোগ",
+        hero_tag: "আন্তর্জাতিক স্বাস্থ্যসেবা প্রতিষ্ঠান",
+        hero_title: "উন্নত হার্ট কেয়ার এবং পেডিয়াট্রিক ওয়েলনেস",
+        hero_desc: "বিশেষজ্ঞ প্রাপ্তবয়স্কদের হার্ট কেয়ার, শিশু স্বাস্থ্য সহায়তা এবং বৈশ্বিক চিকিৎসা শাখা প্রদান করা।",
+        btn_book: "পরামর্শ বুক করুন", btn_explore: "প্রশিক্ষণ দেখুন",
+        notice_box_title: "গুরুত্বপূর্ণ বিজ্ঞপ্তি",
+        notice_box_desc: "আমরা শুধুমাত্র অ্যাপয়েন্টমেন্ট ভিত্তিতে কাজ করি। জরুরী সহায়তার জন্য স্থানীয় জরুরি সেবায় যোগাযোগ করুন।",
         btn_send_inquiry: "অনুসন্ধান পাঠান",
-        adult_title: "প্রাপ্তবয়স্কদের হার্ট এবং ডায়াগনস্টিকস",
-        adult_desc: "উচ্চ-নির্ভুলতা পরীক্ষা, প্রতিরোধ এবং ঝুঁকি ব্যবস্থাপনা ব্যবহার করে ব্যাপক প্রাপ্তবয়স্কদের স্বাস্থ্য সমাধান।",
-        adult_c1_title: "প্রতিরোধমূলক সুস্থতা",
-        adult_c1_desc: "উন্নত লিপিড ট্র্যাকিং, ভাস্কুলার ঝুঁকি স্তরবিন্যাস, এবং কাঠামোগত উচ্চ রক্তচাপ ব্যবস্থাপনা প্রোগ্রাম।",
-        adult_c2_title: "ডায়াগনস্টিক ইমেজিং",
-        adult_c2_desc: "উচ্চ-রেজোলিউশন 12-লিড ইসিজি, ব্যাপক ইকোকার্ডিওগ্রাফি, এবং অ্যাম্বুলেটরি রিদম মনিটরিং।",
-        adult_c3_title: "বিশেষায়িত চিকিৎসা",
-        adult_c3_desc: "দীর্ঘস্থায়ী সঞ্চালন এবং হৃদস্পন্দনের অবস্থার জন্য লক্ষ্যযুক্ত চিকিৎসা অপ্টিমাইজেশান এবং ফলো-আপ যত্ন।",
-        baby_title: "শিশু ও শিশুর যত্ন",
-        baby_desc: "বিশেষ করে শিশু, শিশু এবং বর্ধিত শিশুদের জন্য তৈরি মৃদু, বিশেষ উন্নয়নমূলক এবং ক্লিনিকাল মনোযোগ।",
-        baby_c1_title: "শিশু স্বাস্থ্য স্ক্রীনিং",
-        baby_c1_desc: "নবজাতক এবং শিশুদের জন্য নিরাপদে কাঠামোগত মৃদু অ আক্রমণাত্মক ডায়াগনস্টিক মূল্যায়ন এবং গুরুত্বপূর্ণ পর্যবেক্ষণ।",
-        baby_c2_title: "পেডিয়াট্রিক গ্রোথ এবং ডেভেলপমেন্ট",
-        baby_c2_desc: "শিশু-বান্ধব ক্লিনিকাল মূল্যায়ন, পুষ্টির নির্দেশিকা, এবং টডলার এবং বাচ্চাদের জন্য মাইলস্টোন স্বাস্থ্য ট্র্যাকিং।",
-        baby_c3_title: "যুব সুস্থতা এবং পেডিয়াট্রিক্স",
-        baby_c3_desc: "সহায়ক প্রতিরোধমূলক যত্ন পাথ, স্কুল অ্যাথলেটিক শারীরিক মূল্যায়ন, এবং বিশেষ পেডিয়াট্রিক ফলো-আপ।",
-        global_title: "গ্লোবাল ব্রাঞ্চ এবং মেডিকেল কিউরস",
-        global_desc: "বিশ্বব্যাপী সমন্বিত মাল্টি-স্পেশালিটি শাখা এবং সহযোগী চিকিৎসা চিকিৎসার সাথে আমাদের ক্লিনিকাল নাগালের প্রসার ঘটানো।",
-        global_c1_title: "আন্তর্জাতিক ক্লিনিকাল নেটওয়ার্ক",
-        global_c1_desc: "সমন্বিত বহু-দেশীয় চিকিৎসা দক্ষতা, দ্বিতীয় মতামত এবং ক্রস-বর্ডার ক্লিনিকাল পরামর্শ।",
-        global_c2_title: "মিত্র থেরাপিউটিক শাখা",
-        global_c2_desc: "ব্যাপক রোগীর পথের মধ্যে বিপাকীয় স্বাস্থ্য, পালমোনারি যত্ন, এবং অভ্যন্তরীণ ওষুধ শাখা একীভূত করা।",
-        global_c3_title: "গ্লোবাল রিসার্চ পার্টনারশিপ",
-        global_c3_desc: "উন্নত প্রমাণ-ভিত্তিক চিকিত্সা ঘরে আনতে আন্তর্জাতিকভাবে প্রধান চিকিৎসা প্রতিষ্ঠানের সাথে সহযোগিতা করা।",
-        elderly_tag: "বিশেষায়িত সিনিয়র সাপোর্ট",
-        elderly_title: "সহানুভূতিশীল বয়স্ক এবং পিতামাতার যত্ন",
-        elderly_p1: "বয়স্ক পিতামাতার যত্ন নেওয়ার জন্য উত্সর্গীকৃত ধৈর্য, ​​কম স্ট্রেস পরিবেশ এবং কঠোর দীর্ঘস্থায়ী অবস্থা পরিচালনার প্রয়োজন। আমাদের জেরিয়াট্রিক স্বাস্থ্যসেবা প্রোগ্রাম সিনিয়র সুস্থতার জন্য কাস্টমাইজ করা হয়.",
-        elderly_p2: "আমরা আপনার প্রিয়জনদের মর্যাদা, নিরাপত্তা এবং জীবনীশক্তি দিতে নিরাপদ ওষুধ ট্র্যাকিং, মৃদু স্বাস্থ্য পর্যবেক্ষণ এবং সমন্বিত পরিবারের আপডেটের উপর ফোকাস করি।",
-        senior_priorities: "সিনিয়র কেয়ার অগ্রাধিকার",
-        s_list1: "✓ কম মানসিক চাপ, মৃদু ডায়াগনস্টিক মূল্যায়ন",
-        s_list2: "✓ সমন্বিত বহু-ঔষধ সুরক্ষা পর্যালোচনা",
-        s_list3: "✓ পরিবার-কেন্দ্রিক স্বাস্থ্য অবস্থা রিপোর্টিং",
-        s_list4: "✓ পতন-ঝুঁকি এবং সাধারণ জীবনীশক্তি পর্যবেক্ষণ",
-        train_title: "ক্লিনিকাল প্রশিক্ষণ এবং পেশাদার উন্নয়ন",
-        train_desc: "ক্রমাগত বৈশ্বিক সাইট প্রশিক্ষণ এবং শিক্ষার মাধ্যমে আমাদের জুনিয়র ডাক্তার, চিকিৎসা কর্মী এবং আগত কর্মীদের ক্ষমতায়ন করা।",
-        train_c1_title: " জুনিয়র ডক্টর ফেলোশিপ",
-        train_c1_desc: "জ্যেষ্ঠ বিশেষজ্ঞদের অধীনে কাঠামোগত ক্লিনিকাল ঘূর্ণন, ডায়াগনস্টিক মেন্টরশিপ, এবং সরাসরি কেস-স্টাডি প্রশিক্ষণ।",
-        train_c2_title: "গ্লোবাল সাইট ভিজিট প্রোগ্রাম",
-        train_c2_desc: "আমাদের চিকিৎসক এবং চিকিৎসা দলগুলি উদীয়মান চিকিৎসা প্রযুক্তির উপর প্রশিক্ষণের জন্য অংশীদার আন্তর্জাতিক প্রতিষ্ঠানে নিয়মিত ভ্রমণ করে।",
-        train_c3_title: "কর্মী এবং কর্মচারী শিক্ষা",
-        train_c3_desc: "ক্রমাগত অভ্যন্তরীণ কর্মশালা নিশ্চিত করে যে সমস্ত ক্লিনিকাল এবং প্রশাসনিক দলগুলি সর্বোচ্চ মার্কিন-মানের সম্মতি বজায় রাখে।",
-        about_tag: "আমাদের প্রতিষ্ঠান",
-        about_title: "গ্লোবাল কার্ডিওলজি সম্পর্কে",
-        about_p1: "গ্লোবাল কার্ডিওলজি একাডেমিক শ্রেষ্ঠত্ব, কঠোর ডায়াগনস্টিক নির্ভুলতা এবং স্বচ্ছ চিকিৎসা যোগাযোগের নীতিগুলির উপর প্রতিষ্ঠিত।",
-        about_p2: "আমাদের নেটওয়ার্ক সমস্ত বয়সের রোগীদের সেবা করার জন্য নিবেদিত বহু-বিশেষজ্ঞ ক্লিনিকাল বিশেষজ্ঞদের একত্রিত করে—নবজাতক শিশু থেকে শুরু করে বয়স্ক পিতামাতা—আপসহীন চিকিৎসা সততার সাথে।",
-        pillars_title: "কোর প্রাতিষ্ঠানিক স্তম্ভ",
-        pillar1: "<strong>কোন জরুরী ওয়াক-ইন নেই:</strong> ব্যক্তিগত যত্নের মান রক্ষা করার জন্য, সমস্ত ভিজিট আগে থেকেই নির্ধারিত হয়।",
-        pillar2: "<strong>গ্লোবাল রিচ:</strong> আন্তর্জাতিক শাখা নেটওয়ার্ক এবং উন্নত স্টাফ প্রশিক্ষণের সাথে স্থানীয় সমবেদনাপূর্ণ যত্নের সমন্বয় করা।",
-        contact_title: "একটি অ্যাপয়েন্টমেন্ট বা অনুসন্ধান সময় নির্ধারণ করুন",
-        contact_desc: "অনুগ্রহ করে মনে রাখবেন: আমরা জরুরী ওয়াক-ইন পরিচালনা করি না। আপনার পরামর্শ বুক করতে নীচের আমাদের সমন্বয় দলের কাছে পৌঁছান।",
-        lbl_email: "অনুসন্ধান ইমেল",
-        lbl_phone: "সমন্বয় ফোন",
-        lbl_hours: "কার্যকরী সময়",
-        btn_send_email: "একটি ইমেল অনুসন্ধান পাঠান",
-        footer_copy: "© 2026 গ্লোবাল কার্ডিওলজি (globalcardiologies.com)। সমস্ত অধিকার সংরক্ষিত.",
-        footer_disc: "দাবিত্যাগ: এই ওয়েবসাইটটি নির্ধারিত পরামর্শের জন্য তথ্যমূলক বিবরণ প্রদান করে এবং জরুরী চিকিৎসা যত্ন পরিচালনা করে না।"
+        adult_title: "প্রাপ্তবয়স্কদের হার্ট এবং ডায়াগনস্টিকস", adult_desc: "নির্ভুল পরীক্ষা এবং প্রতিরোধমূলক স্বাস্থ্য সমাধান।",
+        adult_c1_title: "প্রতিরোধমূলক সুস্থতা", adult_c1_desc: "উন্নত লিপিড ট্র্যাকিং এবং রক্তচাপ ব্যবস্থাপনা।",
+        adult_c2_title: "ডায়াগনস্টিক ইমেজিং", adult_c2_desc: "ইসিজি এবং ইকোকার্ডিওগ্রাফি পরীক্ষা।",
+        adult_c3_title: "বিশেষায়িত চিকিৎসা", adult_c3_desc: "হৃদস্পন্দন এবং রক্তচলাচলের জন্য বিশেষ যত্ন।",
+        baby_title: "শিশু ও শিশুর যত্ন", baby_desc: "নজাতক এবং ক্রমবর্ধমান শিশুদের জন্য মৃদু ও বিশেষ মনোযোগ।",
+        baby_c1_title: "শিশু স্বাস্থ্য স্ক্রীনিং", baby_c1_desc: "নবজাতকদের জন্য নিরাপদ এবং মৃদু স্বাস্থ্য পরীক্ষা।",
+        baby_c2_title: "শিশুর বিকাশ", baby_c2_desc: "পুষ্টি নির্দেশিকা এবং স্বাস্থ্য ট্র্যাকিং।",
+        baby_c3_title: "যুব সুস্থতা", baby_c3_desc: "স্কুল অ্যাথলেটিক শারীরিক মূল্যায়ন।",
+        global_title: "গ্লোবাল ব্রাঞ্চ এবং চিকিৎসা", global_desc: "বিশ্বব্যাপী সমন্বিত মাল্টি-স্পেশালিটি চিকিৎসা শাখা।",
+        global_c1_title: "আন্তর্জাতিক নেটওয়ার্ক", global_c1_desc: "বহু-দেশীয় চিকিৎসা দক্ষতা এবং দ্বিতীয় মতামত।",
+        global_c2_title: "সহায়ক থেরাপিউটিক শাখা", global_c2_desc: "মেটাবলিক এবং অভ্যন্তরীণ চিকিৎসা সমন্বয়।",
+        global_c3_title: "গবেষণা অংশীদারিত্ব", global_c3_desc: "আন্তর্জাতিক প্রতিষ্ঠানের সাথে বৈজ্ঞানিক সহযোগিতা।",
+        elderly_tag: "সিনিয়র সাপোর্ট", elderly_title: "সহানুভূতিশীল বয়স্ক এবং পিতামাতার যত্ন",
+        elderly_p1: "বয়স্ক পিতামাতার যত্নের জন্য ধৈর্য, কম চাপের পরিবেশ এবং দীর্ঘমেয়াদী ব্যবস্থাপনা।",
+        explore_elderly: "বয়স্কদের যত্ন দেখুন", senior_priorities: "সিনিয়র কেয়ার অগ্রাধিকার",
+        s_list1: "✓ কম চাপের স্বাস্থ্য মূল্যায়ন", s_list2: "✓ সমন্বিত ওষুধ সুরক্ষা পর্যালোচনা", s_list3: "✓ পরিবার-কেন্দ্রিক স্বাস্থ্য রিপোর্টিং",
+        read_more: "বিস্তারিত দেখুন →", footer_copy: "© 2026 গ্লোবাল কার্ডিওলজি। সমস্ত অধিকার সংরক্ষিত।"
       },
       kn: {
-        notice1: "ನಿಗದಿತ ಸಮಾಲೋಚನೆಗಳು ಮತ್ತು ವಿಚಾರಣೆಗಳು ಮಾತ್ರ (ತುರ್ತು ವॉक-ಇನ್ ಇಲ್ಲ)",
-        inquiry_label: "ವಿಚಾರಣಾ desks:",
-        nav_adult: "ವಯಸ್ಕರ ಹೃದಯ",
-        nav_baby: "ಶಿಶು ಮತ್ತು ಮಕ್ಕಳ ಚಿಕಿತ್ಸೆ",
-        nav_global: "ಜಾಗತಿಕ ಶಾಖೆಗಳು",
-        nav_elderly: "ಹಿರಿಯರ ಆರೈಕೆ",
-        nav_training: "ತರಬೇತಿ",
-        nav_about: "ನಮ್ಮ ಬಗ್ಗೆ",
-        btn_contact: "ಸಂಪರ್ಕಿಸಿ",
+        notice1: "ನಿಗದಿತ ಸಮಾಲೋಚನೆಗಳು ಮಾತ್ರ (ತುರ್ತು ವॉक-ಇನ್ ಇಲ್ಲ)",
+        inquiry_label: "ವಿಚಾರಣೆ:",
+        nav_adult: "ವಯಸ್ಕರ ಹೃದಯ", nav_baby: "ಶಿಶು ಮತ್ತು ಮಕ್ಕಳ ಆರೈಕೆ", nav_global: "ಜಾಗತಿಕ ಶಾಖೆಗಳು", nav_elderly: "ಹಿರಿಯರ ಆರೈಕೆ", nav_training: "ತರಬೇತಿ", nav_about: "ನಮ್ಮ ಬಗ್ಗೆ", btn_contact: "ಸಂಪರ್ಕಿಸಿ",
         hero_tag: "ಅಂತರರಾಷ್ಟ್ರೀಯ ಆರೋಗ್ಯ ಸಂಸ್ಥೆ",
-        hero_title: "ಸುಧಾರಿತ ಹೃದಯ ಆರೈಕೆ, ಪೀಡಿಯಾಟ್ರಿಕ್ ವೆಲ್‌ನೆಸ್ ಮತ್ತು ಕ್ಲಿನಿಕಲ್ ತರಬೇತಿ",
-        hero_desc: "ತಜ್ಞ ವಯಸ್ಕರ ಹೃದಯ ಆರೈಕೆ, ವಿಶೇಷ ಶಿಶು ಮತ್ತು ಮಕ್ಕಳ ಬೆಂಬಲ, ಹಿರಿಯರ ಆರೋಗ್ಯ ಕಾರ್ಯಕ್ರಮಗಳು, ಜಾಗತಿಕ ವೈದ್ಯಕೀಯ ಶಾಖೆಗಳು ಮತ್ತು ಸಿಬ್ಬಂದಿ ತರಬೇತಿ ಪಾಲುದಾರಿಕೆಗಳನ್ನು ಒದಗಿಸುವುದು.",
-        btn_book: "ಸಮಾಲೋಚನೆ ಕಾಯ್ದಿರಿಸಿ",
-        btn_explore: "ತರಬೇತಿಯನ್ನು ಅನ್ವೇಷಿಸಿ",
-        notice_box_title: "ಪ್ರಮುಖ ರೋಗಿಯ ಸೂಚನೆ",
-        notice_box_desc: "ನಾವು ಕಟ್ಟುನಿಟ್ಟಾಗಿ ನಿಗದಿತ ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಮತ್ತು ಸಮಾಲೋಚನೆಯ ಆಧಾರದ ಮೇಲೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತೇವೆ. ತಕ್ಷಣದ ತುರ್ತು ವೈದ್ಯಕೀಯ ಸಹಾಯಕ್ಕಾಗಿ, ದಯವಿಟ್ಟು ನಿಮ್ಮ ಸ್ಥಳೀಯ ತುರ್ತು ಸೇವೆಗಳನ್ನು ಸಂಪರ್ಕಿಸಿ.",
+        hero_title: "ಸುಧಾರಿತ ಹೃದಯ ಆರೈಕೆ ಮತ್ತು ಕ್ಲಿನಿಕಲ್ ತರಬೇತಿ",
+        hero_desc: "ತಜ್ಞ ವಯಸ್ಕರ ಹೃದಯ ಆರೈಕೆ, ಶಿಶು ಸ್ವಾಸ್ಥ್ಯ ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಜಾಗತಿಕ ವೈದ್ಯಕೀಯ ಶಾಖೆಗಳು.",
+        btn_book: "ಸಮಾಲೋಚನೆ ಕಾಯ್ದಿರಿಸಿ", btn_explore: "ತರಬೇತಿ ನೋಡಿ",
+        notice_box_title: "ಪ್ರಮುಖ ಸೂಚನೆ",
+        notice_box_desc: "ನಾವು ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಆಧಾರದ ಮೇಲೆ ಮಾತ್ರ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತೇವೆ. ತುರ್ತು ಸಹಾಯಕ್ಕಾಗಿ ಸ್ಥಳೀಯ ತುರ್ತು ಸೇವೆಗಳನ್ನು ಸಂಪರ್ಕಿಸಿ.",
         btn_send_inquiry: "ವಿಚಾರಣೆ ಕಳುಹಿಸಿ",
-        adult_title: "ವಯಸ್ಕರ ಹೃದಯ ಮತ್ತು ರೋಗನಿರ್ಣಯ",
-        adult_desc: "ಅಧಿಕ-ನಿಖರತೆಯ ಪರೀಕ್ಷೆ, ತಡೆಗಟ್ಟುವಿಕೆ ಮತ್ತು ಜೋಖಿ ನಿರ್ವಹಣೆಯನ್ನು ಬಳಸುವ ಸಮಗ್ರ ವಯಸ್ಕರ ಆರೋಗ್ಯ ಪರಿಹಾರಗಳು.",
-        adult_c1_title: "ತಡೆಗಟ್ಟುವ ಸ್ವಾಸ್ಥ್ಯ",
-        adult_c1_desc: "ಸುಧಾರಿತ ಲಿಪಿಡ್ ಟ್ರ್ಯಾಕಿಂಗ್, ನಾಳೀಯ ಅಪಾಯದ ಶ್ರೇಣೀಕರಣ ಮತ್ತು ರಚನಾತ್ಮಕ ಅಧಿಕ ರಕ್ತದೊತ್ತಡ ನಿರ್ವಹಣಾ ಕಾರ್ಯಕ್ರಮಗಳು.",
-        adult_c2_title: "ಡಯಾಗ್ನೋಸ್ಟಿಕ್ ಇಮೇಜಿಂಗ್",
-        adult_c2_desc: "ಅಧಿಕ-ರೆಸಲ್ಯೂಷನ್ 12-ಲೀಡ್ ECG, ಸಮಗ್ರ ಎಕೋಕಾರ್ಡಿಯೋಗ್ರಾಫಿ, ಮತ್ತು ಆಂಬ್ಯುಲೇಟರಿ ರಿದಮ್ ಮಾನಿಟರಿಂಗ್.",
-        adult_c3_title: "ವಿಶೇಷ ಚಿಕಿತ್ಸೆ",
-        adult_c3_desc: "ದೀರ್ಘಕಾಲದ ರಕ್ತಪರಿಚಲನೆ ಮತ್ತು ಹೃದಯದ ಲಯದ ಪರಿಸ್ಥಿತಿಗಳಿಗೆ ಗುರಿಪಡಿಸಿದ ವೈದ್ಯಕೀಯ ಆಪ್ಟಿಮೈಸೇಶನ್ ಮತ್ತು ಫಾಲೋ-ಅಪ್ ಆರೈಕೆ.",
-        baby_title: "ಶಿಶು ಮತ್ತು ಮಕ್ಕಳ ಆರೈಕೆ",
-        baby_desc: "ಶಿಶುಗಳು, ಮಕ್ಕಳು ಮತ್ತು ಬೆಳೆಯುತ್ತಿರುವ ಮಕ್ಕಳಿಗಾಗಿ ವಿಶೇಷವಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸೌಮ್ಯವಾದ, ವಿಶೇಷ ಅಭಿವೃದ್ಧಿ ಮತ್ತು ಕ್ಲಿನಿಕಲ್ ಗಮನ.",
-        baby_c1_title: "ಶಿಶು ಆರೋಗ್ಯ ತಪಾಸಣೆ",
-        baby_c1_desc: "ನವಜಾತ ಶಿಶುಗಳು ಮತ್ತು ಶಿಶುಗಳಿಗೆ ಸುರಕ್ಷಿತವಾಗಿ ರಚಿಸಲಾದ ಸೌಮ್ಯವಾದ ಆಕ್ರಮಣಶೀಲವಲ್ಲದ ರೋಗನಿರ್ಣಯದ ಮೌಲ್ಯಮಾಪನಗಳು ಮತ್ತು ಪ್ರಮುಖ ಮೇಲ್ವಿಚಾರಣೆ.",
-        baby_c2_title: "ಮಕ್ಕಳ ಬೆಳವಣಿಗೆ ಮತ್ತು ವಿಕಾಸ",
-        baby_c2_desc: "ಮಕ್ಕಳ ಸ್ನೇಹಿ ಕ್ಲಿನಿಕಲ್ ಮೌಲ್ಯಮಾಪನಗಳು, ಪೌಷ್ಟಿಕಾಂಶದ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ದಟ್ಟಗಾಲಿಡುವವರಿಗೆ ಮತ್ತು ಮಕ್ಕಳಿಗಾಗಿ ಮೈಲಿಗಲ್ಲು ಆರೋಗ್ಯ ಟ್ರ್ಯಾಕಿಂಗ್.",
-        baby_c3_title: "ಯುವ ಸ್ವಾಸ್ಥ್ಯ ಮತ್ತು ಶಿಶುವೈದ್ಯಶಾಸ್ತ್ರ",
-        baby_c3_desc: "ಬೆಂಬಲಿತ ತಡೆಗಟ್ಟುವ ಆರೈಕೆ ಮಾರ್ಗಗಳು, ಶಾಲೆ ಅಥ್ಲೆಟಿಕ್ ದೈಹಿಕ ಮೌಲ್ಯಮಾಪನಗಳು ಮತ್ತು ವಿಶೇಷ ಪೀಡಿಯಾಟ್ರಿಕ್ ಫಾಲೋ-ಅಪ್‌ಗಳು.",
-        global_title: "ಜಾಗತಿಕ ಶಾಖೆಗಳು ಮತ್ತು ವೈದ್ಯಕೀಯ ಗುಣಪಡಿಸುವಿಕೆ",
-        global_desc: "ವಿಶ್ವಾದ್ಯಂತ ಸಮಗ್ರ ಬಹು-ವಿಶೇಷ ಶಾಖೆಗಳು ಮತ್ತು ಸಹಯೋಗದ ವೈದ್ಯಕೀಯ ಚಿಕಿತ್ಸೆಗಳೊಂದಿಗೆ ನಮ್ಮ ಕ್ಲಿನಿಕಲ್ ತಲುಪುವಿಕೆಯನ್ನು ವಿಸ್ತರಿಸುವುದು.",
-        global_c1_title: "ಅಂತರರಾಷ್ಟ್ರೀಯ ಕ್ಲಿನಿಕಲ್ ನೆಟ್‌ವರ್ಕ್",
-        global_c1_desc: "ಸಮಯೋಜಿತ ಬಹು-ದೇಶದ ವೈದ್ಯಕೀಯ ಪರಿಣತಿ, ಎರಡನೇ ಅಭಿಪ್ರಾಯಗಳು ಮತ್ತು ಗಡದಾಟದ ಕ್ಲಿನಿಕಲ್ ಸಮಾಲೋಚನೆಗಳು.",
-        global_c2_title: "ಮಿತ್ರ ಚಿಕಿತ್ಸಕ ಶಾಖೆಗಳು",
-        global_c2_desc: "ಚಯಾಪಚಯ ಸ್ವಾಸ್ಥ್ಯ, ಶ್ವಾಸಕೋಶದ ಆರೈಕೆ ಮತ್ತು ಆಂತರಿಕ ಔಷಧ ಶಾಖೆಗಳನ್ನು ಸಮಗ್ರ ರೋಗಿಯ ಹಾದಿಗಳಲ್ಲಿ ಸಂಯೋಜಿಸುವುದು.",
-        global_c3_title: "ಜಾಗತಿಕ ಸಂಶೋಧನಾ ಪಾಲುದಾರಿಕೆಗಳು",
-        global_c3_desc: "ಸುಧಾರಿತ ಸಾಕ್ಷ್ಯಾಧಾರಿತ ಚಿಕಿತ್ಸೆಗಳನ್ನು ಮನೆಗೆ ತರಲು ಅಂತರರಾಷ್ಟ್ರೀಯ ಮಟ್ಟದಲ್ಲಿ ಪ್ರಮುಖ ವೈದ್ಯಕೀಯ ಸಂಸ್ಥೆಗಳೊಂದಿಗೆ ಸಹಕರಿಸುವುದು.",
-        elderly_tag: "ವಿಶೇಷ ಹಿರಿಯ ಬೆಂಬಲ",
-        elderly_title: "ಸಹಾನುಭೂತಿಯ ಹಿರಿಯ ಮತ್ತು ಪೋಷಕರ ಆರೈಕೆ",
-        elderly_p1: "ವೃದ್ಧಾಪ್ಯದ ಪೋಷಕರನ್ನು ನೋಡಿಕೊಳ್ಳಲು ಮೀಸಲಾದ ತಾಳ್ಮೆ, ಕಡಿಮೆ-ಒತ್ತಡದ ಪರಿಸರಗಳು ಮತ್ತು ಕಠಿಣ ದೀರ್ಘಕಾಲದ ಸ್ಥಿತಿ ನಿರ್ವಹಣೆಯ ಅಗತ್ಯವಿರುತ್ತದೆ. ನಮ್ಮ ಜೇರಿಯಾಟ್ರಿಕ್ ಆರೋಗ್ಯ ಕಾರ್ಯಕ್ರಮಗಳು ಹಿರಿಯರ ಸ್ವಾಸ್ಥ್ಯಕ್ಕಾಗಿ ಕಸ್ಟಮೈಸ್ ಮಾಡಲಾಗಿದೆ.",
-        elderly_p2: "ನಿಮ್ಮ ಪ್ರೀತಿಪಾತ್ರರಿಗೆ ಗೌರವ, ಸುರಕ್ಷತೆ ಮತ್ತು ಚೈತನ್ಯವನ್ನು ನೀಡಲು ನಾವು ಸುರಕ್ಷಿತ ಔಷಧಿ ಟ್ರ್ಯಾಕಿಂಗ್, ಸೌಮ್ಯ ಆರೋಗ್ಯ ಮೇಲ್ವಿಚಾರಣೆ ಮತ್ತು ಸಂಯೋಜಿತ ಕುಟುಂಬ ನವೀಕರಣಗಳ ಮೇಲೆ ಗಮನ ಕೇಂದ್ರೀಕರಿಸುತ್ತೇವೆ.",
-        senior_priorities: "ಹಿರಿಯರ ಆರೈಕೆ ಪ್ರಾಮುಖ್ಯತೆಗಳು",
-        s_list1: "✓ ಕಡಿಮೆ-ಒತ್ತಡ, ಸೌಮ್ಯವಾದ ರೋಗನಿರ್ಣಯದ ಮೌಲ್ಯಮಾಪನಗಳು",
-        s_list2: "✓ ಸಂಯೋಜಿತ ಬಹು-ಔಷಧಿ ಸುರಕ್ಷತೆ ವಿಮರ್ಶೆಗಳು",
-        s_list3: "✓ ಕುಟುಂಬ-ಕೇಂದ್ರಿತ ಆರೋಗ್ಯ ಸ್ಥಿತಿ ವರದಿ",
-        s_list4: "✓ ಬೀಳುವ ಅಪಾಯ ಮತ್ತು ಸಾಮಾನ್ಯ ಚೈತನ್ಯ ಮೇಲ್ವಿಚಾರಣೆ",
-        train_title: "ಕ್ಲಿನಿಕಲ್ ತರಬೇತಿ ಮತ್ತು ವೃತ್ತಿಪರ ಅಭಿವೃದ್ಧಿ",
-        train_desc: "ನಿರಂತರ ಜಾಗತಿಕ ಸೈಟ್ ತರಬೇತಿ ಮತ್ತು ಶಿಕ್ಷಣದ ಮೂಲಕ ನಮ್ಮ ಜೂನಿಯರ್ ವೈದ್ಯರು, ವೈದ್ಯಕೀಯ ಸಿಬ್ಬಂದಿ ಮತ್ತು ಭೇಟಿ ನೀಡುವ ಸಿಬ್ಬಂದಿಯನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವುದು.",
-        train_c1_title: "ಜೂನಿಯರ್ ಡಾಕ್ಟರ್ ಫೆಲೋಶಿಪ್",
-        train_c1_desc: "ಹಿರಿಯ ತಜ್ಞರ ಅಡಿಯಲ್ಲಿ ರಚನಾತ್ಮಕ ಕ್ಲಿನಿಕಲ್ ರೊಟೇಷನ್‌ಗಳು, ಡಯಾಗ್ನೋಸ್ಟಿಕ್ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ನೇರ ಕೇಸ್-ಸ್ಟಡಿ ತರಬೇತಿ.",
-        train_c2_title: "ಜಾಗತಿಕ ಸೈಟ್ ಭೇಟಿ ಕಾರ್ಯಕ್ರಮಗಳು",
-        train_c2_desc: "ನಮ್ಮ ವೈದ್ಯರು ಮತ್ತು ವೈದ್ಯಕೀಯ ತಂಡಗಳು ಉದಯೋನ್ಮುಖ ವೈದ್ಯಕೀಯ ತಂತ್ರಜ್ಞಾನಗಳ ಕುರಿತು ತರಬೇತಿ ಪಡೆಯಲು ಪಾಲುದಾರ ಅಂತರರಾಷ್ಟ್ರೀಯ ಸಂಸ್ಥೆಗಳಿಗೆ ನಿಯಮಿತವಾಗಿ ಪ್ರಯಾಣಿಸುತ್ತವೆ.",
-        train_c3_title: "ಸಿಬ್ಬಂದಿ ಮತ್ತು ಉದ್ಯೋಗಿ ಶಿಕ್ಷಣ",
-        train_c3_desc: "ಎಲ್ಲಾ ಕ್ಲಿನಿಕಲ್ ಮತ್ತು ಆಡಳಿತಾತ್ಮಕ ತಂಡಗಳು ಅತ್ಯುನ್ನತ US-ಪ್ರಮಾಣಿತ ಅನುಸರಣೆಯನ್ನು ಕಾಯ್ದುಕೊಳ್ಳುವುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳುವ ನಿರಂತರ ಆಂತರಿಕ ಕಾರ್ಯಾಗಾರಗಳು.",
-        about_tag: "ನಮ್ಮ ಸಂಸ್ಥೆ",
-        about_title: "ಗ್ಲೋಬಲ್ ಕಾರ್ಡಿಯಾಲಜೀಸ್ ಬಗ್ಗೆ",
-        about_p1: "ಗ್ಲೋಬಲ್ ಕಾರ್ಡಿಯಾಲಜೀಸ್ ಶೈಕ್ಷಣಿಕ ಉತ್ಕೃಷ್ಟತೆ, ಕಠಿಣ ರೋಗನಿರ್ಣಯದ ನಿಖರತೆ ಮತ್ತು ಪಾರದರ್ಶಕ ವೈದ್ಯಕೀಯ ಸಂವಹನದ ತತ್ವಗಳ ಮೇಲೆ ಸ್ಥಾಪಿಸಲ್ಪಟ್ಟಿದೆ.",
-        about_p2: "ನಮ್ಮ ನೆಟ್‌ವರ್ಕ್ ನವಜಾತ ಶಿಶುಗಳಿಂದ ಹಿಡಿದು ವೃದ್ಧ ಪೋಷಕರವರೆಗೆ ಎಲ್ಲಾ ವಯಸ್ಸಿನ ರೋಗಿಗಳಿಗೆ ರಾಜಿ ಮಾಡಿಕೊಳ್ಳದ ವೈದ್ಯಕೀಯ ಸಮಗ್ರತೆಯೊಂದಿಗೆ ಸೇವೆ ಸಲ್ಲಿಸಲು ಸಮರ್ಪಿತವಾದ ಬಹು-ವಿಶೇಷ ಕ್ಲಿನಿಕಲ್ ತಜ್ಞರನ್ನು ಒಟ್ಟುಗೂಡಿಸುತ್ತದೆ.",
-        pillars_title: "ಪ್ರಮುಖ ಸಾಂಸ್ಥಿಕ ಸ್ತಂಭಗಳು",
-        pillar1: "<strong>ಯಾವುದೇ ತುರ್ತು ವಾಕ್-ಇನ್‌ಗಳಿಲ್ಲ:</strong> ವೈಯಕ್ತಿಕಗೊಳಿಸಿದ ಆರೈಕೆಯ ಗುಣಮಟ್ಟವನ್ನು ಸಂರಕ್ಷಿಸಲು, ಎಲ್ಲಾ ಭೇಟಿಗಳನ್ನು ಮುಂಚಿತವಾಗಿ ನಿಗದಿಪಡಿಸಲಾಗಿದೆ.",
-        pillar2: "<strong>ಜಾಗತಿಕ ತಲುಪುವಿಕೆ:</strong> ಅಂತರರಾಷ್ಟ್ರೀಯ ಶಾಖಾ ನೆಟ್‌ವರ್ಕ್‌ಗಳು ಮತ್ತು ಸುಧಾರಿತ ಸಿಬ್ಬಂದಿ ತರಬೇತಿಯೊಂದಿಗೆ ಸ್ಥಳೀಯ ಕರುಣೆಯ ಆರೈಕೆಯನ್ನು ಸಂಯೋಜಿಸುವುದು.",
-        contact_title: "ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಅಥವಾ ವಿಚಾರಣೆಯನ್ನು ನಿಗದಿಪಡಿಸಿ",
-        contact_desc: "ದಯವಿಟ್ಟು ಗಮನಿಸಿ: ನಾವು ತುರ್ತು ವಾಕ್-ಇನ್‌ಗಳನ್ನು ನಿರ್ವಹಿಸುವುದಿಲ್ಲ. ನಿಮ್ಮ ಸಮಾಲೋಚನೆಯನ್ನು ಕಾಯ್ದಿರಿಸಲು ಕೆಳಗಿನ ನಮ್ಮ ಸಮನ್ವಯ ತಂಡವನ್ನು ಸಂಪರ್ಕಿಸಿ.",
-        lbl_email: "ವಿಚಾರಣೆ ಇಮೇಲ್",
-        lbl_phone: "ಸಮನ್ವಯ ಫೋನ್",
-        lbl_hours: "ಕಾರ್ಯಾಚರಣೆಯ ಸಮಯ",
-        btn_send_email: "ಇಮೇಲ್ ವಿಚಾರಣೆಯನ್ನು ಕಳುಹಿಸಿ",
-        footer_copy: "© 2026 ಗ್ಲೋಬಲ್ ಕಾರ್ಡಿಯಾಲಜೀಸ್ (globalcardiologies.com). ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
-        footer_disc: "ಹಕ್ಕುತ್ಯಾಗ: ಈ ವೆಬ್‌ಸೈಟ್ ನಿಗದಿತ ಸಮಾಲೋಚನೆಗಳಿಗಾಗಿ ಮಾಹಿತಿಯ ವಿವರಗಳನ್ನು ಒದಗಿಸುತ್ತದೆ ಮತ್ತು ತುರ್ತು ವೈದ್ಯಕೀಯ ಆರೈಕೆಯನ್ನು ನಿರ್ವಹಿಸುವುದಿಲ್ಲ."
+        adult_title: "ವಯಸ್ಕರ ಹೃದಯ ಮತ್ತು ರೋಗನಿರ್ಣಯ", adult_desc: "ನಿಖರವಾದ ಪರೀಕ್ಷೆ ಮತ್ತು ತಡೆಗಟ್ಟುವ ಆರೋಗ್ಯ ಪರಿಹಾರಗಳು.",
+        adult_c1_title: "ತಡೆಗಟ್ಟುವ ಸ್ವಾಸ್ಥ್ಯ", adult_c1_desc: "ಕೊಲೆಸ್ಟ್ರಾಲ್ ಮತ್ತು ರಕ್ತದೊತ್ತಡ ನಿರ್ವಹಣೆ.",
+        adult_c2_title: "ರೋಗನಿರ್ಣಯ ಇಮೇಜಿಂಗ್", adult_c2_desc: "ಇಸಿಜಿ ಮತ್ತು ಎಕೋಕಾರ್ಡಿಯೋಗ್ರಾಫಿ ಪರೀಕ್ಷೆ.",
+        adult_c3_title: "ವಿಶೇಷ ಚಿಕಿತ್ಸೆ", adult_c3_desc: "ಹೃದಯದ ಲಯ ಮತ್ತು ರಕ್ತಪರಿಚಲನೆಗೆ ಗುರಿಪಡಿಸಿದ ಆರೈಕೆ.",
+        baby_title: "ಶಿಶು ಮತ್ತು ಮಕ್ಕಳ ಆರೈಕೆ", baby_desc: "ಶಿಶುಗಳು ಮತ್ತು ಬೆಳೆಯುತ್ತಿರುವ ಮಕ್ಕಳಿಗಾಗಿ ವಿಶೇಷ ಮತ್ತು ಸೌಮ್ಯ ಆರೈಕೆ.",
+        baby_c1_title: "ಶಿಶು ಆರೋಗ್ಯ ತಪಾಸಣೆ", baby_c1_desc: "ನವಜಾತ ಶಿಶುಗಳಿಗೆ ಸುರಕ್ಷಿತ ಆರೋಗ್ಯ ಮೌಲ್ಯಮಾಪನ.",
+        baby_c2_title: "ಮಕ್ಕಳ ಬೆಳವಣಿಗೆ", baby_c2_desc: "ಪೋಷಣೆಯ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಸ್ವಾಸ್ಥ್ಯ ಟ್ರ್ಯಾಕಿಂಗ್.",
+        baby_c3_title: "ಮಕ್ಕಳ ಸ್ವಾಸ್ಥ್ಯ", baby_c3_desc: "ಶಾಲೆ ಮಕ್ಕಳ ಅಥ್ಲೆಟಿಕ್ ದೈಹಿಕ ಮೌಲ್ಯಮಾಪನ.",
+        global_title: "ಜಾಗತಿಕ ಶಾಖೆಗಳು ಮತ್ತು ಚಿಕಿತ್ಸೆ", global_desc: "ವಿಶ್ವಾದ್ಯಂತ ಸಮಗ್ರ ಬಹು-ವಿಶೇಷ ವೈದ್ಯಕೀಯ ಶಾಖೆಗಳು.",
+        global_c1_title: "ಅಂತರರಾಷ್ಟ್ರೀಯ ನೆಟ್‌ವರ್ಕ್", global_c1_desc: "ವಿಶ್ವದ ತಜ್ಞರಿಂದ ಸಲಹೆ ಮತ್ತು ಎರಡನೇ ಅಭಿಪ್ರಾಯ.",
+        global_c2_title: "ಚಿಕಿತ್ಸಕ ಶಾಖೆಗಳು", global_c2_desc: "ಚಯಾಪಚಯ ಮತ್ತು ಆಂತರಿಕ ವೈದ್ಯಕೀಯ ಸಂಯೋಜನೆ.",
+        global_c3_title: "ಸಂಶೋಧನಾ ಪಾಲುದಾರಿಕೆ", global_c3_desc: "ಅಂತರರಾಷ್ಟ್ರೀಯ ಸಂಸ್ಥೆಗಳೊಂದಿಗೆ ವೈಜ್ಞಾನಿಕ ಸಹಕಾರ.",
+        elderly_tag: "ಹಿರಿಯರ ಬೆಂಬಲ", elderly_title: "ಹಿರಿಯರು ಮತ್ತು ಪೋಷಕರ ಆರೈಕೆ",
+        elderly_p1: "ವೃದ್ಧಾಪ್ಯದ ಪೋಷಕರ ಆರೈಕೆಗಾಗಿ ಕಡಿಮೆ-ಒತ್ತಡದ ವಾತಾವರಣ ಮತ್ತು ಆರೋಗ್ಯ ನಿರ್ವಹಣೆ.",
+        explore_elderly: "ಹಿರಿಯರ ಆರೈಕೆ ನೋಡಿ", senior_priorities: "ಹಿರಿಯರ ಆರೈಕೆ ಪ್ರಾಮುಖ್ಯತೆಗಳು",
+        s_list1: "✓ ಕಡಿಮೆ-ಒತ್ತಡದ ಆರೋಗ್ಯ ಮೌಲ್ಯಮಾಪನ", s_list2: "✓ ಸುರಕ್ಷಿತ ಔಷಧಿ ವಿಮರ್ಶೆ", s_list3: "✓ ಕುಟುಂಬ-ಕೇಂದ್ರಿತ ವರದಿ",
+        read_more: "ವಿವರಗಳನ್ನು ನೋಡಿ →", footer_copy: "© 2026 ಗ್ಲೋಬಲ್ ಕಾರ್ಡಿಯಾಲಜೀಸ್. ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ."
       },
       gu: {
-        notice1: "ફક્ત નિર્ધારિત પરામર્શ અને પૂછપરછ (કોઈ ઇમરજન્સી વૉક-ઇન નહીં)",
-        inquiry_label: "પૂછપરછ ડેસ્ક:",
-        nav_adult: "પુખ્ત વયના હૃદય",
-        nav_baby: "શિશુ અને બાળરોગ",
-        nav_global: "વૈશ્વિક શાખાઓ",
-        nav_elderly: "વૃદ્ધોની સંભાળ",
-        nav_training: "તાલીમ",
-        nav_about: "અમારા વિશે",
-        btn_contact: "સંપર્ક કરો",
+        notice1: "ફક્ત નિર્ધારિત પરામર્શ (કોઈ ઇમરજન્સી વૉક-ઇન નથી)",
+        inquiry_label: "પૂછપરછ:",
+        nav_adult: "પુખ્ત હૃદય", nav_baby: "શિશુ અને બાળરોગ", nav_global: "વૈશ્વિક શાખાઓ", nav_elderly: "વૃદ્ધોની સંભાળ", nav_training: "તાલીમ", nav_about: "અમારા વિશે", btn_contact: "સંપર્ક કરો",
         hero_tag: "આંતરરાષ્ટ્રીય આરોગ્ય સંસ્થા",
-        hero_title: "અદ્યતન હાર્ટ કેર, બાળરોગ સુખાકારી અને ક્લિનિકલ તાલીમ",
-        hero_desc: "નિષ્ણાત પુખ્ત વયના હૃદયની સંભાળ, વિશિષ્ટ શિશુ અને બાળરોગ સહાય, વરિષ્ઠ સુખાકારી કાર્યક્રમો, વૈશ્વિક તબીબી શાખાઓ અને સ્ટાફ તાલીમ ભાગીદારી પ્રદાન કરવી.",
-        btn_book: "પરામર્શ બુક કરો",
-        btn_explore: "તાલીમનું અન્વેષણ કરો",
-        notice_box_title: "મહત્વપૂર્ણ દર્દી સૂચના",
-        notice_box_desc: "અમે કડકપણે શેડ્યૂલ કરેલ એપોઇન્ટમેન્ટ અને પરામર્શના આધારે કામ કરીએ છીએ. તાત્કાલિક કટોકટી તબીબી સહાય માટે, કૃપા કરીને તમારી સ્થાનિક કટોકટી સેવાઓનો સંપર્ક કરો.",
+        hero_title: "અદ્યતન હાર્ટ કેર અને ક્લિનિકલ તાલીમ",
+        hero_desc: "નિષ્ણાત પુખ્ત હૃદયની સંભાળ, બાળરોગ સુખાકારી કાર્યક્રમો અને વૈશ્વિક તબીબી શાખાઓ.",
+        btn_book: "પરામર્શ બુક કરો", btn_explore: "તાલીમ જુઓ",
+        notice_box_title: "મહત્વપૂર્ણ સૂચના",
+        notice_box_desc: "અમે ફક્ત એપોઇન્ટમેન્ટના આધારે કામ કરીએ છીએ. તાત્કાલિક કટોકટી સહાય માટે સ્થાનિક સેવાઓનો સંપર્ક કરો.",
         btn_send_inquiry: "પૂછપરછ મોકલો",
-        adult_title: "પુખ્ત હાર્ટ અને ડાયગ્નોસ્ટિક્સ",
-        adult_desc: "ઉચ્ચ-ચોકસાઇ પરીક્ષણ, નિવારણ અને જોખમ વ્યવસ્થાપનનો ઉપયોગ કરતા વ્યાપક પુખ્ત સ્વાસ્થ્ય ઉકેલો.",
-        adult_c1_title: "નિવારક સુખાકારી",
-        adult_c1_desc: "અદ્યતન લિપિડ ટ્રેકિંગ, વેસ્ક્યુલર જોખમ સ્તરીકરણ, અને સંરચિત હાઇપરટેન્શન મેનેજમેન્ટ પ્રોગ્રામ્સ.",
-        adult_c2_title: "ડાયગ્નોસ્ટિક ઇમેજિંગ",
-        adult_c2_desc: "ઉચ્ચ-રિઝોલ્યુશન 12-લીડ ECG, વ્યાપક ઇકોકાર્ડિયોગ્રાફી, અને એમ્બ્યુલેટરી રિધમ મોનિટરિંગ.",
-        adult_c3_title: "વિશિષ્ટ સારવાર",
-        adult_c3_desc: "ક્રોનિક પરિભ્રમણ અને હૃદયની લયની સ્થિતિ માટે લક્ષિત તબીબી ઓપ્ટિમાઇઝેશન અને અનુવર્તી સંભાળ.",
-        baby_title: "શિશુ અને બાળરોગ સંભાળ",
-        baby_desc: "શિશુઓ, બાળકો અને વધતા બાળકો માટે ખાસ તૈયાર કરાયેલ સૌમ્ય, વિશિષ્ટ વિકાસ અને ક્લિનિકલ ધ્યાન.",
-        baby_c1_title: "શિશુ સ્વાસ્થ્ય તપાસ",
-        baby_c1_desc: "નવજાત શિશુઓ અને શિશુઓ માટે સુરક્ષિત રીતે રચાયેલ સૌમ્ય બિન-આક્રમક ડાયગ્નોસ્ટિક મૂલ્યાંકન અને મહત્વપૂર્ણ દેખરેખ.",
-        baby_c2_title: "બાળકોનો વિકાસ અને વૃદ્ધિ",
-        baby_c2_desc: "ટોડલર્સ અને બાળકો માટે બાળ મૈત્રીપૂર્ણ ક્લિનિકલ મૂલ્યાંકન, પોષણ માર્ગદર્શન અને માઇલસ્ટોન હેલ્થ ટ્રેકિંગ.",
-        baby_c3_title: "યુવા સુખાકારી અને બાળરોગ",
-        baby_c3_desc: "સહાયક નિવારક સંભાળના પાથ, સ્કૂલ એથલેટિક શારીરિક મૂલ્યાંકન અને વિશિષ્ટ બાળરોગ અનુવર્તી.",
-        global_title: "વૈશ્વિક શાખાઓ અને તબીબી ઉપચાર",
-        global_desc: "વિશ્વભરમાં સંકલિત મલ્ટી-સ્પેશિયાલટી શાખાઓ અને સહયોગી તબીબી સારવાર સાથે અમારી ક્લિનિકલ પહોંચને વિસ્તૃત કરવી.",
-        global_c1_title: "આંતરરાષ્ટ્રીય ક્લિનિકલ નેટવર્ક",
-        global_c1_desc: "સંકલિત બહુ-દેશીય તબીબી કુશળતા, બીજા અભિપ્રાયો અને સરહદ પારની ક્લિનિકલ પરામર્શ.",
-        global_c2_title: "સહાયક થેરાપ્યુટિક શાખાઓ",
-        global_c2_desc: "વ્યાપક દર્દીના માર્ગોમાં ચયાપચયની સુખાકારી, પલ્મોનરી કેર અને આંતરિક દવાઓની શાખાઓનું એકીકરણ.",
-        global_c3_title: "વૈશ્વિક સંશોધન ભાગીદારી",
-        global_c3_desc: "અદ્યતન પુરાવા-આધારિત ઉપચારો ઘરે લાવવા માટે આંતરરાષ્ટ્રીય સ્તરે મુખ્ય તબીબી સંસ્થાઓ સાથે સહયોગ કરવો.",
-        elderly_tag: "વિશિષ્ટ વરિષ્ઠ આધાર",
-        elderly_title: "દયાપૂર્વક વૃદ્ધ અને માતા-પિતાની સંભાળ",
-        elderly_p1: "વૃદ્ધ માતા-પિતાની સંભાળ રાખવા માટે સમર્પિત ધૈર્ય, ઓછા તણાવવાળા વાતાવરણ અને સખત લાંબા ગાળાના સ્થિતિ વ્યવસ્થાપનની જરૂર છે. અમારા વૃદ્ધ સ્વાસ્થ્ય સંભાળ પ્રોગ્રામ્સ વરિષ્ઠ સુખાકારી માટે કસ્ટમાઇઝ કરવામાં આવ્યા છે.",
-        elderly_p2: "અમે તમારા પ્રિયજનોને ગરિમા, સલામતી અને જીવનશક્તિ આપવા માટે સુરક્ષિત દવા ટ્રેકિંગ, સૌમ્ય સ્વાસ્થ્ય દેખરેખ અને સંકલિત પરિવારના અપડેટ્સ પર ધ્યાન કેન્દ્રિત કરીએ છીએ.",
-        senior_priorities: "વરિષ્ઠ કાળજી પ્રાથમિકતાઓ",
-        s_list1: "✓ ઓછા તણાવવાળા, સૌમ્ય ડાયગ્નોસ્ટિક મૂલ્યાંકન",
-        s_list2: "✓ સંકલિત મલ્ટી-મેડિકેશન સેફ્ટી રિવ્યુ",
-        s_list3: "✓ પરિવાર-કેન્દ્રિત સ્વાસ્થ્ય સ્થિતિ અહેવાલ",
-        s_list4: "✓ પતન-જોખમ અને સામાન્ય જીવનશક્તિ દેખરેખ",
-        train_title: "ક્લિનિકલ તાલીમ અને વ્યાવસાયિક વિકાસ",
-        train_desc: "સતત વૈશ્વિક સાઇટ તાલીમ અને શિક્ષણ દ્વારા અમારા જૂનિયર ડોક્ટરો, તબીબી કર્મચારીઓ અને મુલાકાતી કર્મચારીઓને સશક્ત બનાવવું.",
-        train_c1_title: "જૂનિયર ડૉક્ટર ફેલોશિપ",
-        train_c1_desc: "વરિષ્ઠ નિષ્ણાતો હેઠળ સંરચિત ક્લિનિકલ રોટેશન, ડાયગ્નોસ્ટિક માર્ગદર્શન અને ప్రత్యక్ష કેસ-અભ્યાસ તાલીમ.",
-        train_c2_title: "વૈશ્વિક સાઇટ મુલાકાત કાર્યક્રમો",
-        train_c2_desc: "ઉભરતી તબીબી તકનીકો પર તાલીમ મેળવવા માટે અમારા ચિકિત્સકો અને તબીબી ટીમો નિયમિતપણે ભાગીદાર આંતરરાષ્ટ્રીય સંસ્થાઓની મુલાકાત લે છે.",
-        train_c3_title: "સ્ટાફ અને કર્મચારી શિક્ષણ",
-        train_c3_desc: "સતત આંતરિક કાર્યશાળાઓ ખાતરી કરે છે કે તમામ ક્લિનિકલ અને વહીવટી ટીમો ઉચ્ચતમ યુએસ-માનક અનુપાલન જાળવી રાખે છે.",
-        about_tag: "અમારી સંસ્થા",
-        about_title: "ગ્લોબલ કાર્ડિયોલોજી વિશે",
-        about_p1: "ગ્લોબલ કાર્ડિયોલોજી શૈક્ષણિક શ્રેષ્ઠતા, કઠોર ડાયગ્નોસ્ટિક ચોકસાઈ અને પારદર્શક તબીબી સંચારના સિદ્ધાંતો પર સ્થાપિત છે.",
-        about_p2: "અમારું નેટવર્ક નવજાત શિશુઓથી લઈને વૃદ્ધ માતા-પિતા સુધીની તમામ વયના દર્દીઓની સેવા કરવા માટે સમર્પિત બહુ-વિશિષ્ટ ક્લિનિકલ નિષ્ણાતોને એકસાથે લાવે છે.",
-        pillars_title: "મુખ્ય સંસ્થાકીય સ્તંભો",
-        pillar1: "<strong>કોઈ કટોકટી વૉક-ઇન નથી:</strong> વ્યક્તિગત સંભાળની ગુણવત્તા જાળવવા માટે, તમામ મુલાકાતો અગાઉથી નક્કી કરવામાં આવે છે.",
-        pillar2: "<strong>વૈશ્વિક પહોંચ:</strong> આંતરરાષ્ટ્રીય શાખા નેટવર્ક્સ અને અદ્યતન સ્ટાફ તાલીમ સાથે સ્થાનિક દયાળુ સંભાળનું સંયોજન.",
-        contact_title: "એપોઇન્ટમેન્ટ અથવા પૂછપરછ શેડ્યૂલ કરો",
-        contact_desc: "કૃપા કરીને નોંધો: અમે ઇમરજન્સી વૉક-ઇન હેન્ડલ કરતા નથી. તમારો પરામર્શ બુક કરવા માટે નીચે અમારી સંકલન ટીમ સુધી પહોંચો.",
-        lbl_email: "પૂછપરછ ઇમેઇલ",
-        lbl_phone: "સંકલન ફોન",
-        lbl_hours: "ઓપરેટિંગ કલાક",
-        btn_send_email: "ઇમેઇલ પૂછપરછ મોકલો",
-        footer_copy: "© 2026 ગ્લોબલ કાર્ડિયોલોજીસ (globalcardiologies.com). બધા હકો અમારી પાસે રાખેલા છે.",
-        footer_disc: "અસ્વીકરણ: આ વેબસાઇટ નિર્ધારિત પરામર્શ માટે માહિતીપ્રદ વિગતો પ્રદાન કરે છે અને કટોકટી તબીબી સંભાળ સંભાળતી નથી."
+        adult_title: "પુખ્ત હાર્ટ અને ડાયગ્નોસ્ટિક્સ", adult_desc: "ચોક્કસ પરીક્ષણ અને નિવારક આરોગ્ય ઉકેલો.",
+        adult_c1_title: "નિવારક સુખાકારી", adult_c1_desc: "લિપિડ ટ્રેકિંગ અને બ્લડ પ્રેશર વ્યવસ્થાપન.",
+        adult_c2_title: "ડાયગ્નોસ્ટિક ઇમેજિંગ", adult_c2_desc: "ઈસીજી અને ઇકોકાર્ડિયોગ્રાફી પરીક્ષણ.",
+        adult_c3_title: "વિશિષ્ટ સારવાર", adult_c3_desc: "હૃદયની લય અને પરિભ્રમણ માટે લક્ષિત સંભાળ.",
+        baby_title: "શિશુ અને બાળરોગ સંભાળ", baby_desc: "નવજાત શિશુઓ અને બાળકો માટે ખાસ અને સૌમ્ય સંભાળ.",
+        baby_c1_title: "શિશુ સ્વાસ્થ્ય તપાસ", baby_c1_desc: "નવજાત શિશુઓ માટે સુરક્ષિત સ્વાસ્થ્ય મૂલ્યાંકન.",
+        baby_c2_title: "બાળકોનો વિકાસ", baby_c2_desc: "પોષણ માર્ગદર્શન અને વિકાસ ટ્રેકિંગ.",
+        baby_c3_title: "યુવા સુખાકારી", baby_c3_desc: "શાળાના બાળકોનું શારીરિક મૂલ્યાંકન.",
+        global_title: "વૈશ્વિક શાખાઓ અને ઉપચાર", global_desc: "વિશ્વભરમાં સંકલિત મલ્ટી-સ્પેશિયાલટી શાખાઓ.",
+        global_c1_title: "આંતરરાષ્ટ્રીય નેટવર્ક", global_c1_desc: "વૈશ્વિક નિષ્ણાતો પાસેથી સલાહ અને બીજા અભિપ્રાય.",
+        global_c2_title: "થેરાપ્યુટિક શાખાઓ", global_c2_desc: "ચયાપચય અને આંતરિક દવાઓનું સંકલન.",
+        global_c3_title: "સંશોધન ભાગીદારી", global_c3_desc: "આંતરરાષ્ટ્રીય સંસ્થાઓ સાથે વૈજ્ઞાનિક સહયોગ.",
+        elderly_tag: "વરિષ્ઠ આધાર", elderly_title: "વૃદ્ધ અને માતા-પિતાની સંભાળ",
+        elderly_p1: "વૃદ્ધ માતા-પિતાની સંભાળ માટે શાંત વાતાવરણ અને લાંબા ગાળાનું સ્વાસ્થ્ય સંચાલન.",
+        explore_elderly: "વૃદ્ધોની સંભાળ જુઓ", senior_priorities: "વરિષ્ઠ કાળજી પ્રાથમિકતાઓ",
+        s_list1: "✓ તણાવ મુક્ત સ્વાસ્થ્ય મૂલ્યાંકન", s_list2: "✓ સલામત દવા સમીક્ષા", s_list3: "✓ પરિવાર-કેન્દ્રિત અહેવાલ",
+        read_more: "વિગતો જુઓ →", footer_copy: "© 2026 ગ્લોબલ કાર્ડિયોલોજીસ. બધા હકો સુરક્ષિત છે."
       },
       es: {
-        notice1: "Consultas programadas y consultas solamente (sin emergencias sin cita previa)",
-        inquiry_label: "Mesa de consultas:",
-        nav_adult: "Corazón adulto",
-        nav_baby: "Bebé y pediatría",
-        nav_global: "Sucursales globales",
-        nav_elderly: "Cuidado de ancianos",
-        nav_training: "Capacitación",
-        nav_about: "Sobre nosotros",
-        btn_contact: "Contáctenos",
+        notice1: "Solo consultas programadas (sin emergencias sin cita previa)",
+        inquiry_label: "Consultas:",
+        nav_adult: "Corazón adulto", nav_baby: "Bebé y pediatría", nav_global: "Sucursales globales", nav_elderly: "Cuidado de ancianos", nav_training: "Capacitación", nav_about: "Sobre nosotros", btn_contact: "Contacto",
         hero_tag: "Instituto Internacional de Salud",
-        hero_title: "Atención cardíaca avanzada, bienestar pediátrico y capacitación clínica",
-        hero_desc: "Ofreciendo atención cardíaca experta para adultos, apoyo especializado para bebés y pediatría, programas de bienestar para personas mayores, sucursales médicas globales y asociaciones de capacitación para el personal.",
-        btn_book: "Reservar consulta",
-        btn_explore: "Explorar capacitación",
-        notice_box_title: "Aviso importante para pacientes",
-        notice_box_desc: "Operamos estrictamente sobre la base de citas y consultas programadas. Para atención médica de emergencia inmediata, comuníquese con sus servicios de emergencia locales.",
+        hero_title: "Atención cardíaca avanzada y capacitación clínica",
+        hero_desc: "Atención experta para adultos, apoyo pediátrico especializado y sucursales médicas globales.",
+        btn_book: "Reservar consulta", btn_explore: "Ver capacitación",
+        notice_box_title: "Aviso importante",
+        notice_box_desc: "Operamos estrictamente con cita previa. Para emergencias, comuníquese con los servicios locales.",
         btn_send_inquiry: "Enviar consulta",
-        adult_title: "Corazón adulto y diagnóstico",
-        adult_desc: "Soluciones integrales de salud para adultos que utilizan pruebas de alta precisión, prevención y gestión de riesgos.",
-        adult_c1_title: "Bienestar preventivo",
-        adult_c1_desc: "Seguimiento avanzado de lípidos, estratificación de riesgo vascular y programas estructurados de control de la hipertensión.",
-        adult_c2_title: "Imágenes diagnósticas",
-        adult_c2_desc: "ECG de 12 derivaciones de alta resolución, ecocardiografía integral y monitorización ambulatoria del ritmo.",
-        adult_c3_title: "Tratamiento especializado",
-        adult_c3_desc: "Optimización médica dirigida y atención de seguimiento para afecciones crónicas de la circulación y del ritmo cardíaco.",
-        baby_title: "Cuidado de bebés y pediatría",
-        baby_desc: "Atención clínica y de desarrollo suave y especializada adaptada específicamente para bebés, niños pequeños y niños en crecimiento.",
-        baby_c1_title: "Exámenes de salud infantil",
-        baby_c1_desc: "Evaluaciones diagnósticas no invasivas y suaves y monitoreo de signos vitales estructurados de manera segura para recién nacidos y bebés.",
-        baby_c2_title: "Crecimiento y desarrollo pediátrico",
-        baby_c2_desc: "Evaluaciones clínicas aptas para niños, orientación nutricional y seguimiento del desarrollo de la salud para niños pequeños y niños.",
-        baby_c3_title: "Bienestar juvenil y pediatría",
-        baby_c3_desc: "Rutas de atención preventiva de apoyo, evaluaciones físicas deportivas escolares y seguimientos pediátricos especializados.",
-        global_title: "Sucursales globales y curas médicas",
-        global_desc: "Ampliar nuestro alcance clínico con sucursales multisectoriales integradas y tratamientos médicos colaborativos en todo el mundo.",
-        global_c1_title: "Red clínica internacional",
-        global_c1_desc: "Experiencia médica coordinada en múltiples países, segundas opiniones y consultas clínicas transfronterizas.",
-        global_c2_title: "Ramas terapéuticas aliadas",
-        global_c2_desc: "Integración de ramas de salud metabólica, atención pulmonar y medicina interna en vías integrales para los pacientes.",
-        global_c3_title: "Asociaciones de investigación global",
-        global_c3_desc: "Colaborar con instituciones médicas líderes a nivel internacional para traer tratamientos avanzados basados en evidencia.",
-        elderly_tag: "Apoyo especializado para personas mayores",
-        elderly_title: "Cuidado compasivo de ancianos y padres",
-        elderly_p1: "Cuidar de los padres ancianos requiere paciencia dedicada, entornos de bajo estrés y una gestión rigurosa de las condiciones crónicas. Nuestros programas de atención médica geriátrica están personalizados para el bienestar de las personas mayores.",
-        elderly_p2: "Nos enfocamos en el seguimiento seguro de los medicamentos, el monitoreo suave de la salud y las actualizaciones familiares coordinadas para brindar a sus seres queridos dignidad, seguridad y vitalidad.",
-        senior_priorities: "Prioridades de atención a personas mayores",
-        s_list1: "✓ Evaluaciones de diagnóstico suaves y de bajo estrés",
-        s_list2: "✓ Revisiones de seguridad coordinadas de múltiples medicamentos",
-        s_list3: "✓ Informes de estado de salud centrados en la familia",
-        s_list4: "✓ Control de riesgo de caídas y vitalidad general",
-        train_title: "Capacitación clínica y desarrollo profesional",
-        train_desc: "Empoderar a nuestros médicos jóvenes, personal médico y personal visitante a través de capacitación continua en el sitio y educación global.",
-        train_c1_title: "Beca para médicos jóvenes",
-        train_c1_desc: "Rotaciones clínicas estructuradas, tutoría diagnóstica y capacitación directa basada en estudios de casos bajo la supervisión de especialistas senior.",
-        train_c2_title: "Programas de visitas a sitios globales",
-        train_c2_desc: "Nuestros médicos y equipos médicos viajan regularmente a instituciones internacionales asociadas para capacitarse en tecnologías médicas emergentes.",
-        train_c3_title: "Educación del personal y empleados",
-        train_c3_desc: "Talleres internos continuos para garantizar que todos los equipos clínicos y administrativos mantengan el cumplimiento de los más altos estándares de EE. UU.",
-        about_tag: "Nuestra Institución",
-        about_title: "Acerca de Global Cardiologies",
-        about_p1: "Global Cardiologies se fundó sobre los principios de excelencia académica, rigurosa precisión diagnóstica y comunicación médica transparente.",
-        about_p2: "Nuestra red reúne a expertos clínicos multiespecializados dedicados a atender a pacientes de todas las edades, desde recién nacidos hasta padres ancianos, con una integridad médica intransigente.",
-        pillars_title: "Pilares institucionales centrales",
-        pillar1: "<strong>No hay emergencias sin cita previa:</strong> para preservar la calidad de la atención personalizada, todas las visitas se programan con anticipación.",
-        pillar2: "<strong>Alcance global:</strong> Combinando atención compasiva local con redes de sucursales internacionales y capacitación avanzada del personal.",
-        contact_title: "Programar una cita o consulta",
-        contact_desc: "Tenga en cuenta: no atendemos urgencias sin cita previa. Comuníquese con nuestro equipo de coordinación a continuación para reservar su consulta.",
-        lbl_email: "Correo electrónico de consulta",
-        lbl_phone: "Teléfono de coordinación",
-        lbl_hours: "Horas de operación",
-        btn_send_email: "Enviar una consulta por correo electrónico",
-        footer_copy: "© 2026 Global Cardiologies (globalcardiologies.com). Todos los derechos reservados.",
-        footer_disc: "Descargo de responsabilidad: este sitio web proporciona detalles informativos para consultas programadas y no maneja atención médica de emergencia."
+        adult_title: "Corazón adulto y diagnóstico", adult_desc: "Pruebas de alta precisión y soluciones preventivas de salud.",
+        adult_c1_title: "Bienestar preventivo", adult_c1_desc: "Control de colesterol y programas de hipertensión.",
+        adult_c2_title: "Imágenes diagnósticas", adult_c2_desc: "ECG de alta resolución y ecocardiografía.",
+        adult_c3_title: "Tratamiento especializado", adult_c3_desc: "Cuidado dirigido para afecciones del ritmo cardíaco.",
+        baby_title: "Cuidado de bebés y pediatría", baby_desc: "Atención suave y especializada para bebés y niños en crecimiento.",
+        baby_c1_title: "Exámenes infantiles", baby_c1_desc: "Evaluaciones diagnósticas no invasivas y seguras.",
+        baby_c2_title: "Crecimiento pediátrico", baby_c2_desc: "Orientación nutricional y seguimiento del desarrollo.",
+        baby_c3_title: "Bienestar juvenil", baby_c3_desc: "Evaluaciones físicas deportivas escolares.",
+        global_title: "Sucursales globales y curas", global_desc: "Expansión clínica con sucursales multiespecialidad integradas.",
+        global_c1_title: "Red clínica internacional", global_c1_desc: "Experticia médica multinacional y segundas opiniones.",
+        global_c2_title: "Ramas terapéuticas", global_c2_desc: "Integración de salud metabólica y medicina interna.",
+        global_c3_title: "Alianzas de investigación", global_c3_desc: "Colaboración con instituciones médicas líderes mundiales.",
+        elderly_tag: "Soporte para adultos mayores", elderly_title: "Cuidado compasivo de ancianos",
+        elderly_p1: "Cuidado personalizado para padres ancianos con ambientes de bajo estrés y gestión de condiciones crónicas.",
+        explore_elderly: "Ver cuidado de ancianos", senior_priorities: "Prioridades de cuidado",
+        s_list1: "✓ Evaluaciones de diagnóstico de bajo estrés", s_list2: "✓ Revisiones de seguridad de medicamentos", s_list3: "✓ Informes centrados en la familia",
+        read_more: "Ver detalles →", footer_copy: "© 2026 Global Cardiologies. Todos los derechos reservados."
       },
       ne: {
         notice1: "निर्धारित परामर्श र सोधपुछ मात्र (कुनै वाक-इन आपतकालीन छैन)",
-        inquiry_label: "सोधपुछ डेस्क:",
-        nav_adult: "वयस्क मुटु",
-        nav_baby: "शिशु तथा बाल रोग",
-        nav_global: "विश्वव्यापी शाखाहरू",
-        nav_elderly: "जेष्ठ नागरिक हेरचाह",
-        nav_training: "प्रशिक्षण",
-        nav_about: "हाम्रो बारेमा",
-        btn_contact: "सम्पर्क गर्नुहोस्",
+        inquiry_label: "सोधपुछ:",
+        nav_adult: "वयस्क मुटु", nav_baby: "शिशु तथा बाल रोग", nav_global: "विश्वव्यापी शाखाहरू", nav_elderly: "जेष्ठ नागरिक हेरचाह", nav_training: "प्रशिक्षण", nav_about: "हाम्रो बारेमा", btn_contact: "सम्पर्क",
         hero_tag: "अन्तर्राष्ट्रिय स्वास्थ्य संस्था",
-        hero_title: "उन्नत मुटुको हेरचाह, बाल चिकित्सा कल्याण र क्लिनिकल प्रशिक्षण",
-        hero_desc: "विशेषज्ञ वयस्क मुटुको हेरचाह, विशेष शिशु र बाल चिकित्सा सहयोग, वरिष्ठ कल्याण कार्यक्रमहरू, विश्वव्यापी चिकित्सा शाखाहरू, र कर्मचारी प्रशिक्षण साझेदारीहरू प्रदान गर्दै।",
-        btn_book: "परामर्श बुक गर्नुहोस्",
-        btn_explore: "प्रशिक्षण अन्वेषण गर्नुहोस्",
-        notice_box_title: "महत्त्वपूर्ण बिरामी सूचना",
-        notice_box_desc: "हामी कडा रूपमा निर्धारित अपोइन्टमेन्ट र परामर्शको आधारमा सञ्चालन गर्छौं। तत्काल आपतकालीन चिकित्सा सहायताको लागि, कृपया आफ्नो स्थानीय आपतकालीन सेवाहरूमा सम्पर्क गर्नुहोस्।",
+        hero_title: "उन्नत मुटुको हेरचाह र क्लिनिकल प्रशिक्षण",
+        hero_desc: "विशेषज्ञ वयस्क मुटुको हेरचाह, शिशु स्वास्थ्य कार्यक्रम र विश्वव्यापी चिकित्सा शाखाहरू।",
+        btn_book: "परामर्श बुक गर्नुहोस्", btn_explore: "प्रशिक्षण हेर्नुहोस्",
+        notice_box_title: "महत्वपूर्ण सूचना",
+        notice_box_desc: "हामी अपोइन्टमेन्टको आधारमा मात्र सञ्चालन गर्छौं। तत्काल आपतकालीन सहायताको लागि स्थानीय सेवाहरूमा सम्पर्क गर्नुहोस्।",
         btn_send_inquiry: "सोधपुछ पठाउनुहोस्",
-        adult_title: "वयस्क मुटु र निदान",
-        adult_desc: "उच्च-शुद्धता परीक्षण, रोकथाम, र जोखिम व्यवस्थापन प्रयोग गरेर व्यापक वयस्क स्वास्थ्य समाधानहरू।",
-        adult_c1_title: "निवारक कल्याण",
-        adult_c1_desc: "उन्नत लिपिड ट्र्याकिङ, भास्कुलर जोखिम स्तरीकरण, र संरचित उच्च रक्तचाप व्यवस्थापन कार्यक्रमहरू।",
-        adult_c2_title: "डायग्नोस्टिक इमेजिङ",
-        adult_c2_desc: "उच्च-रिजोल्युसन 12-लिड ECG, व्यापक इकोकार्डियोग्राफी, र एम्बुलेटरी लय अनुगमन।",
-        adult_c3_title: "विशेष उपचार",
-        adult_c3_desc: "दीर्घकालीन परिसंचरण र मुटुको लयको अवस्थाका लागि लक्षित चिकित्सा अप्टिमाइजेसन र फलो-अप हेरचाह।",
-        baby_title: "शिशु तथा बाल हेरचाह",
-        baby_desc: "शिशुहरू, बच्चाहरू, र बढ्दो बच्चाहरूको लागि विशेष रूपमा तयार पारिएको कोमल, विशेष विकास र क्लिनिकल ध्यान।",
-        baby_c1_title: "शिशु स्वास्थ्य जाँच",
-        baby_c1_desc: "नवजात शिशु र शिशुहरूको लागि सुरक्षित रूपमा संरचित कोमल गैर-आक्रामक निदान मूल्याङ्कन र महत्त्वपूर्ण अनुगमन।",
-        baby_c2_title: "बालबालिकाको वृद्धि र विकास",
-        baby_c2_desc: "बालबालिका र बच्चाहरूको लागि बाल-मैत्री क्लिनिकल मूल्याङ्कन, पोषण मार्गदर्शन, र माइलस्टोन स्वास्थ्य ट्र्याकिङ।",
-        baby_c3_title: "युवा कल्याण र बाल रोग",
-        baby_c3_desc: "सहायक निवारक हेरचाह मार्गहरू, विद्यालय एथलेटिक शारीरिक मूल्याङ्कनहरू, र विशेष बाल चिकित्सा फलो-अपहरू।",
-        global_title: "विश्वव्यापी शाखाहरू र चिकित्सा उपचार",
-        global_desc: "विश्वभर एकीकृत बहु-विशेषता शाखाहरू र सहयोगी चिकित्सा उपचारहरूको साथ हाम्रो क्लिनिकल पहुँच विस्तार गर्दै।",
-        global_c1_title: "अन्तर्राष्ट्रिय क्लिनिकल नेटवर्क",
-        global_c1_desc: "समन्वयित बहु-देशीय चिकित्सा विशेषज्ञता, दोस्रो राय, र सीमापार क्लिनिकल परामर्श।",
-        global_c2_title: "सम्बद्ध चिकित्सीय शाखाहरू",
-        global_c2_desc: "व्यापक बिरामी मार्गहरूमा चयापचय स्वास्थ्य, पल्मोनरी हेरचाह, र आन्तरिक चिकित्सा शाखाहरू एकीकृत गर्दै।",
-        global_c3_title: "वैश्विक अनुसन्धान साझेदारी",
-        global_c3_desc: "उन्नत प्रमाणमा आधारित उपचारहरू घर ल्याउन अन्तर्राष्ट्रिय स्तरमा प्रमुख चिकित्सा संस्थाहरूसँग सहकार्य गर्दै।",
-        elderly_tag: "विशेष वरिष्ठ समर्थन",
-        elderly_title: "सहयोगी जेष्ठ नागरिक र अभिभावक हेरचाह",
-        elderly_p1: "बुढ्यौली अभिभावकहरूको हेरचाह गर्न समर्पित धैर्य, कम तनावपूर्ण वातावरण, र कडा दीर्घकालीन अवस्था व्यवस्थापन आवश्यक हुन्छ। हाम्रा जेरियाट्रिक स्वास्थ्य सेवा कार्यक्रमहरू वरिष्ठ कल्याणका लागि अनुकूलित छन्।",
-        elderly_p2: "हामी तपाईंका प्रियजनहरूलाई मर्यादा, सुरक्षा र जीवन शक्ति दिन सुरक्षित औषधि ट्र्याकिङ, कोमल स्वास्थ्य अनुगमन, र समन्वयित पारिवारिक अपडेटहरूमा ध्यान केन्द्रित गर्छौं।",
-        senior_priorities: "वरिष्ठ हेरचाह प्राथमिकताहरू",
-        s_list1: "✓ कम तनाव, कोमल निदान मूल्याङ्कन",
-        s_list2: "✓ समन्वित बहु-औषधि सुरक्षा समीक्षाहरू",
-        s_list3: "✓ परिवार-केन्द्रित स्वास्थ्य स्थिति रिपोर्टिङ",
-        s_list4: "✓ पतन-जोखिम र सामान्य जीवन शक्ति अनुगमन",
-        train_title: "क्लिनिकल प्रशिक्षण र व्यावसायिक विकास",
-        train_desc: "निरन्तर विश्वव्यापी साइट प्रशिक्षण र शिक्षा मार्फत हाम्रा जुनियर डाक्टरहरू, चिकित्सा कर्मचारीहरू, र भ्रमण गर्ने कर्मचारीहरूलाई सशक्त बनाउने।",
-        train_c1_title: "जुनियर डाक्टर फेलोशिप",
-        train_c1_desc: "वरिष्ठ विशेषज्ञहरूको मातहतमा संरचित क्लिनिकल रोटेशनहरू, डायग्नोस्टिक मेन्टरशिप, र प्रत्यक्ष केस-स्टडी प्रशिक्षण।",
-        train_c2_title: "विश्वव्यापी साइट भ्रमण कार्यक्रमहरू",
-        train_c2_desc: "हाम्रा चिकित्सकहरू र चिकित्सा टोलीहरूले उदीयमान चिकित्सा प्रविधिहरूमा प्रशिक्षण लिन साझेदार अन्तर्राष्ट्रिय संस्थाहरूमा नियमित रूपमा यात्रा गर्छन्।",
-        train_c3_title: "कर्मचारी र कर्मचारी शिक्षा",
-        train_c3_desc: "निरन्तर आन्तरिक कार्यशालाहरूले सबै क्लिनिकल र प्रशासनिक टोलीहरूले उच्चतम अमेरिकी-मानक अनुपालन कायम राख्छन् भन्ने सुनिश्चित गर्दछ।",
-        about_tag: "हाम्रो संस्था",
-        about_title: "ग्लोबल कार्डियोलोजी बारे",
-        about_p1: "ग्लोबल कार्डियोलोजी शैक्षिक उत्कृष्टता, कडा निदान शुद्धता, र पारदर्शी चिकित्सा संचार को सिद्धान्त मा स्थापित छ।",
-        about_p2: "हाम्रो नेटवर्कले नवजात शिशुदेखि वृद्ध आमाबाबुसम्म सबै उमेरका बिरामीहरूलाई ασυ compromise चिकित्सा अखण्डताका साथ सेवा गर्न समर्पित बहु-विशेषता क्लिनिकल विशेषज्ञहरूलाई एक ठाउँमा ल्याउँछ।",
-        pillars_title: "कोर संस्थागत स्तम्भहरू",
-        pillar1: "<strong>कुनै आपतकालीन वाक-इन छैन:</strong> व्यक्तिगत हेरचाहको गुणस्तर जोगाउन, सबै भ्रमणहरू अग्रिम रूपमा निर्धारण गरिन्छ।",
-        pillar2: "<strong>विश्वव्यापी पहुँच:</strong> अन्तर्राष्ट्रिय शाखा नेटवर्कहरू र उन्नत कर्मचारी प्रशिक्षणसँग स्थानीय दयालु हेरचाह संयोजन गर्दै।",
-        contact_title: "एक अपोइन्टमेन्ट वा सोधपुछ समय तालिका",
-        contact_desc: "कृपया ध्यान दिनुहोस्: हामी आपतकालीन वाक-इनहरू ह्यान्डल गर्दैनौं। आफ्नो परामर्श बुक गर्न तल हाम्रो समन्वय टोलीसँग सम्पर्क गर्नुहोस्।",
-        lbl_email: "सोधपुछ इमेल",
-        lbl_phone: "समन्वय फोन",
-        lbl_hours: "सञ्चालन समय",
-        btn_send_email: "इमेल सोधपुछ पठाउनुहोस्",
-        footer_copy: "© 2026 Global Cardiologies (globalcardiologies.com)। सबै अधिकार सुरक्षित।",
-        footer_disc: "अस्वीकरण: यो वेबसाइटले निर्धारित परामर्शका लागि जानकारीमूलक विवरणहरू प्रदान गर्दछ र आपतकालीन चिकित्सा हेरचाह ह्यान्डल गर्दैन।"
+        adult_title: "वयस्क मुटु र निदान", adult_desc: "सटीक परीक्षण र निवारक स्वास्थ्य समाधानहरू।",
+        adult_c1_title: "निवारक कल्याण", adult_c1_desc: "कोलेस्ट्रोल र रक्तचाप व्यवस्थापन कार्यक्रमहरू।",
+        adult_c2_title: "डायग्नोस्टिक इमेजिङ", adult_c2_desc: "इजी र इकोकार्डियोग्राफी परीक्षण।",
+        adult_c3_title: "विशेष उपचार", adult_c3_desc: "मुटुको चाल र रक्तसञ्चारको लागि लक्षित हेरचाह।",
+        baby_title: "शिशु तथा बाल हेरचाह", baby_desc: "नवजात शिशु र बालबालिकाका लागि विशेष र कोमल हेरचाह।",
+        baby_c1_title: "शिशु स्वास्थ्य जाँच", baby_c1_desc: "शिशुहरूका लागि सुरक्षित स्वास्थ्य मूल्याङ्कन।",
+        baby_c2_title: "बाल विकास हेरचाह", baby_c2_desc: "पोषण मार्गदर्शन र स्वास्थ्य ट्र्याकिङ।",
+        baby_c3_title: "बाल कल्याण", baby_c3_desc: "विद्यालयका बालबालिकाको शारीरिक मूल्याङ्कन।",
+        global_title: "विश्वव्यापी शाखाहरू र उपचार", global_desc: "विश्वभर एकीकृत बहु-विशेषता चिकित्सा शाखाहरू।",
+        global_c1_title: "अन्तर्राष्ट्रिय नेटवर्क", global_c1_desc: "विश्वभरका विशेषज्ञ डाक्टरहरूसँग परामर्श।",
+        global_c2_title: "चिकित्सकीय शाखाहरू", global_c2_desc: "पाचन स्वास्थ्य र आन्तरिक चिकित्साको समन्वय।",
+        global_c3_title: "अनुसन्धान साझेदारी", global_c3_desc: "अग्रणी चिकित्सा संस्थाहरूसँगको सहकार्य।",
+        elderly_tag: "वरिष्ठ समर्थन", elderly_title: "जेष्ठ नागरिक र अभिभावक हेरचाह",
+        elderly_p1: "बुढ्यौली अभिभावकहरूको हेरचाहका लागि कम तनावयुक्त वातावरण र दीर्घकालीन व्यवस्थापन।",
+        explore_elderly: "जेष्ठ नागरिक हेरचाह हेर्नुहोस्", senior_priorities: "वरिष्ठ हेरचाह प्राथमिकताहरू",
+        s_list1: "✓ तनावमुक्त स्वास्थ्य परीक्षण", s_list2: "✓ सुरक्षित औषधि समीक्षाहरू", s_list3: "✓ परिवार-केन्द्रित रिपोर्टिङ",
+        read_more: "विवरण हेर्नुहोस् →", footer_copy: "© 2026 ग्लोबल कार्डियोलॉजीज। सबै अधिकार सुरक्षित।"
       }
     };
 
-    function setLang(lang) {
-      // Update active button styling
-      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      // Update text elements based on dictionary keys
+    function changeLanguage(lang) {
       const keys = translations[lang];
       if (!keys) return;
-
       document.querySelectorAll('[data-key]').forEach(el => {
         const key = el.getAttribute('data-key');
         if (keys[key]) {
           el.innerHTML = keys[key];
         }
       });
-      
-      // Save user language preference in browser
-      localStorage.setItem('preferred_lang', lang);
+      localStorage.setItem('selected_lang', lang);
     }
 
-    // Load saved preference on startup if available
     window.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('preferred_lang');
+      const savedLang = localStorage.getItem('selected_lang');
       if (savedLang && translations[savedLang]) {
-        // Find and trigger click on saved language button
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-          if(btn.getAttribute('onclick').includes(savedLang)) {
-            btn.click();
-          }
-        });
+        document.getElementById('langDropdown').value = savedLang;
+        changeLanguage(savedLang);
       }
     });
   </script>
